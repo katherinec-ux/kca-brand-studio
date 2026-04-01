@@ -22,15 +22,15 @@
             --light-grey: #DDD9D4;
             --cream: #F2EFEA;
             --off-white: #FAF9F7;
-            --crimson: #D3D3FF;
-            --crimson-light: #EFEFFF;
-            --crimson-dark: #ADADD9;
+            --crimson: #8A8C64;
+            --crimson-light: #EEEFE6;
+            --crimson-dark: #6E7050;
             --champagne: #EDE7DF;
             --champagne-light: #F2EFEA;
             --navy: #2A2320;
             --blush: #F2EFEA;
             --white: #FFFFFF;
-            --olive: #9E9EC8;
+            --olive: #8A8C64;
 
             --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
             --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -1999,36 +1999,37 @@
             color: var(--mid-grey);
         }
 
-        /* Buttons — ghost / outline style */
+        /* Buttons — soft lilac fill */
         .btn-primary {
-            background: transparent;
+            background: var(--crimson);
             color: var(--black);
-            border: 1px solid rgba(42,35,32,0.5);
+            border: 1px solid var(--crimson);
             letter-spacing: 0.18em;
             font-weight: 400;
             padding: 1.1rem 3rem;
             border-radius: 0;
         }
         .btn-primary:hover {
-            background: var(--black);
-            color: var(--off-white);
+            background: var(--crimson-dark);
+            border-color: var(--crimson-dark);
+            color: var(--white);
         }
         .btn-secondary:hover { color: var(--black); }
 
         /* Nav refinements */
         .nav--scrolled { background: rgba(250, 249, 247, 0.97); }
         .nav__cta {
-            background: transparent !important;
+            background: var(--crimson) !important;
             color: var(--black) !important;
-            border: 1px solid rgba(42,35,32,0.3) !important;
+            border: 1px solid var(--crimson) !important;
             border-radius: 0 !important;
             letter-spacing: 0.12em !important;
             font-weight: 400 !important;
         }
         .nav__cta:hover {
-            background: var(--black) !important;
-            color: var(--off-white) !important;
-            border-color: var(--black) !important;
+            background: var(--crimson-dark) !important;
+            border-color: var(--crimson-dark) !important;
+            color: var(--white) !important;
         }
         .nav__logo { font-weight: 400; letter-spacing: 0.28em; }
 
