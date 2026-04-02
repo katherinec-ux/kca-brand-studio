@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | KCA Brand Studio</title>
+    <meta name="description" content="Strategy, branding, and creative thinking from KCA Brand Studio. Articles for founders and emerging businesses ready to build brands that work.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #1E3D28; --charcoal: #2E5C3C; --warm-grey: #5A6B5E; --mid-grey: #8A9A8C;
+            --light-grey: #C8DACC; --cream: #FAF5EC; --off-white: #FAF5EC; --champagne: #EDE6D4;
+            --white: #FFFFFF; --lime: #C85C30; --periwinkle: #64a08c;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'DM Sans', -apple-system, sans-serif;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-sans); color: var(--black); background: var(--off-white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 3rem); }
+
+        /* Nav */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,245,236,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; }
+        .nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav__logo { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); line-height: 1; }
+        .nav__logo span { font-family: var(--font-sans); font-weight: 500; font-size: 0.55rem; letter-spacing: 0.22em; text-transform: uppercase; display: block; color: var(--black); margin-top: 0.15rem; margin-left: 0; }
+        .nav__links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav__links a { font-size: 0.8rem; color: var(--warm-grey); transition: color 0.2s; }
+        .nav__links a:hover { color: var(--black); }
+        .nav__cta { background: var(--black); color: var(--white) !important; padding: 0.55rem 1.25rem; border-radius: 100px; font-size: 0.72rem !important; letter-spacing: 0.12em !important; text-transform: uppercase; font-weight: 500 !important; }
+        .nav__cta:hover { background: var(--lime) !important; }
+
+        /* Header */
+        .journal-header { padding: clamp(7rem, 12vh, 10rem) 0 clamp(3rem, 5vw, 5rem); border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .journal-header .eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 1rem; display: block; }
+        .journal-header h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        .journal-header p { font-size: 1.05rem; color: var(--warm-grey); max-width: 520px; line-height: 1.7; }
+
+        /* Featured post */
+        .featured { padding: clamp(3rem, 5vw, 5rem) 0 0; }
+        .featured-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; padding-bottom: clamp(3rem, 5vw, 5rem); border-bottom: 1px solid rgba(0,0,0,0.06); }
+        @media (max-width: 720px) { .featured-inner { grid-template-columns: 1fr; } }
+        .featured-img { aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; background: var(--champagne); }
+        .featured-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; transition: transform 0.5s ease; }
+        .featured-inner:hover .featured-img img { transform: scale(1.03); }
+        .featured-eyebrow { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem; }
+        .featured-eyebrow::before { content: 'Featured'; background: var(--periwinkle); color: var(--white); padding: 0.2rem 0.6rem; border-radius: 100px; font-size: 0.6rem; }
+        .featured-title { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 300; line-height: 1.15; margin-bottom: 1rem; color: var(--black); transition: color 0.2s; }
+        .featured-inner:hover .featured-title { color: var(--periwinkle); }
+        .featured-excerpt { font-size: 0.95rem; color: var(--warm-grey); line-height: 1.7; margin-bottom: 1.25rem; }
+        .featured-meta { font-size: 0.75rem; color: var(--mid-grey); display: flex; gap: 0.75rem; }
+        .read-more { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lime); margin-top: 1rem; transition: gap 0.2s; }
+        .featured-inner:hover .read-more { gap: 0.7rem; }
+
+        /* Grid */
+        .journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; padding: clamp(3rem, 5vw, 5rem) 0 clamp(4rem, 6vw, 6rem); }
+        @media (max-width: 900px) { .journal-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .journal-grid { grid-template-columns: 1fr; } }
+
+        /* Post card */
+        .post-card { display: flex; flex-direction: column; }
+        .post-card__img { aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; background: var(--champagne); margin-bottom: 1.25rem; }
+        .post-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .post-card:hover .post-card__img img { transform: scale(1.03); }
+        .post-card__tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 0.5rem; display: block; }
+        .post-card__title { font-family: var(--font-serif); font-size: clamp(1.15rem, 1.6vw, 1.4rem); font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; color: var(--black); transition: color 0.2s; flex: 1; }
+        .post-card:hover .post-card__title { color: var(--periwinkle); }
+        .post-card__meta { font-size: 0.72rem; color: var(--mid-grey); display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .post-card__read-more { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lime); display: inline-flex; align-items: center; gap: 0.35rem; transition: gap 0.2s; margin-top: auto; }
+        .post-card:hover .post-card__read-more { gap: 0.6rem; }
+
+        /* Footer */
+        .journal-footer { background: var(--black); color: var(--cream); padding: 3rem 0; }
+        .journal-footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .journal-footer__brand { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+        .journal-footer__brand span { font-weight: 300; margin-left: 0.4rem; color: var(--lime); }
+        .journal-footer p { font-size: 0.8rem; color: rgba(250,245,236,0.5); }
+        .journal-footer a { font-size: 0.8rem; color: rgba(250,245,236,0.6); transition: color 0.2s; }
+        .journal-footer a:hover { color: var(--periwinkle); }
+
+        svg { display: inline-block; vertical-align: middle; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="container">
+            <a href="../index.html" class="nav__logo">KCA <span>Brand Studio</span></a>
+            <ul class="nav__links">
+                <li><a href="../index.html#services">Packages</a></li>
+                <li><a href="../index.html#work">Work</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="index.html" style="color: var(--black); font-weight: 500;">Journal</a></li>
+                <li><a href="../index.html#contact" class="nav__cta">Book a Free Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="journal-header">
+        <div class="container">
+            <span class="eyebrow">Journal</span>
+            <h1>Strategy, branding,<br>and the space between.</h1>
+            <p>Thinking out loud on brand strategy, creative direction, and what it actually takes to build a brand that works.</p>
+        </div>
+    </header>
+
+    <!-- Featured article -->
+    <section class="featured">
+        <div class="container">
+            <a href="why-most-brands-are-built-backwards.html" class="featured-inner">
+                <div class="featured-img">
+                    <img src="../images/blog-built-backwards.jpg" alt="Why most brands are built backwards" style="object-position: center center;">
+                </div>
+                <div>
+                    <div class="featured-eyebrow">Brand Strategy</div>
+                    <h2 class="featured-title">Why Most Brands Are Built Backwards - And What To Do Instead</h2>
+                    <p class="featured-excerpt">Most founders start with a logo. They choose colours, build a website, launch ads - and then wonder why nothing converts. This is not a failure of execution. It's a failure of sequence.</p>
+                    <div class="featured-meta">
+                        <span>Katherine Chalhoub</span>
+                        <span>·</span>
+                        <span>2 April 2026</span>
+                        <span>·</span>
+                        <span>5 min read</span>
+                    </div>
+                    <div class="read-more">Read article <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Article grid -->
+    <div class="container">
+        <div class="journal-grid">
+
+            <article class="post-card">
+                <a href="how-to-build-a-brand-that-performs.html" class="post-card__img">
+                    <img src="../images/workspace.jpg" alt="How to build a brand that performs">
+                </a>
+                <span class="post-card__tag">Performance</span>
+                <h2 class="post-card__title"><a href="how-to-build-a-brand-that-performs.html">How to Build a Brand That Performs (Not Just Looks Good)</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>4 min read</span></div>
+                <a href="how-to-build-a-brand-that-performs.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="brand-positioning-how-to-stand-out.html" class="post-card__img">
+                    <img src="../images/blog-brand-positioning.jpg" alt="Brand positioning" style="object-position: center 40%;">
+                </a>
+                <span class="post-card__tag">Positioning</span>
+                <h2 class="post-card__title"><a href="brand-positioning-how-to-stand-out.html">Brand Positioning: How to Stand Out in a Saturated Market</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>4 min read</span></div>
+                <a href="brand-positioning-how-to-stand-out.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="why-your-brand-isnt-converting.html" class="post-card__img">
+                    <img src="../images/blog-sales.jpg" alt="Why your brand isn't converting" style="object-position: center 50%;">
+                </a>
+                <span class="post-card__tag">Conversion</span>
+                <h2 class="post-card__title"><a href="why-your-brand-isnt-converting.html">Why Your Brand Isn't Converting (A Strategic Breakdown)</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>4 min read</span></div>
+                <a href="why-your-brand-isnt-converting.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="what-to-look-for-in-a-brand-agency.html" class="post-card__img">
+                    <img src="../images/blog-brand-agency.jpg" alt="What to look for in a brand agency" style="object-position: center center;">
+                </a>
+                <span class="post-card__tag">Founders</span>
+                <h2 class="post-card__title"><a href="what-to-look-for-in-a-brand-agency.html">What to Look for in a Brand Agency (From a Strategic Perspective)</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>3 min read</span></div>
+                <a href="what-to-look-for-in-a-brand-agency.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="why-premium-branding-isnt-about-aesthetics.html" class="post-card__img">
+                    <img src="../images/blog-premium-branding.jpg" alt="Why premium branding isn't about aesthetics" style="object-position: center 30%;">
+                </a>
+                <span class="post-card__tag">Brand Strategy</span>
+                <h2 class="post-card__title"><a href="why-premium-branding-isnt-about-aesthetics.html">Why "Premium" Branding Isn't About Aesthetics - It's About Perception</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>4 min read</span></div>
+                <a href="why-premium-branding-isnt-about-aesthetics.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="from-invisible-to-in-demand.html" class="post-card__img">
+                    <img src="../images/blog-invisible-to-indemand.jpg" alt="From invisible to in-demand" style="object-position: center center;">
+                </a>
+                <span class="post-card__tag">Brand Strategy</span>
+                <h2 class="post-card__title"><a href="from-invisible-to-in-demand.html">From Invisible to In-Demand: How to Build a Brand People Actually Choose</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>4 min read</span></div>
+                <a href="from-invisible-to-in-demand.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="the-hidden-cost-of-a-weak-brand.html" class="post-card__img">
+                    <img src="../images/blog-hidden-cost.jpg" alt="The hidden cost of a weak brand" style="object-position: center 55%;">
+                </a>
+                <span class="post-card__tag">Performance</span>
+                <h2 class="post-card__title"><a href="the-hidden-cost-of-a-weak-brand.html">The Hidden Cost of a Weak Brand (And Why It Shows Up in Your Marketing)</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>4 min read</span></div>
+                <a href="the-hidden-cost-of-a-weak-brand.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="what-happens-when-you-get-your-brand-right.html" class="post-card__img">
+                    <img src="../images/blog-brand-right.jpg" alt="What happens when you get your brand right" style="object-position: center 40%;">
+                </a>
+                <span class="post-card__tag">Brand Strategy</span>
+                <h2 class="post-card__title"><a href="what-happens-when-you-get-your-brand-right.html">What Happens When You Finally Get Your Brand Right</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>3 min read</span></div>
+                <a href="what-happens-when-you-get-your-brand-right.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="do-you-need-a-rebrand-or-better-strategy.html" class="post-card__img">
+                    <img src="../images/blog-rebrand-strategy.jpg" alt="Do you need a rebrand or better strategy" style="object-position: center 60%;">
+                </a>
+                <span class="post-card__tag">Founders</span>
+                <h2 class="post-card__title"><a href="do-you-need-a-rebrand-or-better-strategy.html">Do You Actually Need a Rebrand - Or Just Better Strategy?</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>4 min read</span></div>
+                <a href="do-you-need-a-rebrand-or-better-strategy.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="frank-body-the-brand-that-spoke-first.html" class="post-card__img">
+                    <img src="../images/blog-frank-body.jpg" alt="Frank Body brand case study" style="object-position: center center;">
+                </a>
+                <span class="post-card__tag">Case Study</span>
+                <h2 class="post-card__title"><a href="frank-body-the-brand-that-spoke-first.html">Frank Body: The Brand That Spoke First - And Won Because Of It</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>7 min read</span></div>
+                <a href="frank-body-the-brand-that-spoke-first.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="youre-sitting-on-insight.html" class="post-card__img">
+                    <img src="../images/blog-data-insight.jpg" alt="You're sitting on insight" style="object-position: center 30%;">
+                </a>
+                <span class="post-card__tag">Brand Strategy</span>
+                <h2 class="post-card__title"><a href="youre-sitting-on-insight.html">You're Sitting on Insight - But Using It Like Output</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>6 min read</span></div>
+                <a href="youre-sitting-on-insight.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <article class="post-card">
+                <a href="ai-brand-strategy.html" class="post-card__img">
+                    <img src="../images/blog-ai-brand-strategy.jpg" alt="AI and brand strategy" style="object-position: center center;">
+                </a>
+                <span class="post-card__tag">Brand Strategy</span>
+                <h2 class="post-card__title"><a href="ai-brand-strategy.html">AI Won't Replace Brand Strategy - But It Will Expose Weak Ones</a></h2>
+                <div class="post-card__meta"><span>2 April 2026</span><span>·</span><span>6 min read</span></div>
+                <a href="ai-brand-strategy.html" class="post-card__read-more">Read article <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+        </div>
+    </div>
+
+    <footer class="journal-footer">
+        <div class="container">
+            <div class="journal-footer__brand">KCA <span>Brand Studio</span></div>
+            <p>Strategy-led branding for founders and emerging businesses.</p>
+            <a href="../index.html">Back to main site &rarr;</a>
+        </div>
+    </footer>
+
+</body>
+</html>
