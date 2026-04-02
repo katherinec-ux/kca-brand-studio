@@ -15,25 +15,22 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            /* ── Botanica Palette ── */
-            --black: #1E3D28;          /* Forest - primary ink */
-            --charcoal: #2E5C3C;       /* Forest mid - secondary dark */
-            --warm-grey: #5A6B5E;      /* Muted forest - body text */
-            --mid-grey: #8A9A8C;       /* Soft forest grey - captions */
-            --light-grey: #C8DACC;     /* Very light - dividers */
-            --cream: #FAF5EC;          /* Botanica cream - card fills */
-            --off-white: #FAF5EC;      /* Page background */
-            --crimson: #1E3D28;        /* Forest - primary action */
-            --crimson-light: #D4E8DA;  /* Light forest tint */
-            --crimson-dark: #152D1D;   /* Dark forest - hover */
-            --champagne: #EDE6D4;      /* Warm cream - alt sections */
-            --champagne-light: #FAF5EC;
-            --navy: #1E3D28;           /* Forest - dark sections */
-            --blush: #FAF5EC;          /* Cream - section backgrounds */
+            --black: #2D2A27;
+            --charcoal: #3A3632;
+            --warm-grey: #6B6560;
+            --mid-grey: #9E9890;
+            --light-grey: #D5D0CA;
+            --cream: #F6F3EF;
+            --off-white: #FDFCFA;
+            --crimson: #D3D3FF;
+            --crimson-light: #D3D3FF;
+            --crimson-dark: #8585C9;
+            --champagne: #D3D3FF;
+            --champagne-light: #D3D3FF;
+            --navy: #2D2A27;
+            --blush: #F6F3EF;
             --white: #FFFFFF;
-            --olive: #1E3D28;          /* Forest - eyebrow labels */
-            --periwinkle: #64a08c;     /* Teal - feature highlight */
-            --lime: #C85C30;           /* Terracotta - accent on dark backgrounds */
+            --olive: #8A8C64;
 
             --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
             --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -87,8 +84,6 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--olive);
-            display: block;
-            margin-bottom: 1.25rem;
         }
 
         .body-lg {
@@ -134,7 +129,7 @@
         }
 
         .nav--scrolled {
-            background: rgba(250, 245, 236, 0.95);
+            background: rgba(253, 250, 251, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -192,17 +187,17 @@
             letter-spacing: 0.1em !important;
             text-transform: uppercase;
             background: var(--crimson);
-            color: var(--white) !important;
+            color: var(--charcoal) !important;
             border: 1px solid var(--crimson);
             padding: 0.6rem 1.5rem;
-            border-radius: 100px;
+            border-radius: 3px;
             transition: all 0.3s ease;
         }
 
         .nav__cta:hover {
-            background: var(--lime);
+            background: var(--crimson-dark);
             border-color: var(--crimson-dark);
-            color: var(--white) !important;
+            color: var(--charcoal) !important;
         }
 
         .nav__mobile-toggle {
@@ -233,52 +228,10 @@
             overflow: hidden;
         }
 
-
-        .hero__grid {
-            display: grid;
-            grid-template-columns: 1fr 0.9fr;
-            gap: clamp(3rem, 6vw, 6rem);
-            align-items: center;
-            width: 100%;
-        }
-
         .hero__content {
             position: relative;
             z-index: 2;
-        }
-
-        .hero__visual {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero__visual img {
-            width: 100%;
-            height: clamp(420px, 60vh, 620px);
-            object-fit: cover;
-            object-position: center 40%;
-            border-radius: 20px;
-            display: block;
-        }
-
-        .hero__visual-caption {
-            position: absolute;
-            bottom: -1.25rem;
-            left: -1.25rem;
-            background: var(--periwinkle);
-            padding: 1rem 1.5rem;
-            max-width: 220px;
-        }
-
-        .hero__visual-caption p {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: var(--black);
+            max-width: 800px;
         }
 
         .hero__label {
@@ -299,7 +252,7 @@
         .hero__title em {
             font-family: var(--font-serif);
             font-style: italic;
-            color: var(--periwinkle);
+            color: var(--crimson);
         }
 
         .hero__subtitle {
@@ -317,18 +270,18 @@
         .btn-primary {
             display: inline-block;
             background: var(--crimson);
-            color: var(--white);
+            color: var(--charcoal);
             padding: 1rem 2.5rem;
             font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            border-radius: 100px;
+            border-radius: 3px;
             transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
-            background: var(--lime);
+            background: var(--crimson-dark);
         }
 
         .btn-secondary {
@@ -342,7 +295,7 @@
         }
 
         .btn-secondary:hover {
-            color: var(--charcoal);
+            color: var(--crimson);
         }
 
         .btn-secondary svg {
@@ -357,11 +310,6 @@
 
         .hero__accent {
             display: none;
-        }
-
-        @media (max-width: 900px) {
-            .hero__grid { grid-template-columns: 1fr; }
-            .hero__visual { display: none; }
         }
 
         /* ============================================
@@ -409,7 +357,7 @@
 
         .brands__logo:hover {
             border-color: var(--olive);
-            background: #FAF5EC;
+            background: #EFEFEA;
         }
 
         .brands__logo img {
@@ -439,7 +387,11 @@
         }
 
         @media (max-width: 768px) {
+            .brands__logos {
+                flex-wrap: wrap;
+            }
             .brands__logo {
+                flex: 0 0 auto;
                 width: clamp(110px, 28vw, 140px);
                 padding: 1.25rem;
                 border-radius: 10px;
@@ -571,11 +523,11 @@
         }
 
         .pricing__card--featured {
-            background: var(--periwinkle);
-            color: var(--black);
+            background: var(--navy);
+            color: var(--white);
             transform: scaleY(1.02);
             z-index: 2;
-            border-color: #3d7a6a;
+            border-color: var(--crimson);
         }
 
         .pricing__badge {
@@ -588,10 +540,10 @@
             font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            background: var(--black);
-            color: var(--white);
+            background: var(--crimson);
+            color: var(--charcoal);
             padding: 0.35rem 1rem;
-            border-radius: 100px;
+            border-radius: 3px;
             white-space: nowrap;
         }
 
@@ -606,7 +558,7 @@
         }
 
         .pricing__card--featured .pricing__tier {
-            color: var(--black);
+            color: var(--olive);
         }
 
         .pricing__name {
@@ -624,7 +576,7 @@
         }
 
         .pricing__card--featured .pricing__desc {
-            color: var(--warm-grey);
+            color: rgba(255,255,255,0.5);
         }
 
         .pricing__price {
@@ -635,7 +587,7 @@
         }
 
         .pricing__card--featured .pricing__price {
-            color: var(--black);
+            color: var(--white);
         }
 
         .pricing__gst {
@@ -645,7 +597,7 @@
         }
 
         .pricing__card--featured .pricing__gst {
-            color: var(--mid-grey);
+            color: rgba(255,255,255,0.4);
         }
 
         .pricing__divider {
@@ -655,7 +607,7 @@
         }
 
         .pricing__card--featured .pricing__divider {
-            background: rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.1);
         }
 
         .pricing__section-label {
@@ -668,7 +620,7 @@
         }
 
         .pricing__card--featured .pricing__section-label {
-            color: var(--mid-grey);
+            color: rgba(255,255,255,0.4);
         }
 
         .pricing__list {
@@ -686,11 +638,7 @@
         }
 
         .pricing__card--featured .pricing__list li {
-            color: var(--charcoal);
-        }
-
-        .pricing__card--featured .pricing__list li::before {
-            color: var(--black);
+            color: rgba(255,255,255,0.7);
         }
 
         .pricing__list li::before {
@@ -708,11 +656,11 @@
         }
 
         .pricing__card--featured .pricing__list li.pricing__list--na {
-            color: var(--mid-grey);
+            color: rgba(255,255,255,0.2);
         }
 
         .pricing__list li.pricing__list--na::before {
-            content: '-';
+            content: '—';
             color: var(--light-grey);
         }
 
@@ -724,29 +672,26 @@
             font-weight: 500;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            border: 1.5px solid var(--black);
-            background: var(--black);
-            color: var(--white);
-            border-radius: 100px;
+            border: 1.5px solid var(--crimson);
+            color: var(--charcoal);
+            border-radius: 3px;
             transition: all 0.3s ease;
             margin-top: 1.5rem;
         }
 
         .pricing__cta:hover {
-            background: var(--lime);
-            border-color: var(--lime);
-            color: var(--white);
+            background: var(--crimson);
         }
 
         .pricing__card--featured .pricing__cta {
-            background: var(--black);
-            color: var(--white);
-            border-color: var(--black);
+            background: var(--crimson);
+            color: var(--charcoal);
+            border-color: var(--crimson);
         }
 
         .pricing__card--featured .pricing__cta:hover {
-            background: var(--lime);
-            border-color: var(--lime);
+            background: var(--crimson-dark);
+            border-color: var(--crimson-dark);
         }
 
         .pricing__tagline {
@@ -811,7 +756,7 @@
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            background: #FAF5EC;
+            background: #EFEFEA;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -844,7 +789,7 @@
             font-size: 0.6rem;
             font-weight: 500;
             letter-spacing: 0.15em;
-            color: var(--periwinkle);
+            color: var(--olive);
             margin-bottom: 0.5rem;
         }
 
@@ -907,18 +852,18 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1.2rem;
-            border: 1px solid rgba(224, 232, 106, 0.3);
+            border: 1px solid rgba(138,140,100,0.4);
             font-size: 0.72rem;
             font-weight: 500;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--lime);
+            color: var(--olive);
         }
 
         .process__timeline-badge svg {
             width: 14px;
             height: 14px;
-            stroke: var(--lime);
+            stroke: var(--olive);
             fill: none;
             stroke-width: 1.5;
             stroke-linecap: round;
@@ -930,7 +875,7 @@
            ============================================ */
         .case-studies__header {
             text-align: center;
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto clamp(3rem, 5vw, 4rem);
         }
 
@@ -976,7 +921,7 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: #FAF5EC;
+            background: #EFEFEA;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1082,29 +1027,10 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             background: var(--crimson);
-            color: var(--white);
+            color: var(--charcoal);
             padding: 0.25rem 0.7rem;
-            border-radius: 100px;
+            border-radius: 3px;
             margin-top: 1.25rem;
-        }
-
-        .case-study__gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.75rem;
-            padding: 1.25rem clamp(1.5rem, 3vw, 2.25rem) 0;
-        }
-
-        .case-study__gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
-        }
-
-        .case-study__gallery img:hover {
-            transform: scale(1.03);
         }
 
         @media (max-width: 768px) {
@@ -1129,21 +1055,20 @@
         }
 
         .about__image-circle {
-            width: 100%;
-            aspect-ratio: unset;
-            height: clamp(420px, 62vh, 600px);
-            border-radius: 52% 48% 50% 50% / 48% 48% 52% 52%;
+            width: clamp(300px, 80%, 420px);
+            max-width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
             overflow: hidden;
             position: relative;
             z-index: 2;
-            box-shadow: 0 28px 72px rgba(30,61,40,0.18);
+            box-shadow: 0 20px 60px rgba(27, 40, 56, 0.12);
         }
 
         .about__image-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 12%;
         }
 
         .about__image-circle .about__image-placeholder {
@@ -1160,43 +1085,44 @@
         }
 
         .about__image-ring {
-            display: block;
             position: absolute;
-            top: 28px;
-            left: -28px;
-            right: 16px;
-            bottom: -28px;
-            border-radius: 52% 48% 50% 50% / 48% 48% 52% 52%;
-            background: var(--periwinkle);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(330px, 86%, 460px);
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            border: 1.5px solid var(--champagne);
             z-index: 1;
-            opacity: 0.65;
+            opacity: 0.5;
         }
 
         .about__image-ring--outer {
-            display: none;
+            width: clamp(360px, 92%, 500px);
+            border-color: var(--crimson);
+            opacity: 0.15;
         }
 
         .about__image-dot {
             position: absolute;
-            width: 14px;
-            height: 14px;
-            background: var(--lime);
+            width: 12px;
+            height: 12px;
+            background: var(--crimson);
             border-radius: 50%;
-            z-index: 4;
+            z-index: 3;
         }
 
         .about__image-dot--top {
-            top: 8%;
-            right: 8%;
+            top: 5%;
+            right: 20%;
         }
 
         .about__image-dot--bottom {
-            bottom: 12%;
-            left: -10px;
-            width: 10px;
-            height: 10px;
-            background: var(--lime);
-            opacity: 0.7;
+            bottom: 10%;
+            left: 15%;
+            width: 8px;
+            height: 8px;
+            background: var(--champagne);
         }
 
         .about__content .heading-sm {
@@ -1212,105 +1138,48 @@
             margin-bottom: 1.5rem;
         }
 
-        .about__pull-quote {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: clamp(1rem, 1.4vw, 1.2rem);
-            color: var(--black);
-            border-left: 2px solid var(--periwinkle);
-            padding: 0.25rem 0 0.25rem 1rem;
-            margin: 0.5rem 0 2rem;
-            line-height: 1.5;
-        }
-
         .about__stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0;
+            gap: 1.5rem;
             margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--periwinkle);
-        }
-
-        .about__stat {
-            padding: 1.5rem 1.5rem 0 0;
-            border-right: 1px solid rgba(100,160,140,0.5);
-        }
-
-        .about__stat:last-child {
-            border-right: none;
-            padding-right: 0;
-            padding-left: 1.5rem;
-        }
-
-        .about__stat:nth-child(2) {
-            padding-left: 1.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
         }
 
         .about__stat-icon {
-            display: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #EFEFEA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .about__stat-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--olive);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .about__stat-number {
             font-family: var(--font-serif);
-            font-size: clamp(2.6rem, 4vw, 3.8rem);
-            color: var(--lime);
+            font-size: 2rem;
+            color: var(--olive);
             line-height: 1;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
         }
 
         .about__stat-label {
-            font-size: 0.8rem;
-            color: var(--warm-grey);
-            letter-spacing: 0.02em;
-            line-height: 1.4;
-        }
-
-        /* ============================================
-           VISUAL STRIP
-           ============================================ */
-        .visual-strip {
-            position: relative;
-            height: clamp(220px, 32vw, 400px);
-            overflow: hidden;
-        }
-
-        .visual-strip img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 65%;
-            display: block;
-        }
-
-        .visual-strip::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(30,61,40,0.55) 0%, rgba(30,61,40,0.25) 100%);
-        }
-
-        .visual-strip__quote {
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .visual-strip__quote p {
-            font-family: var(--font-serif);
-            font-size: clamp(1.3rem, 2.8vw, 2.1rem);
-            color: var(--cream);
-            font-style: italic;
-            font-weight: 300;
-            max-width: 680px;
-            line-height: 1.45;
+            font-size: 0.75rem;
+            color: var(--mid-grey);
+            letter-spacing: 0.05em;
         }
 
         /* ============================================
@@ -1323,7 +1192,7 @@
         }
 
         .difference .heading-sm {
-            color: var(--lime);
+            color: var(--olive);
             margin-bottom: 1.5rem;
         }
 
@@ -1359,7 +1228,7 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: rgba(200, 92, 48, 0.12);
+            background: rgba(138,140,100,0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1369,7 +1238,7 @@
         .difference__icon svg {
             width: 24px;
             height: 24px;
-            stroke: var(--lime);
+            stroke: var(--olive);
             fill: none;
             stroke-width: 1.5;
             stroke-linecap: round;
@@ -1433,7 +1302,6 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
-            min-height: 300px;
         }
 
         .review-card__callout {
@@ -1442,10 +1310,10 @@
             font-style: italic;
             line-height: 1.5;
             color: var(--charcoal);
-            background: var(--white);
+            background: #EFEFEA;
             padding: 1.25rem 1.5rem;
             border-radius: 8px;
-            border-left: 3px solid var(--periwinkle);
+            border-left: 3px solid var(--olive);
             margin-bottom: 1.25rem;
             order: 3;
             flex: 1;
@@ -1467,10 +1335,18 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            background: var(--champagne);
+            background: var(--cream);
             border: 1px solid rgba(0,0,0,0.06);
             overflow: hidden;
-            padding: 10px;
+            padding: 6px;
+        }
+
+        .review-card__avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
         }
 
         .review-card__avatar span {
@@ -1509,7 +1385,7 @@
         .review-card__star {
             width: 16px;
             height: 16px;
-            fill: #C85C30;
+            fill: var(--olive);
         }
 
 
@@ -1616,20 +1492,20 @@
            CTA BAND
            ============================================ */
         .cta-band {
-            background: var(--crimson);
-            color: var(--white);
+            background: var(--crimson-light);
+            color: var(--charcoal);
             text-align: center;
             padding: clamp(3rem, 5vw, 5rem) 0;
         }
 
         .cta-band .heading-lg {
-            color: var(--white);
+            color: var(--charcoal);
             margin-bottom: 1rem;
         }
 
         .cta-band p {
-            color: var(--white);
-            opacity: 0.85;
+            color: var(--charcoal);
+            opacity: 0.7;
             margin-bottom: 2rem;
             font-size: 1.05rem;
         }
@@ -1643,28 +1519,22 @@
             font-weight: 500;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            border-radius: 100px;
+            border-radius: 3px;
             transition: all 0.3s ease;
         }
 
         .btn-white:hover {
-            background: var(--lime);
-            border-color: var(--lime);
+            background: var(--black);
             color: var(--white);
         }
 
         /* ============================================
            CONTACT / FORM
            ============================================ */
-        #contact {
-            background: var(--navy);
-        }
-
         .contact__grid {
             display: grid;
             grid-template-columns: 1fr 1.3fr;
             gap: clamp(3rem, 6vw, 6rem);
-            align-items: start;
         }
 
         .contact__badge {
@@ -1674,26 +1544,24 @@
             font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            background: var(--lime);
-            color: var(--white);
+            background: var(--crimson);
+            color: var(--charcoal);
             padding: 0.35rem 1rem;
-            border-radius: 100px;
+            border-radius: 3px;
             margin-bottom: 1.5rem;
         }
 
         .contact__left .heading-sm {
-            color: var(--periwinkle);
+            color: var(--olive);
             margin-bottom: 1.5rem;
         }
 
         .contact__left .heading-lg {
             margin-bottom: 1.5rem;
-            color: var(--cream);
         }
 
         .contact__left .body-lg {
             margin-bottom: 2rem;
-            color: rgba(250,245,236,0.75);
         }
 
         .contact__details {
@@ -1708,29 +1576,19 @@
             align-items: center;
             gap: 0.75rem;
             font-size: 0.9rem;
-            color: rgba(250,245,236,0.65);
+            color: var(--warm-grey);
         }
 
         .contact__details li svg {
             width: 20px;
             height: 20px;
             flex-shrink: 0;
-            color: var(--periwinkle);
-        }
-
-        .contact__details li a {
-            color: rgba(250,245,236,0.65);
-        }
-
-        .contact__details li a:hover {
-            color: var(--periwinkle);
+            color: var(--olive);
         }
 
         .contact__form {
-            background: var(--cream);
+            background: var(--blush);
             padding: clamp(2rem, 4vw, 3.5rem);
-            border-radius: 4px;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.25);
         }
 
         .form__row {
@@ -1750,7 +1608,7 @@
             font-weight: 500;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--black);
+            color: var(--warm-grey);
             margin-bottom: 0.5rem;
         }
 
@@ -1773,8 +1631,7 @@
         .form__group input:focus,
         .form__group select:focus,
         .form__group textarea:focus {
-            border-color: var(--periwinkle);
-            box-shadow: 0 0 0 3px rgba(100,160,140,0.2);
+            border-color: var(--crimson);
         }
 
         .form__group textarea {
@@ -1792,13 +1649,13 @@
         .form__submit {
             width: 100%;
             background: var(--crimson);
-            color: var(--white);
+            color: var(--charcoal);
             padding: 1.1rem;
             font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            border-radius: 100px;
+            border-radius: 3px;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
@@ -1806,7 +1663,7 @@
         }
 
         .form__submit:hover {
-            background: var(--lime);
+            background: var(--crimson-dark);
         }
 
         .form__note {
@@ -1840,10 +1697,9 @@
            FOOTER
            ============================================ */
         .footer {
-            background: #0D1A10;
+            background: var(--navy);
             color: var(--white);
             padding: clamp(3rem, 5vw, 4rem) 0 2rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
         .footer__cta-band {
@@ -1891,7 +1747,7 @@
             letter-spacing: 0.22em;
             text-transform: uppercase;
             display: block;
-            color: var(--lime);
+            color: var(--olive);
             margin-top: 0.15rem;
         }
 
@@ -1939,93 +1795,10 @@
         }
 
         .footer__social a {
+            font-size: 0.8rem;
             color: rgba(255,255,255,0.4);
             transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-        .footer__social a svg { display: block; }
-
-        /* ============================================
-           FAQ
-           ============================================ */
-        .faq { background: var(--cream); }
-        .faq__header { text-align: center; max-width: 600px; margin: 0 auto clamp(2.5rem, 4vw, 4rem); }
-        .faq__header .heading-sm { color: var(--olive); margin-bottom: 1rem; }
-        .faq__grid { max-width: 800px; margin: 0 auto; }
-        .faq__item { border-bottom: 1px solid rgba(0,0,0,0.08); }
-        .faq__question {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            font-family: var(--font-serif);
-            font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-            font-weight: 400;
-            color: var(--black);
-            text-align: left;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-        .faq__question::after {
-            content: '+';
-            font-family: var(--font-sans);
-            font-size: 1.4rem;
-            font-weight: 300;
-            color: var(--olive);
-            flex-shrink: 0;
-            margin-left: 1rem;
-            transition: transform 0.3s ease;
-        }
-        .faq__item.is-open .faq__question::after { content: '\2212'; }
-        .faq__answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-        }
-        .faq__item.is-open .faq__answer { max-height: 300px; }
-        .faq__answer p {
-            font-size: 0.95rem;
-            color: var(--warm-grey);
-            line-height: 1.7;
-            padding-bottom: 1.5rem;
-        }
-
-        /* ============================================
-           STICKY MOBILE CTA
-           ============================================ */
-        .sticky-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 99;
-            background: var(--off-white);
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding: 0.75rem 1rem;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-        .sticky-cta.is-visible { transform: translateY(0); }
-        .sticky-cta a {
-            display: block;
-            background: var(--crimson);
-            color: var(--charcoal);
-            padding: 0.85rem;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border-radius: 100px;
-        }
-        @media (max-width: 768px) {
-            .sticky-cta { display: block; }
-            .section { padding-bottom: calc(clamp(4rem, 8vw, 8rem)); }
-            body { padding-bottom: 60px; }
+            letter-spacing: 0.05em;
         }
 
         .footer__social a:hover {
@@ -2106,184 +1879,6 @@
             .about__stats { grid-template-columns: 1fr; text-align: center; }
             .hero__ctas { flex-direction: column; align-items: flex-start; }
         }
-
-        /* ============================================
-           BOTANICA PALETTE - KCA Brand Studio
-           Cream 35% · Forest 25% · Lavender 20%
-           Lime 8% (dark backgrounds only)
-           ============================================ */
-
-        /* Base */
-        body { background: var(--off-white); }
-
-        /* Typography */
-        .heading-xl { font-weight: 300; letter-spacing: -0.01em; }
-        .hero__title { font-size: clamp(2.4rem, 4vw, 3.8rem); max-width: 580px; }
-        .heading-lg { font-weight: 300; }
-        .heading-md { font-weight: 300; }
-        .heading-sm { color: var(--olive); letter-spacing: 0.22em; font-weight: 400; }
-
-        /* Nav */
-        .nav--scrolled { background: rgba(250, 245, 236, 0.97); }
-        .nav__logo { font-weight: 400; letter-spacing: 0.28em; }
-        .nav__cta {
-            background: var(--black) !important;
-            color: var(--white) !important;
-            border: 1px solid var(--black) !important;
-            border-radius: 100px !important;
-            letter-spacing: 0.12em !important;
-            font-weight: 400 !important;
-        }
-        .nav__cta:hover {
-            background: var(--lime) !important;
-            border-color: var(--charcoal) !important;
-            color: var(--white) !important;
-        }
-
-        .btn-primary {
-            background: var(--black);
-            color: var(--white);
-            border: 1px solid var(--black);
-            border-radius: 100px;
-            letter-spacing: 0.15em;
-            font-weight: 400;
-        }
-        .btn-primary:hover {
-            background: var(--lime);
-            border-color: var(--charcoal);
-            color: var(--white);
-        }
-        .btn-secondary:hover { color: var(--lime); }
-
-        /* Brands / client logos */
-        .brands__logo {
-            background: var(--white);
-            border: 1px solid var(--light-grey);
-            border-radius: 8px;
-        }
-        .brands__logo:hover {
-            border-color: var(--black);
-            background: var(--crimson-light);
-        }
-        .brands__logo:hover img { filter: none; opacity: 1; }
-
-        /* Problem section - forest bg: lime + sage for accents */
-        .problem__left .heading-sm { color: var(--lime); }
-        .problem__points li::before { background: var(--lime); border-radius: 50%; }
-        .problem__quote em { color: var(--lime); }
-
-        /* Pricing */
-        .pricing__card { background: var(--white); border-color: var(--light-grey); border-radius: 4px; }
-        /* Featured card: lavender bg, dark text - set in main CSS above */
-        .pricing__card--featured .pricing__name { color: var(--black); }
-        .pricing__card--featured .pricing__price { color: var(--black); }
-        .pricing__card--featured .pricing__desc { color: var(--warm-grey); }
-        .pricing__card--featured .pricing__gst { color: var(--mid-grey); }
-        .pricing__card--featured .pricing__divider { background: rgba(0,0,0,0.1); }
-        .pricing__card--featured .pricing__section-label { color: var(--mid-grey); }
-        .pricing__card--featured .pricing__list li { color: var(--charcoal); }
-        .pricing__list li::before { color: var(--lime); }
-        .pricing__card--featured .pricing__list li::before { color: var(--lime); }
-        .pricing__card--featured .pricing__list li.pricing__list--na { color: var(--mid-grey); }
-        .pricing__card--featured .pricing__tagline { color: var(--warm-grey); }
-        .pricing__badge { background: var(--lime); color: var(--white); border-radius: 100px; }
-        .pricing__card--featured .pricing__cta {
-            background: var(--black); color: var(--white); border-color: var(--black); border-radius: 100px;
-        }
-        .pricing__card--featured .pricing__cta:hover { background: var(--lime); border-color: var(--lime); }
-        .pricing__cta { border-radius: 100px; }
-        .pricing__tier { color: var(--olive); }
-
-        /* Process - cream bg */
-        .process { background: var(--cream); }
-        .process__header .heading-sm { color: var(--olive); }
-        .process__step-icon { background: var(--white); border: 1px solid var(--light-grey); }
-        .process__step-icon svg { stroke: var(--lime); }
-        .process__step:hover .process__step-icon { background: var(--black); border-color: var(--black); }
-        .process__step:hover .process__step-icon svg { stroke: var(--white); }
-        .process__timeline { background: var(--black); }
-        .process__timeline::before { background: var(--periwinkle); opacity: 0.8; }
-        .process__timeline-badge { border-color: rgba(250,245,236,0.35); color: var(--cream); background: rgba(250,245,236,0.08); }
-        .process__timeline-badge svg { stroke: var(--cream); }
-
-        /* Case studies */
-        .case-study { background: var(--white); border: 1px solid var(--light-grey); border-radius: 8px; box-shadow: none; }
-        .case-study:hover { border-color: var(--black); box-shadow: 0 4px 32px rgba(30,61,40,0.1); }
-        .case-study__icon { background: var(--cream); border-radius: 8px; }
-        .case-study__tag { background: var(--lime); color: var(--white); border-radius: 100px; }
-        .case-study__outcomes li::before { background: var(--lime); border-radius: 50%; }
-        .case-study__stat-value { color: var(--periwinkle); }
-
-        /* Trust strip */
-        .trust-strip { background: var(--champagne); padding: clamp(2rem, 3vw, 3rem) 0; border-top: 2px solid var(--periwinkle); }
-        .trust-strip__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
-        .trust-strip__item { padding: 1.25rem 2rem 0 0; border-right: 1px solid rgba(100,160,140,0.5); }
-        .trust-strip__item:nth-child(2) { padding-left: 2rem; }
-        .trust-strip__item:last-child { border-right: none; padding-right: 0; padding-left: 2rem; }
-        .trust-strip__check { color: var(--lime); margin-bottom: 0.75rem; } .trust-strip__check svg { width: clamp(2rem, 3vw, 2.8rem); height: clamp(2rem, 3vw, 2.8rem); stroke: var(--lime); display: block; }
-        .trust-strip__label { font-size: 0.82rem; color: var(--warm-grey); line-height: 1.5; letter-spacing: 0.01em; }
-
-        /* About */
-        .about__stat-number { color: var(--lime); }
-        .about__image-dot { background: var(--lime); }
-
-        /* Difference section - forest bg: lime for icons and eyebrow */
-        .difference__icon {
-            background: rgba(224,232,106,0.08);
-            border: 1px solid rgba(224,232,106,0.15);
-            border-radius: 8px;
-        }
-        .difference__icon svg { stroke: var(--lime); }
-        .difference .heading-sm { color: var(--lime); }
-        .difference__card:hover { border-color: rgba(255,255,255,0.2); }
-
-        /* Testimonials */
-        .testimonials { background: var(--cream); }
-        .review-card { background: var(--white); border: 1px solid var(--light-grey); border-radius: 8px; box-shadow: 0 2px 16px rgba(30,61,40,0.04); }
-        .review-card__callout { background: var(--white); border-left-color: var(--periwinkle); border-radius: 8px; color: var(--black); }
-        .review-card__star { fill: var(--lime); }
-        .review-carousel__arrow:hover { border-color: var(--black); color: var(--black); }
-        .review-carousel__dot.active { background: var(--periwinkle); }
-
-        /* CTA band - forest bg, white text, white button with lavender hover */
-        .cta-band { background: var(--black); }
-        .cta-band .heading-lg { font-weight: 300; }
-        .cta-band p { opacity: 1; color: rgba(250,245,236,0.7); }
-        .btn-white {
-            background: var(--white);
-            color: var(--black);
-            border: 1px solid var(--white);
-            border-radius: 100px;
-            letter-spacing: 0.15em;
-            font-weight: 400;
-        }
-        .btn-white:hover { background: var(--lime); border-color: var(--lime); color: var(--white); }
-
-        /* Contact form */
-        .contact__form { background: var(--cream); }
-        .contact__badge { background: var(--black); color: var(--white); border-radius: 100px; }
-        .form__group input,
-        .form__group select,
-        .form__group textarea { background: var(--white); border-color: var(--light-grey); border-radius: 2px; }
-        .form__group input:focus,
-        .form__group select:focus,
-        .form__group textarea:focus { border-color: var(--black); }
-        .form__submit { background: var(--black); color: var(--white); border-radius: 100px; letter-spacing: 0.15em; font-weight: 400; }
-        .form__submit:hover { background: var(--lime); }
-
-        /* FAQ */
-        .faq { background: var(--champagne); }
-        .faq__item { border-bottom-color: rgba(0,0,0,0.1); }
-        .faq__question::after { color: var(--black); }
-
-        /* Footer - forest bg: sage hover, lime sub-label */
-        .footer__links a:hover { color: var(--periwinkle); }
-        .footer__social a:hover { color: var(--periwinkle); }
-        .footer__brand span { color: var(--lime); }
-
-        /* Sticky mobile CTA */
-        .sticky-cta a { background: var(--black); color: var(--white); border-radius: 100px; }
-
     </style>
 </head>
 <body>
@@ -2299,8 +1894,7 @@
                 <li><a href="#process">Process</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="blog/">Journal</a></li>
-                <li><a href="#contact" class="nav__cta">Book a Free Call</a></li>
+                <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
             </ul>
             <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu">
                 <span></span>
@@ -2315,31 +1909,52 @@
          ============================================ -->
     <section class="hero" id="hero">
         <div class="container">
-            <div class="hero__grid">
-                <div class="hero__content">
-                    <h1 class="heading-xl hero__title">
-                        Your brand<br>shouldn't blend in.<br><em>Let's make it impossible to ignore.</em>
-                    </h1>
-                    <p class="body-lg hero__subtitle">
-                        Strategy-led brand positioning for founders and emerging businesses in lead gen, ecommerce, and retail.
-                    </p>
-                    <div class="hero__ctas">
-                        <a href="#contact" class="btn-primary">Book a Free Strategy Call</a>
-                        <a href="#services" class="btn-secondary">
-                            See packages &amp; pricing
-                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M3 8h10M9 4l4 4-4 4"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero__visual">
-                    <img src="images/typewriter.jpg" alt="Creative strategy at KCA Brand Studio">
+            <div class="hero__content">
+                <span class="hero__label">Brand Strategy &amp; Positioning for Lead Gen, Ecommerce &amp; Retail</span>
+                <h1 class="heading-xl hero__title">
+                    Your brand shouldn't<br>blend in. <em>Let's make<br>it impossible to ignore.</em>
+                </h1>
+                <p class="body-lg hero__subtitle">
+                    Strategy-led brand positioning for founders and emerging businesses in lead gen, ecommerce, and retail. From $2,500 + GST.
+                </p>
+                <div class="hero__ctas">
+                    <a href="#contact" class="btn-primary">Start Your Brand</a>
+                    <a href="#process" class="btn-secondary">
+                        See how it works
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 8h10M9 4l4 4-4 4"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ============================================
+         SOCIAL PROOF BAR
+         ============================================ -->
+    <section class="proof">
+        <div class="container">
+            <p class="proof__inline reveal">14+ Years Experience &bull; DTC, Ecommerce &amp; Retail &bull; AU &amp; Global Brands &bull; Lead Gen &amp; Performance</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BRANDS WORKED WITH
+         ============================================ -->
+    <section class="brands section" style="padding: clamp(2.5rem, 4vw, 4rem) 0;">
+        <div class="container">
+            <p class="heading-sm" style="text-align: center; color: var(--olive); margin-bottom: 2.5rem;">Brands we've worked with</p>
+            <div class="brands__logos">
+                <div class="brands__logo reveal"><img src="images/brands/bellamys.png" alt="Bellamy's Organic"></div>
+
+                <div class="brands__logo reveal"><img src="images/brands/brighten.png" alt="Brighten Home Loans" class="brand--lg"></div>
+                <div class="brands__logo reveal"><img src="images/brands/listnr.webp" alt="LiSTNR" class="brand--lg"></div>
+                <div class="brands__logo reveal"><img src="images/brands/jojoba.webp" alt="The Jojoba Company"></div>
+                <div class="brands__logo reveal"><img src="images/brands/roomia.png" alt="Roomia"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- ============================================
          PROBLEM SECTION
@@ -2352,20 +1967,19 @@
                     <h2 class="heading-lg">Most brands are built backwards.</h2>
                     <ul class="problem__points">
                         <li>Logo before strategy. Aesthetics before positioning.</li>
-                        <li>No clear differentiation - sounds like everyone else.</li>
+                        <li>No clear differentiation &mdash; sounds like everyone else.</li>
                         <li>Looks great on a mood board, falls flat in market.</li>
                     </ul>
                 </div>
                 <div class="problem__right reveal reveal-delay-2">
                     <p class="problem__quote">
-                        &ldquo;If your brand can't articulate why it's different - it doesn't matter how beautiful it is. <em>It won't convert.</em>&rdquo;
+                        &ldquo;If your brand can't articulate why it's different &mdash; it doesn't matter how beautiful it is. <em>It won't convert.</em>&rdquo;
                     </p>
                     <p class="problem__attribution">KCA Brand Studio</p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- ============================================
          SERVICES / WHAT WE DO
@@ -2395,15 +2009,21 @@
                         <li>Tone of voice</li>
                         <li>Messaging infrastructure</li>
                     </ul>
+                    <p class="pricing__section-label">Identity</p>
+                    <ul class="pricing__list">
+                        <li class="pricing__list--na">Logo design</li>
+                        <li class="pricing__list--na">Colour, typography &amp; imagery</li>
+                        <li class="pricing__list--na">Brand guidelines</li>
+                    </ul>
                     <p class="pricing__section-label">Outputs</p>
                     <ul class="pricing__list">
                         <li>Brand strategy document</li>
                         <li>Messaging playbook</li>
                     </ul>
-                    <a href="#contact" class="pricing__cta">Book a Free Call</a>
-                    <p class="pricing__tagline">Clarity, meaning, and direction - designed to resonate and convert.</p>
+                    <a href="#contact" class="pricing__cta">Get Started</a>
+                    <p class="pricing__tagline">Clarity, meaning, and direction &mdash; designed to resonate and convert.</p>
                 </div>
-                <!-- BETTER - Featured -->
+                <!-- BETTER — Featured -->
                 <div class="pricing__card pricing__card--featured reveal reveal-delay-1">
                     <span class="pricing__badge">Most Popular</span>
                     <div class="pricing__tier">Better</div>
@@ -2435,7 +2055,7 @@
                         <li>Visual identity suite</li>
                         <li>Brand guidelines document</li>
                     </ul>
-                    <a href="#contact" class="pricing__cta">Book a Free Call</a>
+                    <a href="#contact" class="pricing__cta">Get Started</a>
                     <p class="pricing__tagline">Built to be recognised, remembered, and trusted.</p>
                 </div>
                 <!-- BEST -->
@@ -2478,7 +2098,7 @@
                         <li>Brand guidelines document</li>
                         <li>Launch-ready assets</li>
                     </ul>
-                    <a href="#contact" class="pricing__cta">Book a Free Call</a>
+                    <a href="#contact" class="pricing__cta">Get Started</a>
                     <p class="pricing__tagline">Show up, stand out, and drive results.</p>
                 </div>
             </div>
@@ -2491,39 +2111,9 @@
     <section class="cta-band">
         <div class="container">
             <h2 class="heading-lg">Ready to build a brand that cuts through?</h2>
-            <p>Book a free 15-minute strategy call. No obligation, no sales pitch - just a straight conversation about where your brand sits and what it needs.</p>
-            <a href="#contact" class="btn-white">Book a Free Strategy Call</a>
+            <a href="#contact" class="btn-white">Let's Talk</a>
         </div>
     </section>
-
-    <!-- Risk reversal strip under pricing -->
-    <div class="trust-strip">
-        <div class="container">
-            <div class="trust-strip__grid">
-                <div class="trust-strip__item">
-                    <div class="trust-strip__check">
-                        <!-- Calendar / discovery call -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
-                    </div>
-                    <div class="trust-strip__label">Free 15-min discovery call before any commitment</div>
-                </div>
-                <div class="trust-strip__item">
-                    <div class="trust-strip__check">
-                        <!-- Open padlock / no lock-in -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 019.9-1"/></svg>
-                    </div>
-                    <div class="trust-strip__label">No lock-in contracts</div>
-                </div>
-                <div class="trust-strip__item">
-                    <div class="trust-strip__check">
-                        <!-- Target / results-focused -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                    </div>
-                    <div class="trust-strip__label">Results-focused, not hours-focused</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ============================================
          PROCESS
@@ -2532,7 +2122,7 @@
         <div class="container">
             <div class="process__header reveal">
                 <span class="heading-sm">How It Works</span>
-                <h2 class="heading-lg">A process that<br>uncovers - not assumes.</h2>
+                <h2 class="heading-lg">A process that uncovers &mdash; not assumes.</h2>
                 <p class="body-lg">A deep, guided process that gets to the heart of your brand. Not a tick-box exercise.</p>
             </div>
             <div class="process__steps">
@@ -2550,7 +2140,7 @@
                     </div>
                     <div class="process__step-num">02</div>
                     <h4>Market Analysis</h4>
-                    <p>We map your competitors and landscape to find where you can stand apart - not alongside.</p>
+                    <p>We map your competitors and landscape to find where you can stand apart &mdash; not alongside.</p>
                 </div>
                 <div class="process__step reveal reveal-delay-2">
                     <div class="process__step-icon">
@@ -2558,7 +2148,7 @@
                     </div>
                     <div class="process__step-num">03</div>
                     <h4>Strategic Positioning</h4>
-                    <p>Your brand narrative, value prop, and market position - defined with precision and purpose.</p>
+                    <p>Your brand narrative, value prop, and market position &mdash; defined with precision and purpose.</p>
                 </div>
                 <div class="process__step reveal reveal-delay-3">
                     <div class="process__step-icon">
@@ -2566,7 +2156,7 @@
                     </div>
                     <div class="process__step-num">04</div>
                     <h4>Brand System</h4>
-                    <p>Messaging frameworks, tone of voice, brand guidelines - everything connected and cohesive.</p>
+                    <p>Messaging frameworks, tone of voice, brand guidelines &mdash; everything connected and cohesive.</p>
                 </div>
                 <div class="process__step reveal">
                     <div class="process__step-icon">
@@ -2574,7 +2164,7 @@
                     </div>
                     <div class="process__step-num">05</div>
                     <h4>Activation</h4>
-                    <p>Your brand brought to life through real assets - capability docs, website direction, launch-ready materials.</p>
+                    <p>Your brand brought to life through real assets &mdash; capability docs, website direction, launch-ready materials.</p>
                 </div>
             </div>
             <div class="process__timeline reveal">
@@ -2603,23 +2193,21 @@
          ============================================ -->
     <section class="difference section" id="difference">
         <div class="container">
-            <div style="max-width: 700px; margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);">
-                <span class="heading-sm">Why KCA</span>
-                <h2 class="heading-lg">Branding designed to work.</h2>
-            </div>
+            <span class="heading-sm">Why KCA</span>
+            <h2 class="heading-lg">Branding designed to work.</h2>
             <div class="difference__grid">
                 <div class="difference__card reveal">
                     <div class="difference__icon">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
                     </div>
-                    <h3>Not design fed, but strategy led.</h3>
+                    <h3>Strategy-led, not design-led</h3>
                     <p>Positioning first. Aesthetics second. We figure out where you sit in the market before we talk colours and fonts.</p>
                 </div>
                 <div class="difference__card reveal reveal-delay-1">
                     <div class="difference__icon">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                     </div>
-                    <h3>Conversion-conscious thinking</h3>
+                    <h3>Conversion-aware thinking</h3>
                     <p>Will it resonate? Will it stand out? Will it convert? Every decision gets tested against these three questions.</p>
                 </div>
                 <div class="difference__card reveal reveal-delay-2">
@@ -2634,12 +2222,11 @@
     </section>
 
     <!-- ============================================
-         TESTIMONIALS - LinkedIn Reviews Carousel
+         TESTIMONIALS — LinkedIn Reviews Carousel
          ============================================ -->
     <section class="testimonials section">
         <div class="container">
             <div class="testimonials__header">
-                <span class="heading-sm">Testimonials</span>
                 <h2 class="heading-lg">What people say about working with us</h2>
             </div>
 
@@ -2651,7 +2238,7 @@
                         <div class="review-card">
                             <div class="review-card__callout">&ldquo;An insightful, strategic thinker who sees the big picture.&rdquo;</div>
                             <div class="review-card__header">
-                                <div class="review-card__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--periwinkle)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <div class="review-card__avatar"><span>RAMG</span></div>
                                 <div class="review-card__meta">
                                     <div class="review-card__name">Jennifer Xu</div>
                                     <div class="review-card__title">Director at Real Asset Management Group</div>
@@ -2674,10 +2261,10 @@
                         <div class="review-card">
                             <div class="review-card__callout">&ldquo;A consummate professional who delivers innovative approaches.&rdquo;</div>
                             <div class="review-card__header">
-                                <div class="review-card__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--periwinkle)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <div class="review-card__avatar"><span>CBHS</span></div>
                                 <div class="review-card__meta">
                                     <div class="review-card__name">James Harvey-Fiander</div>
-                                    <div class="review-card__title">Marketing | Customer Experience | Digital - CBHS Insurance</div>
+                                    <div class="review-card__title">Marketing | Customer Experience | Digital &mdash; CBHS Insurance</div>
                                 </div>
                             </div>
                             <div class="review-card__stars">
@@ -2697,10 +2284,10 @@
                         <div class="review-card">
                             <div class="review-card__callout">&ldquo;Connects creativity with innovation to achieve strategic goals.&rdquo;</div>
                             <div class="review-card__header">
-                                <div class="review-card__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--periwinkle)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <div class="review-card__avatar"><span>CBHS</span></div>
                                 <div class="review-card__meta">
                                     <div class="review-card__name">Jo Egan</div>
-                                    <div class="review-card__title">eComm That Converts. Ops That Scale. CX That Sticks - CBHS Insurance</div>
+                                    <div class="review-card__title">eComm That Converts. Ops That Scale. CX That Sticks &mdash; CBHS Insurance</div>
                                 </div>
                             </div>
                             <div class="review-card__stars">
@@ -2720,34 +2307,10 @@
                         <div class="review-card">
                             <div class="review-card__callout">&ldquo;One of the most passionate and creative minds in the digital industry.&rdquo;</div>
                             <div class="review-card__header">
-                                <div class="review-card__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--periwinkle)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <div class="review-card__avatar"><img src="images/brands/swarovski.png" alt="Swarovski" class="brand--lg"></div>
                                 <div class="review-card__meta">
                                     <div class="review-card__name">Margaret Simonovska</div>
-                                    <div class="review-card__title">Luxury Fashion &amp; Accessories Marketing Communications Leader - Swarovski</div>
-                                </div>
-                            </div>
-                            <div class="review-card__stars">
-                                <svg class="review-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg class="review-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg class="review-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg class="review-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg class="review-card__star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                            <div class="review-card__source">
-                                <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                <span>Posted on LinkedIn</span>
-                            </div>
-                        </div>
-
-
-                        <!-- 5. Louisa Nightingale -->
-                        <div class="review-card">
-                            <div class="review-card__callout">&ldquo;She doesn&rsquo;t just build brands, she builds brands that grow.&rdquo;</div>
-                            <div class="review-card__header">
-                                <div class="review-card__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--periwinkle)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                                <div class="review-card__meta">
-                                    <div class="review-card__name">Louisa Nightingale</div>
-                                    <div class="review-card__title">Senior Event Producer &amp; B2B Marketer - Webprofits</div>
+                                    <div class="review-card__title">Luxury Fashion &amp; Accessories Marketing Communications Leader &mdash; Swarovski</div>
                                 </div>
                             </div>
                             <div class="review-card__stars">
@@ -2781,15 +2344,6 @@
         </div>
     </section>
 
-    <!-- CTA after testimonials -->
-    <div style="background: var(--lime); padding: clamp(3rem, 5vw, 4.5rem) 0; text-align: center;">
-        <div class="container">
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; margin-bottom: 0.5rem; color: var(--cream); font-style: italic; line-height: 1.2;">Convinced?</p>
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 1.8vw, 1.5rem); font-weight: 300; margin-bottom: 2rem; color: rgba(250,245,236,0.8);">Let&rsquo;s talk about your brand.</p>
-            <a href="#contact" style="display: inline-block; background: var(--cream); color: var(--lime); padding: 0.9rem 2.5rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 100px; font-family: var(--font-sans);">Book Your Free 15-Min Call</a>
-        </div>
-    </div>
-
     <!-- ============================================
          CASE STUDIES
          ============================================ -->
@@ -2797,17 +2351,16 @@
         <div class="container">
             <div class="case-studies__header reveal">
                 <span class="heading-sm">Case Studies</span>
-                <h2 class="heading-lg" style="white-space: nowrap;">Brands we've helped define and position.</h2>
+                <h2 class="heading-lg">Brands we've helped define and position.</h2>
             </div>
             <div class="case-studies__grid">
-                <!-- Case Study 1 - Bellamy's Organic -->
+                <!-- Case Study 1 — Bellamy's Organic -->
                 <div class="case-study reveal">
-                    <div class="case-study__banner" style="background: #64a08c;"></div>
-
+                    <div class="case-study__banner" style="background: linear-gradient(90deg, #8A8C64, #D3D3FF);"></div>
                     <div class="case-study__body">
                         <div class="case-study__meta">
                             <div class="case-study__icon">
-                                <img src="images/brands/bellamys-logo.png" alt="Bellamy's Organic">
+                                <img src="bellamys-logo.png" alt="Bellamy's Organic">
                             </div>
                             <div>
                                 <div class="case-study__client">Bellamy's Organic</div>
@@ -2816,7 +2369,7 @@
                         </div>
                         <p class="case-study__challenge">Competing against Nestl&eacute;, A2, and supermarket private labels in a heavily regulated category. Needed to cut through on a fraction of the budget by amplifying the brand through its existing customers.</p>
                         <ul class="case-study__outcomes">
-                            <li>Created "Bellamy's Firsts" - a UGC-led content strategy turning real parents into brand advocates</li>
+                            <li>Created "Bellamy's Firsts" &mdash; a UGC-led content strategy turning real parents into brand advocates</li>
                             <li>Drove earned attention through social, email sequences, and community growth</li>
                             <li>Won 2018 AMI Award for Marketing Excellence &amp; SEMrush Best Content Marketing Campaign</li>
                         </ul>
@@ -2824,13 +2377,13 @@
                     </div>
                 </div>
 
-                <!-- Case Study 2 - Brighten Home Loans -->
+                <!-- Case Study 2 — Brighten Home Loans -->
                 <div class="case-study reveal reveal-delay-1">
-                    <div class="case-study__banner" style="background: #64a08c;"></div>
+                    <div class="case-study__banner" style="background: linear-gradient(90deg, #D3D3FF, #9B9BDB);"></div>
                     <div class="case-study__body">
                         <div class="case-study__meta">
                             <div class="case-study__icon">
-                                <img src="images/brands/brighten-logo.jpg" alt="Brighten Home Loans">
+                                <img src="brighten-logo.png" alt="Brighten Home Loans">
                             </div>
                             <div>
                                 <div class="case-study__client">Brighten Home Loans</div>
@@ -2851,17 +2404,6 @@
     </section>
 
     <!-- ============================================
-         POST CASE STUDY CTA
-         ============================================ -->
-    <div style="background: var(--black); padding: clamp(3rem, 5vw, 4.5rem) 0; text-align: center;">
-        <div class="container">
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; margin-bottom: 0.5rem; color: var(--cream); font-style: italic; line-height: 1.2;">Want results like these for your brand?</p>
-            <p style="font-size: 0.9rem; color: rgba(250,245,236,0.6); margin-bottom: 2rem; letter-spacing: 0.03em;">Let&rsquo;s talk about where you&rsquo;re at and what it would take.</p>
-            <a href="#contact" style="display: inline-block; background: var(--cream); color: var(--black); padding: 0.9rem 2.5rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 100px; font-family: var(--font-sans);">Book a Free Strategy Call</a>
-        </div>
-    </div>
-
-    <!-- ============================================
          ABOUT / FOUNDER
          ============================================ -->
     <section class="section" id="about">
@@ -2869,7 +2411,15 @@
             <div class="about__grid">
                 <div class="about__image reveal">
                     <div class="about__image-circle">
-                        <img src="images/katherine.png" alt="Kath - Founder of KCA Brand Studio">
+                        <!--
+                            DROP YOUR PHOTO HERE:
+                            Save any of your photos as "katherine.png" in the /images/ folder.
+                            Recommended: KatherineCha_White (1).png or KatherineCha2_White.png
+                        -->
+                        <img src="images/katherine.png" alt="Katherine Chalhoub Arcuri - Founder, KCA Brand Studio" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="about__image-placeholder" style="display:none;">
+                            <span>Your photo here</span>
+                        </div>
                     </div>
                     <div class="about__image-ring"></div>
                     <div class="about__image-ring about__image-ring--outer"></div>
@@ -2880,68 +2430,34 @@
                     <span class="heading-sm">Meet the Founder</span>
                     <h2 class="heading-lg">I believe every brand deserves a strategy as strong as its ambition.</h2>
                     <p class="body-lg">
-                        I'm Kath - a brand strategist and creative director with 14+ years across performance marketing, lead gen, ecommerce, and retail. I've had the privilege of shaping brands like Bellamy's Organic, Roomia and Brighten Home Loans, and those experiences taught me what separates brands that look good from brands that actually work.
+                        I'm Kath &mdash; a brand strategist and creative director with 14+ years across performance marketing, lead gen, ecommerce, and retail. I've had the privilege of shaping brands like Swarovski, Levi's, Logitech, and Bellamy's Organic, and those experiences taught me what separates brands that look good from brands that actually work.
                     </p>
                     <p class="body-lg">
                         I started KCA Brand Studio because I kept seeing the same gap: beautifully designed brands without the strategic backbone to cut through. I work directly with founders to define what makes them different, build that into every touchpoint, and give them the clarity and confidence to launch with real commercial intent.
                     </p>
-                    <p class="about__pull-quote"><em>&ldquo;Every great brand starts with a story worth telling.&rdquo;</em></p>
                     <div class="about__stats">
-                        <div class="about__stat">
+                        <div>
+                            <div class="about__stat-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
                             <div class="about__stat-number">14+</div>
-                            <div class="about__stat-label">Years in brand, creative &amp; performance</div>
+                            <div class="about__stat-label">Years in brand, creative & performance</div>
                         </div>
-                        <div class="about__stat">
+                        <div>
+                            <div class="about__stat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            </div>
                             <div class="about__stat-number">100+</div>
                             <div class="about__stat-label">Brands built &amp; positioned</div>
                         </div>
-                        <div class="about__stat">
+                        <div>
+                            <div class="about__stat-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            </div>
                             <div class="about__stat-number">AU</div>
-                            <div class="about__stat-label">&amp; global brand experience</div>
+                            <div class="about__stat-label">& global brand experience</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         FAQ
-         ============================================ -->
-    <section class="faq section">
-        <div class="container">
-            <div class="faq__header reveal">
-                <span class="heading-sm">Common Questions</span>
-                <h2 class="heading-lg">Before you reach out</h2>
-            </div>
-            <div class="faq__grid">
-                <div class="faq__item">
-                    <button class="faq__question">What if I already have a logo - do I still need brand strategy?</button>
-                    <div class="faq__answer"><p>Absolutely. A logo is just one piece of a brand. Without a clear positioning strategy, messaging framework, and brand narrative, even a great logo won't help you stand out or convert. The Brand Foundations package is designed for exactly this scenario.</p></div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__question">How long does the process take?</button>
-                    <div class="faq__answer"><p>Most projects are completed within 1&ndash;4 weeks depending on the package. This is a focused, high-touch process - no endless revisions or drawn-out timelines.</p></div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__question">I'm pre-launch - is it too early to invest in branding?</button>
-                    <div class="faq__answer"><p>It's actually the ideal time. Getting your positioning and messaging right before you go to market means your first impression is your best one. You avoid the costly pivot of rebranding 6 months in.</p></div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__question">What makes this different from hiring a graphic designer?</button>
-                    <div class="faq__answer"><p>A designer creates visuals. KCA Brand Studio defines why your brand exists, who it's for, and how it should show up in market - then builds the visual and verbal identity to match. Strategy first, design second.</p></div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__question">What does the free strategy call involve?</button>
-                    <div class="faq__answer"><p>It's a 15-minute conversation where we discuss your brand, your goals, and your challenges. You'll walk away with clarity on what your brand needs next - whether we work together or not. No pitch, no pressure. Most people tell me it's the most useful 15 minutes they've spent on their brand.</p></div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__question">Is this worth the investment if I'm just starting out?</button>
-                    <div class="faq__answer"><p>Brand strategy is highest-ROI at the start - before you've spent money on ads, websites, or packaging that don't convert. A $2,500 positioning investment now can save you $20,000 in wasted spend later. Founders who get their positioning right from day one grow faster and spend less to acquire customers.</p></div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__question">I've worked with agencies before and been disappointed. How is this different?</button>
-                    <div class="faq__answer"><p>Most agencies are built for volume - many clients, junior staff doing the work, and a template approach. KCA Brand Studio is deliberately small: you work directly with me, Katherine, from brief to delivery. No account managers. No junior hand-offs. The strategy is built specifically for your business, not adapted from a previous client's framework.</p></div>
                 </div>
             </div>
         </div>
@@ -2954,10 +2470,10 @@
         <div class="container">
             <div class="contact__grid">
                 <div class="contact__left reveal">
-                    <span class="contact__badge">Free Strategy Call - Limited Availability</span>
-                    <h2 class="heading-lg">15 minutes.<br>Zero obligation. Total clarity.</h2>
+                    <span class="contact__badge">Get in Touch</span>
+                    <h2 class="heading-lg">Let's build your brand properly.</h2>
                     <p class="body-lg">
-                        Not sure which package is right? Let's talk it through. You'll walk away knowing exactly what your brand needs - whether we work together or not.
+                        Ready to get clear on positioning and stand out in market? No fluff. No sales pitch. Just a straight conversation about your brand.
                     </p>
                     <ul class="contact__details">
                         <li>
@@ -2976,7 +2492,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
                             </svg>
-                            <a href="https://www.linkedin.com/in/katherinechalhoubarcuri" target="_blank" rel="noopener">linkedin.com/in/katherinechalhoubarcuri</a>
+                            linkedin.com/in/katherinechalhoubarcuri
                         </li>
                     </ul>
                 </div>
@@ -2988,8 +2504,8 @@
                                 <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
                             </div>
                             <div class="form__group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" id="lastName" name="lastName" placeholder="Your last name">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
                             </div>
                         </div>
                         <div class="form__group">
@@ -3005,26 +2521,26 @@
                                 <label for="stage">Where Are You At? *</label>
                                 <select id="stage" name="stage" required>
                                     <option value="" disabled selected>Select one</option>
-                                    <option value="pre-launch">Pre-launch - haven't gone to market yet</option>
-                                    <option value="early-stage">Early stage - launched but need brand clarity</option>
-                                    <option value="repositioning">Repositioning - brand needs a reset</option>
-                                    <option value="scaling">Scaling - need to tighten up for growth</option>
+                                    <option value="pre-launch">Pre-launch &mdash; haven't gone to market yet</option>
+                                    <option value="early-stage">Early stage &mdash; launched but need brand clarity</option>
+                                    <option value="repositioning">Repositioning &mdash; brand needs a reset</option>
+                                    <option value="scaling">Scaling &mdash; need to tighten up for growth</option>
                                 </select>
                             </div>
                             <div class="form__group">
                                 <label for="budget">Indicative Budget</label>
                                 <select id="budget" name="budget">
                                     <option value="" disabled selected>Select range</option>
-                                    <option value="2.5k-4.5k">$2,500 &ndash; $4,500 (Good)</option>
-                                    <option value="4.5k-6.5k">$4,500 &ndash; $6,500 (Better)</option>
-                                    <option value="6.5k+">$6,500+ (Best / Custom)</option>
+                                    <option value="5k-10k">$5,000 &ndash; $10,000</option>
+                                    <option value="10k-20k">$10,000 &ndash; $20,000</option>
+                                    <option value="20k+">$20,000+</option>
                                     <option value="not-sure">Not sure yet</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form__group">
-                            <label for="message">Tell Us About Your Brand</label>
-                            <textarea id="message" name="message" placeholder="What does your business do? What's the biggest challenge right now?"></textarea>
+                            <label for="message">Tell Us About Your Brand *</label>
+                            <textarea id="message" name="message" required placeholder="What does your business do? What are you struggling with? What's the dream?"></textarea>
                         </div>
                         <div class="form__group">
                             <label for="found">How Did You Find Us?</label>
@@ -3037,17 +2553,12 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <button type="submit" class="form__submit">Book My Free Strategy Call</button>
-                        <p style="margin-top: 0.75rem; font-size: 0.72rem; color: var(--mid-grey); text-align: center; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                            <span>🔒 Your details are never shared</span>
-                            <span>·</span>
-                            <span>Response within 24 hours</span>
-                        </p>
-                        <p class="form__note">Free 15-min call. No obligation. We'll respond within 24 hours.</p>
+                        <button type="submit" class="form__submit">Send Inquiry</button>
+                        <p class="form__note">We'll get back to you within 48 hours. No spam. No auto-responders.</p>
                     </form>
                     <div class="form__success" id="formSuccess">
-                        <h3>You're booked in.</h3>
-                        <p>Thanks for reaching out. We'll be in touch within 24 hours to lock in your free strategy call.</p>
+                        <h3>Got it. We'll be in touch.</h3>
+                        <p>Thanks for reaching out. We'll review your inquiry and get back to you within 48 hours to see if we're a good fit.</p>
                     </div>
                 </div>
             </div>
@@ -3059,6 +2570,10 @@
          ============================================ -->
     <footer class="footer">
         <div class="container">
+            <div class="footer__cta-band">
+                <h3 class="footer__cta-heading">Ready to build a brand that actually works?</h3>
+                <a href="#contact" class="btn-primary" style="background: var(--crimson); color: var(--charcoal);">Start Your Brand</a>
+            </div>
             <div class="footer__top">
                 <div>
                     <div class="footer__brand">KCA<span>Brand Studio</span></div>
@@ -3075,12 +2590,8 @@
             <div class="footer__bottom">
                 <p class="footer__copy">&copy; 2026 KCA Brand Studio. All rights reserved. ABN to be added.</p>
                 <ul class="footer__social">
-                    <li><a href="https://www.linkedin.com/in/katherinechalhoubarcuri" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a></li>
-                    <li><a href="https://www.instagram.com/kca_brandstudio/" target="_blank" rel="noopener" aria-label="Instagram">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                    </a></li>
+                    <li><a href="https://www.linkedin.com/in/katherinechalhoubarcuri" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
                 </ul>
             </div>
         </div>
@@ -3133,26 +2644,22 @@
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            // Collect form data
             const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
 
-            fetch('https://formspree.io/f/xreolepj', {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    formSuccess.classList.add('is-visible');
-                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    alert('Something went wrong. Please try again or email me directly.');
-                }
-            }).catch(() => {
-                alert('Something went wrong. Please try again or email me directly.');
-            });
+            // Log to console (replace with actual form endpoint)
+            console.log('Form submission:', data);
+
+            // Show success message
+            form.style.display = 'none';
+            formSuccess.classList.add('is-visible');
+
+            // Scroll to success message
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
-        // Review carousel - show multiple cards at a time
+        // Review carousel — show multiple cards at a time
         const carouselSlides = document.querySelector('.review-carousel__slides');
         const reviewCards = document.querySelectorAll('.review-card');
         const prevBtn = document.getElementById('reviewPrev');
@@ -3234,50 +2741,7 @@
                 }
             });
         });
-        // FAQ accordion
-        document.querySelectorAll('.faq__question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const wasOpen = item.classList.contains('is-open');
-                // Close all
-                document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('is-open'));
-                // Toggle clicked
-                if (!wasOpen) item.classList.add('is-open');
-            });
-        });
-
-        // Sticky mobile CTA - show after scrolling past hero
-        const stickyCta = document.getElementById('stickyCta');
-        if (stickyCta) {
-            const heroSection = document.getElementById('hero');
-            const stickyObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        stickyCta.classList.add('is-visible');
-                    } else {
-                        stickyCta.classList.remove('is-visible');
-                    }
-                });
-            }, { threshold: 0 });
-            stickyObserver.observe(heroSection);
-
-            // Hide when contact section is in view
-            const contactSection = document.getElementById('contact');
-            const contactObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        stickyCta.classList.remove('is-visible');
-                    }
-                });
-            }, { threshold: 0.2 });
-            contactObserver.observe(contactSection);
-        }
     </script>
-
-    <!-- Sticky mobile CTA -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="#contact">Book a Free Strategy Call</a>
-    </div>
 
 </body>
 </html>
