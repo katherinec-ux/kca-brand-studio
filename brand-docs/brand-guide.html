@@ -1,0 +1,3369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KCA Brand Studio — Brand Guide 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ==============================
+       RESET
+       ============================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF5EC; color: #1E3D28; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ==============================
+       VARIABLES
+       ============================== */
+    :root {
+      /* ── Core palette (matches live site exactly) ─────────────────── */
+      --green:        #1E3D28;   /* Forest green — primary dark, all dark sections */
+      --green-mid:    #2E5C3C;   /* Medium green — hover states */
+      --sage:         #64A08C;   /* Sage teal — featured card accent */
+      --terracotta:   #C85C30;   /* Terracotta — button hover, checkmarks, energy */
+      /* ── Neutrals (green-tinted greyscale) ───────────────────────── */
+      --warm-grey:    #5A6B5E;   /* Body text */
+      --mid-grey:     #8A9A8C;   /* Secondary / caption text */
+      --light-grey:   #C8DACC;   /* Borders, dividers */
+      --champagne:    #EDE6D4;   /* Warm neutral accent */
+      --cream:        #FAF5EC;   /* Primary page background */
+      --off-white:    #FAF5EC;
+      /* ── Aliases matching live CSS variable names ─────────────────── */
+      --olive:        #1E3D28;   /* = --green in live site (labels, icons) */
+      --olive-light:  #8A9A8C;   /* = --mid-grey (labels on dark bg) */
+      --black:        #1E3D28;   /* = --green (how live site uses --black) */
+      --charcoal:     #2E5C3C;   /* = --green-mid */
+      --white:        #FFFFFF;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    /* ==============================
+       PAGE LAYOUT
+       ============================== */
+    .page { max-width: 1080px; margin: 0 auto; padding: 0 2.5rem 6rem; }
+
+    /* ==============================
+       COVER PAGE
+       ============================== */
+    .cover {
+      min-height: 100vh;
+      background: var(--green);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      border: 1px solid rgba(197,98,45,0.2);
+    }
+    .cover__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .cover__logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .cover__logo small {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--olive-light);
+      margin-top: 0.2rem;
+    }
+    .cover__label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.4rem 0.9rem;
+    }
+    .cover__body {
+      position: relative;
+      z-index: 2;
+    }
+    .cover__eyebrow {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 2rem;
+    }
+    .cover__title {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .cover__title em {
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+    }
+    .cover__rule {
+      width: 60px;
+      height: 2px;
+      background: var(--terracotta);
+      margin-bottom: 2rem;
+    }
+    .cover__desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+    .cover__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      z-index: 2;
+    }
+    .cover__meta {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.1em;
+      line-height: 2;
+    }
+    .cover__version {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+    }
+
+    /* ==============================
+       TABLE OF CONTENTS
+       ============================== */
+    .toc {
+      background: var(--cream);
+      padding: 5rem 4rem;
+    }
+    .toc__label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 2.5rem;
+    }
+    .toc__title {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 3rem;
+    }
+    .toc__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .toc__item {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      cursor: default;
+    }
+    .toc__num {
+      font-family: var(--serif);
+      font-size: 0.8rem;
+      color: var(--olive);
+      font-weight: 400;
+      flex-shrink: 0;
+      width: 1.5rem;
+    }
+    .toc__name {
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    /* ==============================
+       SECTION CONTAINERS
+       ============================== */
+    .section-block {
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .section-block:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .section-intro {
+      font-size: 1.05rem;
+      color: var(--warm-grey);
+      line-height: 1.75;
+      max-width: 680px;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ==============================
+       DARK SECTION BAND
+       ============================== */
+    .dark-band {
+      background: var(--green);
+      padding: 5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .dark-band::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .dark-band .section-label { color: var(--olive-light); }
+    .dark-band .section-title { color: var(--white); }
+    .dark-band .section-intro { color: rgba(255,255,255,0.55); max-width: none; }
+
+    /* ==============================
+       TERRA BAND
+       ============================== */
+    .terra-band {
+      background: var(--terracotta);
+      padding: 4rem;
+    }
+    .terra-band .section-title { color: var(--white); }
+    .terra-band .section-intro { color: rgba(255,255,255,0.7); max-width: none; }
+
+    /* ==============================
+       GRIDS
+       ============================== */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.25rem; }
+
+    /* ==============================
+       CARDS
+       ============================== */
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.07);
+      padding: 2rem;
+    }
+    .card--cream { background: var(--cream); }
+    .card--dark { background: var(--green); color: var(--white); border-color: transparent; }
+    .card--olive { background: var(--olive); color: var(--white); border-color: transparent; }
+    .card--terra { background: var(--terracotta); color: var(--white); border-color: transparent; }
+
+    .card__label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 0.75rem;
+    }
+    .card--dark .card__label { color: var(--olive-light); }
+    .card--terra .card__label { color: rgba(255,255,255,0.6); }
+    .card__title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .card--dark .card__title { color: var(--white); }
+    .card--terra .card__title { color: var(--white); }
+    .card__body {
+      font-size: 0.9rem;
+      color: var(--warm-grey);
+      line-height: 1.7;
+    }
+    .card--dark .card__body { color: rgba(255,255,255,0.6); }
+    .card--terra .card__body { color: rgba(255,255,255,0.75); }
+
+    /* ==============================
+       COLOR SWATCHES
+       ============================== */
+    .swatch-group { margin-bottom: 3rem; }
+    .swatch-group__label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      margin-bottom: 1rem;
+    }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+    .swatch {
+      border-radius: 0;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .swatch__chip {
+      height: 100px;
+      position: relative;
+    }
+    .swatch__chip--sm { height: 72px; }
+    .swatch__info {
+      padding: 0.9rem 1rem;
+      background: var(--white);
+    }
+    .swatch__name {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.2rem;
+    }
+    .swatch__hex {
+      font-family: 'Courier New', monospace;
+      font-size: 0.7rem;
+      color: var(--mid-grey);
+    }
+    .swatch__var {
+      font-family: 'Courier New', monospace;
+      font-size: 0.65rem;
+      color: var(--light-grey);
+      margin-top: 0.15rem;
+    }
+    .swatch__role {
+      font-size: 0.7rem;
+      color: var(--mid-grey);
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+
+    /* ==============================
+       TYPOGRAPHY SPECIMENS
+       ============================== */
+    .type-specimen {
+      background: var(--cream);
+      padding: 2.5rem;
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+    }
+    .type-specimen__meta {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1rem;
+    }
+    .type-specimen__sample {
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .type-specimen__detail {
+      font-size: 0.75rem;
+      color: var(--mid-grey);
+      font-family: 'Courier New', monospace;
+      line-height: 1.8;
+    }
+
+    .font-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+    .font-card__header {
+      background: var(--green);
+      padding: 2.5rem;
+      color: var(--white);
+    }
+    .font-card__display {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .font-card__name {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .font-card__body {
+      padding: 2rem;
+    }
+    .font-card__alphabet {
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      word-break: break-all;
+    }
+    .font-card__specs {
+      font-size: 0.75rem;
+      color: var(--mid-grey);
+      line-height: 2;
+    }
+    .font-card__specs span {
+      display: inline-block;
+      margin-right: 1.5rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* ==============================
+       TYPE SCALE TABLE
+       ============================== */
+    .type-scale { width: 100%; border-collapse: collapse; }
+    .type-scale th {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .type-scale td {
+      padding: 1.25rem 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      vertical-align: middle;
+    }
+    .type-scale tr:last-child td { border-bottom: none; }
+    .type-scale td:nth-child(1) { width: 25%; }
+    .type-scale td:nth-child(2) { width: 50%; }
+    .type-scale td:nth-child(3) { width: 25%; font-family: 'Courier New', monospace; font-size: 0.7rem; color: var(--mid-grey); }
+
+    /* ==============================
+       LOGO DIRECTION CARDS
+       ============================== */
+    .logo-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+    .logo-card__display {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+    .logo-card__display--light { background: var(--cream); }
+    .logo-card__display--dark  { background: var(--green); }
+    .logo-card__info { padding: 1.5rem; }
+    .logo-card__num {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 0.4rem;
+    }
+    .logo-card__name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+    .logo-card__desc {
+      font-size: 0.78rem;
+      color: var(--warm-grey);
+      line-height: 1.6;
+    }
+
+    /* Logo Specimens */
+    .logo-precision {
+      font-family: 'Jost', var(--sans);
+      font-size: 1.4rem;
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .logo-prestige {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--green);
+      font-variant: small-caps;
+    }
+    .logo-italic {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--green);
+    }
+    .logo-stacked {
+      border-left: 3px solid var(--olive);
+      padding-left: 1rem;
+    }
+    .logo-stacked strong {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      display: block;
+      line-height: 1;
+    }
+    .logo-stacked span {
+      font-family: var(--sans);
+      font-size: 0.5rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--olive);
+      display: block;
+      margin-top: 0.4rem;
+    }
+    .logo-signal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .logo-signal__star {
+      font-size: 1.4rem;
+      color: var(--olive);
+      line-height: 1;
+    }
+    .logo-signal__text {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--green);
+      font-variant: small-caps;
+    }
+    .logo-couture-wrap {
+      text-align: center;
+    }
+    .logo-couture {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--green);
+      line-height: 1;
+      display: block;
+    }
+    .logo-couture-sub {
+      font-family: var(--sans);
+      font-size: 0.48rem;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* ==============================
+       VOICE & TONE
+       ============================== */
+    .tone-pill {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      margin: 0.25rem;
+    }
+    .tone-pill--yes { background: var(--green); color: var(--white); }
+    .tone-pill--no  { background: var(--light-grey); color: var(--warm-grey); text-decoration: line-through; }
+
+    .copy-example {
+      padding: 1.5rem 2rem;
+      border-left: 3px solid var(--terracotta);
+      background: var(--cream);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    .copy-example--bad {
+      border-left-color: var(--light-grey);
+      color: var(--mid-grey);
+      text-decoration: line-through;
+    }
+    .copy-tag {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .copy-tag--good { background: rgba(30,59,42,0.1); color: var(--green); }
+    .copy-tag--bad  { background: rgba(213,208,202,0.5); color: var(--mid-grey); }
+
+    /* ==============================
+       BUTTONS
+       ============================== */
+    .btn-demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .demo-btn-primary {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      border: 1px solid var(--green);
+    }
+    .demo-btn-primary:hover { background: var(--terracotta); border-color: var(--terracotta); }
+    .demo-btn-secondary {
+      display: inline-block;
+      border: 1.5px solid var(--green);
+      color: var(--green);
+      padding: 0.9rem 2.2rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      background: transparent;
+    }
+    .demo-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--warm-grey);
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+    .demo-btn-ghost::after { content: '→'; }
+    .demo-btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green);
+      padding: 0.9rem 2.2rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      border: 1px solid var(--white);
+    }
+    .demo-btn-olive {
+      display: inline-block;
+      background: var(--sage);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 100px;
+    }
+    .btn-spec-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+    .btn-spec-table th {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .btn-spec-table td {
+      padding: 0.9rem 1rem;
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      vertical-align: middle;
+    }
+    .btn-spec-table td code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      background: var(--cream);
+      padding: 0.15rem 0.4rem;
+      color: var(--warm-grey);
+    }
+
+    /* ==============================
+       UI COMPONENTS
+       ============================== */
+    .demo-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .demo-badge--terra { background: var(--terracotta); color: var(--white); }
+    .demo-badge--green { background: var(--green); color: var(--white); }
+    .demo-badge--sage  { background: var(--sage); color: var(--white); }
+    .demo-badge--cream { background: var(--cream); color: var(--green); border: 1px solid rgba(0,0,0,0.08); }
+    .demo-badge--outline { border: 1px solid var(--green); color: var(--green); background: transparent; }
+
+    .demo-card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+
+    .pricing-demo {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 2rem;
+      border-radius: 4px;
+      position: relative;
+    }
+    .pricing-demo--featured {
+      background: var(--sage);
+      border-color: #3d7a6a;
+      transform: scaleY(1.02);
+    }
+    .pricing-demo__badge {
+      position: absolute;
+      top: -0.65rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--terracotta);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pricing-demo__tier {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.25rem;
+    }
+    .pricing-demo__name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 0.25rem;
+    }
+    .pricing-demo__price {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--green-mid);
+      margin-bottom: 0.25rem;
+    }
+    .pricing-demo__note { font-size: 0.7rem; color: var(--mid-grey); }
+
+    .demo-form-group {
+      margin-bottom: 1.25rem;
+    }
+    .demo-form-group label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      margin-bottom: 0.5rem;
+    }
+    .demo-form-group input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--light-grey);
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--black);
+      outline: none;
+      border-radius: 0;
+    }
+    .demo-form-group input:focus {
+      border-color: var(--terracotta);
+    }
+
+    /* ==============================
+       PROCESS STEPS
+       ============================== */
+    .process-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .process-step {
+      text-align: center;
+    }
+    .process-step__circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .process-step__num {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--olive-light);
+    }
+    .process-step__title {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .process-step__desc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       SPACING & LAYOUT GUIDE
+       ============================== */
+    .spacing-scale {
+      display: flex;
+      gap: 1px;
+      background: rgba(0,0,0,0.06);
+      align-items: flex-end;
+      padding: 1.5rem;
+      background: var(--cream);
+    }
+    .spacing-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .spacing-bar {
+      background: var(--olive);
+      width: 100%;
+      opacity: 0.7;
+    }
+    .spacing-label {
+      font-size: 0.6rem;
+      font-family: 'Courier New', monospace;
+      color: var(--mid-grey);
+      text-align: center;
+    }
+
+    /* ==============================
+       IMAGERY GUIDE
+       ============================== */
+    .photo-rule {
+      background: var(--cream);
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .photo-rule__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+    .photo-rule__title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .photo-rule__body {
+      font-size: 0.82rem;
+      color: var(--warm-grey);
+      line-height: 1.7;
+    }
+
+    .circle-portrait {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 2px solid var(--light-grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 0.7rem;
+      color: var(--mid-grey);
+      letter-spacing: 0.05em;
+      text-align: center;
+      margin-right: 2rem;
+      flex-shrink: 0;
+    }
+
+    /* ==============================
+       SERVICE PACKAGES TABLE
+       ============================== */
+    .packages-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .packages-table thead tr th {
+      padding: 1.25rem 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: left;
+      border-bottom: 2px solid rgba(0,0,0,0.08);
+    }
+    .packages-table thead th:first-child { color: var(--mid-grey); }
+    .packages-table thead th:nth-child(2) { color: var(--charcoal); }
+    .packages-table thead th:nth-child(3) { background: var(--green); color: var(--white); }
+    .packages-table thead th:nth-child(4) { color: var(--charcoal); }
+    .packages-table tbody tr:nth-child(even) td { background: rgba(0,0,0,0.015); }
+    .packages-table td {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .packages-table td:nth-child(3) { background: rgba(30,59,42,0.04); }
+    .packages-table .row-header td:first-child {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--olive);
+      padding-top: 1.5rem;
+    }
+    .packages-table td.check { color: var(--green); font-size: 1rem; }
+    .packages-table td.cross { color: var(--light-grey); }
+    .packages-table td:first-child { color: var(--warm-grey); }
+    .packages-table .price-row td {
+      padding: 1.25rem 1.5rem 0.5rem;
+    }
+    .packages-table .price-row td .price {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .packages-table .price-row td:nth-child(3) .price { color: var(--green); }
+    .packages-table .price-row td .gst { font-size: 0.72rem; color: var(--mid-grey); }
+
+    /* ==============================
+       DO / DON'T
+       ============================== */
+    .do-dont-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .do-list, .dont-list {
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .do-list { border-top: 3px solid var(--green); }
+    .dont-list { border-top: 3px solid var(--terracotta); }
+    .do-list__header, .dont-list__header {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .do-list__header { color: var(--green); }
+    .dont-list__header { color: var(--terracotta); }
+    .do-list__items, .dont-list__items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .do-list__items li, .dont-list__items li {
+      font-size: 0.85rem;
+      color: var(--charcoal);
+      line-height: 1.5;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .do-list__items li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .dont-list__items li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+
+    /* ==============================
+       HELPER TEXT
+       ============================== */
+    .note {
+      background: rgba(138,140,100,0.1);
+      border-left: 3px solid var(--olive);
+      padding: 1rem 1.5rem;
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .divider {
+      height: 1px;
+      background: rgba(0,0,0,0.06);
+      margin: 3rem 0;
+    }
+    .row { display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; }
+    .col-half { flex: 1; }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+    .mt-3 { margin-top: 3rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .mb-3 { margin-bottom: 3rem; }
+
+    /* ==============================
+       ICON COMPONENTS
+       ============================== */
+    .icon-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .icon-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: center;
+    }
+    .icon-container {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(200,218,204,0.25);
+      border: 1px solid rgba(200,218,204,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+      cursor: default;
+    }
+    .icon-container:hover {
+      background: #1E3D28;
+      border-color: #1E3D28;
+    }
+    .icon-container:hover svg {
+      stroke: #FFFFFF;
+    }
+    .icon-container svg {
+      width: 26px;
+      height: 26px;
+      stroke: #1E3D28;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.25s ease;
+    }
+    .icon-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      line-height: 1.4;
+    }
+    .icon-spec-box {
+      background: var(--cream);
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 1.75rem 2rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: var(--charcoal);
+      line-height: 2;
+    }
+    .icon-size-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem;
+      background: var(--cream);
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+    }
+    .icon-size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      text-align: center;
+    }
+
+    /* ==============================
+       PARTNER LOGO TILES
+       ============================== */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .partner-tile {
+      aspect-ratio: 1;
+      background: #FAF5EC;
+      border-radius: 12px;
+      border: 1.5px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      transition: border-color 0.2s ease;
+      cursor: default;
+    }
+    .partner-tile:hover {
+      border-color: rgba(0,0,0,0.1);
+    }
+    .partner-tile .partner-logo-text {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-align: center;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      mix-blend-mode: multiply;
+      transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+    .partner-tile:hover .partner-logo-text {
+      filter: none;
+      opacity: 1;
+    }
+
+    /* ==============================
+       PORTRAIT RING TREATMENT
+       ============================== */
+    .portrait-treatment-demo {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      flex-shrink: 0;
+    }
+    .portrait-ring-outer {
+      position: absolute;
+      top: -10px; left: -10px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(200,218,204,0.35);
+      pointer-events: none;
+    }
+    .portrait-ring-terra {
+      position: absolute;
+      top: -22px; left: -22px;
+      width: 264px; height: 264px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(200,92,48,0.12);
+      pointer-events: none;
+    }
+    .portrait-circle {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1.5px solid rgba(250,245,236,0.5);
+      box-shadow: 0 20px 60px rgba(27,40,56,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--mid-grey);
+      position: relative;
+      z-index: 2;
+    }
+    .portrait-dot-terra {
+      position: absolute;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      bottom: 22px; right: -4px;
+      z-index: 3;
+    }
+    .portrait-dot-cream {
+      position: absolute;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--champagne);
+      top: 18px; left: 0px;
+      z-index: 3;
+    }
+
+    /* ==============================
+       TINT STRIPS
+       ============================== */
+    .tint-row { margin-bottom:1.75rem; }
+    .tint-row__label { font-family:var(--sans); font-size:0.62rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--mid-grey); margin-bottom:0.5rem; }
+    .tint-strip { display:flex; height:72px; border-radius:4px; overflow:hidden; }
+    .tint-strip__cell { flex:1; display:flex; align-items:flex-end; padding:0.4rem 0.7rem; }
+    .tint-strip__cell span { font-family:monospace; font-size:0.58rem; }
+
+    /* ==============================
+       PROPORTION BAR
+       ============================== */
+    .proportion-bar { display:flex; height:52px; width:100%; overflow:hidden; border-radius:4px; margin-bottom:1rem; }
+    .proportion-bar__seg { display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-size:0.65rem; font-weight:600; overflow:hidden; }
+    .proportion-legend { display:flex; flex-wrap:wrap; gap:1.25rem 2rem; margin-bottom:3rem; }
+    .proportion-legend__item { display:flex; align-items:center; gap:0.6rem; font-size:0.75rem; color:var(--warm-grey); }
+    .proportion-legend__dot { width:12px; height:12px; border-radius:2px; flex-shrink:0; }
+
+    /* ==============================
+       TYPE SCALE VISUAL
+       ============================== */
+    .type-scale-visual { margin-bottom:3rem; }
+    .type-size-row { display:flex; align-items:center; gap:2rem; padding:1.5rem 0; border-bottom:1px solid var(--light-grey); }
+    .type-size-row:first-child { border-top:1px solid var(--light-grey); }
+    .type-size-meta { min-width:140px; flex-shrink:0; }
+    .type-size-name { font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--mid-grey); line-height:1.4; }
+    .type-size-px { font-family:monospace; font-size:0.7rem; color:var(--terracotta); margin-top:0.2rem; display:block; }
+    .type-size-specimen { flex:1; line-height:1.1; }
+
+    /* ==============================
+       LOGO CLEAR SPACE
+       ============================== */
+    .clearspace-wrap { background:var(--cream); border:1px solid rgba(0,0,0,0.07); padding:4rem; display:flex; align-items:center; justify-content:center; margin-bottom:2rem; }
+    .clearspace-inner { position:relative; display:inline-flex; flex-direction:column; align-items:center; }
+    .clearspace-logo-box { padding:1.75rem 2.25rem; outline:1.5px dashed var(--light-grey); position:relative; }
+    .clearspace-arrow { display:flex; align-items:center; gap:0.4rem; position:absolute; }
+    .clearspace-arrow span { font-family:monospace; font-size:0.58rem; color:var(--terracotta); white-space:nowrap; }
+    .clearspace-line { background:var(--terracotta); }
+
+    /* ==============================
+       LOGO DON'TS GRID
+       ============================== */
+    .logo-donts { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:3rem; }
+    .logo-dont { position:relative; }
+    .logo-dont__box { padding:2.5rem 2rem; display:flex; align-items:center; justify-content:center; position:relative; min-height:110px; overflow:hidden; }
+    .logo-dont__x { position:absolute; inset:0; pointer-events:none; }
+    .logo-dont__x::before, .logo-dont__x::after { content:''; position:absolute; top:50%; left:50%; width:55%; height:2px; background:rgba(180,20,20,0.65); border-radius:2px; }
+    .logo-dont__x::before { transform:translate(-50%,-50%) rotate(30deg); }
+    .logo-dont__x::after  { transform:translate(-50%,-50%) rotate(-30deg); }
+    .logo-dont__label { font-size:0.72rem; color:var(--warm-grey); line-height:1.5; margin-top:0.75rem; }
+    .logo-dont__rule { font-size:0.65rem; color:#b01a1a; font-weight:600; display:block; margin-top:0.2rem; }
+
+    /* ==============================
+       BRAND IN USE
+       ============================== */
+    .brand-in-use-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:3rem; }
+    .mockup-wrap { }
+    .mockup-label { font-family:var(--sans); font-size:0.62rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--mid-grey); margin-bottom:0.75rem; }
+    .biz-card { aspect-ratio:1.76; display:flex; flex-direction:column; justify-content:space-between; padding:1.5rem; border:1px solid rgba(0,0,0,0.08); }
+    .biz-card--light { background:var(--cream); }
+    .biz-card--dark  { background:var(--green); }
+    .email-sig { background:#FFFFFF; border:1px solid var(--light-grey); padding:1.5rem 1.75rem; }
+    .social-banner { aspect-ratio:2.63; background:var(--green); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .social-banner::before { content:''; position:absolute; top:-40px; right:-40px; width:180px; height:180px; border-radius:50%; border:1px solid rgba(255,255,255,0.06); }
+    .social-banner::after  { content:''; position:absolute; bottom:-30px; left:-30px; width:140px; height:140px; border-radius:50%; border:1px solid rgba(200,92,48,0.18); }
+
+    /* ==============================
+       PRINT
+       ============================== */
+    @media print {
+      .cover { min-height: auto; page-break-after: always; }
+      .section-block { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 768px) {
+      .cover { padding: 2.5rem; }
+      .toc { padding: 3rem 2rem; }
+      .toc__grid { grid-template-columns: 1fr; }
+      .dark-band { padding: 3rem 2rem; }
+      .terra-band { padding: 3rem 2rem; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .process-row { grid-template-columns: 1fr 1fr; }
+      .do-dont-grid { grid-template-columns: 1fr; }
+      .demo-card-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       COVER PAGE
+       ============================================================ -->
+  <div class="cover">
+    <div class="cover__header">
+      <div class="cover__logo">KCA <small>Brand Studio</small></div>
+      <div class="cover__label">Brand Guide 2026</div>
+    </div>
+    <div class="cover__body">
+      <p class="cover__eyebrow">Brand Identity System</p>
+      <h1 class="cover__title">Built to stand out.<br><em>Designed to perform.</em></h1>
+      <div class="cover__rule"></div>
+      <p class="cover__desc">A complete reference for how KCA Brand Studio looks, sounds, and shows up — across every channel, touchpoint, and format.</p>
+    </div>
+    <div class="cover__footer">
+      <div class="cover__meta">
+        Founder: Katherine Chalhoub Arcuri<br>
+        Location: Sydney, Australia<br>
+        Issued: April 2026 — Version 1.0
+      </div>
+      <div class="cover__version">KCA</div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TABLE OF CONTENTS
+       ============================================================ -->
+  <div class="toc">
+    <p class="toc__label">Contents</p>
+    <h2 class="toc__title">Brand Guide Overview</h2>
+    <div class="toc__grid">
+      <div class="toc__item"><span class="toc__num">01</span><span class="toc__name">Brand Foundation</span></div>
+      <div class="toc__item"><span class="toc__num">08</span><span class="toc__name">Iconography</span></div>
+      <div class="toc__item"><span class="toc__num">02</span><span class="toc__name">Positioning & Audience</span></div>
+      <div class="toc__item"><span class="toc__num">09</span><span class="toc__name">Partner Logo Treatment</span></div>
+      <div class="toc__item"><span class="toc__num">03</span><span class="toc__name">Voice & Tone</span></div>
+      <div class="toc__item"><span class="toc__num">10</span><span class="toc__name">UI Components</span></div>
+      <div class="toc__item"><span class="toc__num">04</span><span class="toc__name">Colour System</span></div>
+      <div class="toc__item"><span class="toc__num">11</span><span class="toc__name">Layout & Spacing</span></div>
+      <div class="toc__item"><span class="toc__num">05</span><span class="toc__name">Typography</span></div>
+      <div class="toc__item"><span class="toc__num">12</span><span class="toc__name">Do's & Don'ts</span></div>
+      <div class="toc__item"><span class="toc__num">06</span><span class="toc__name">Logo & Wordmark</span></div>
+      <div class="toc__item"><span class="toc__num">13</span><span class="toc__name">Quick Reference</span></div>
+      <div class="toc__item"><span class="toc__num">07</span><span class="toc__name">Imagery & Photography</span></div>
+      <div class="toc__item"><span class="toc__num">14</span><span class="toc__name">Brand in Use</span></div>
+      <div class="toc__item"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <div class="page">
+
+    <!-- ========================
+         01 BRAND FOUNDATION
+         ======================== -->
+    <div class="section-block" id="s01">
+      <p class="section-label">01 — Brand Foundation</p>
+      <h2 class="section-title">Who we are</h2>
+      <p class="section-intro">KCA Brand Studio is a strategy-led brand practice for founders and emerging businesses. We don't start with aesthetics. We start with positioning — then build a brand that's impossible to ignore and built to convert.</p>
+
+      <div class="grid-3" style="margin-bottom:3rem;">
+        <div class="card card--dark">
+          <div class="card__label">Mission</div>
+          <div class="card__title">Make every brand impossible to ignore.</div>
+          <div class="card__body">We exist to give founders the clarity, strategy, and identity they need to stand apart and drive real commercial outcomes.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Positioning</div>
+          <div class="card__title">Strategy-led. Conversion-aware. Built to perform.</div>
+          <div class="card__body">Not a design studio. Not a freelancer. A strategic practice that starts with positioning and ends with a brand ready to launch.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Belief</div>
+          <div class="card__title">Every brand deserves a strategy as strong as its ambition.</div>
+          <div class="card__body">Beautiful without strategy is just decoration. We build brands that resonate, stand out, and convert.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col-half">
+          <p class="section-label">Brand Story</p>
+          <h3 style="font-family:var(--serif); font-size:1.6rem; font-weight:400; color:var(--green); margin-bottom:1rem;">The name behind the studio</h3>
+          <p style="font-size:0.95rem; color:var(--warm-grey); line-height:1.8; margin-bottom:1rem;">KCA stands for Katherine Chalhoub Arcuri — but the abbreviated form carries deliberate weight. Inspired by the late-career reinvention of <em>Kid A</em> (Radiohead's landmark departure from the expected), the name signals the same spirit: experimentation, authorship, and a departure from the safe and predictable.</p>
+          <p style="font-size:0.95rem; color:var(--warm-grey); line-height:1.8;">The "K" is a marker of authorship. This brand carries Kath's name because every project carries her thinking, her direction, and her commercial intent — personally.</p>
+        </div>
+        <div class="col-half">
+          <div style="background:var(--green); padding:3rem 2.5rem; position:relative; overflow:hidden;">
+            <div style="position:absolute; top:-40px; right:-40px; width:160px; height:160px; border-radius:50%; border:1px solid rgba(255,255,255,0.06);"></div>
+            <p style="font-family:var(--serif); font-size:1.6rem; font-style:italic; color:rgba(255,255,255,0.7); line-height:1.4; margin-bottom:1.5rem; position:relative; z-index:2;">"If your brand can't articulate why it's different — it doesn't matter how beautiful it is. It won't convert."</p>
+            <p style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--olive-light); position:relative; z-index:2;">— Katherine Chalhoub Arcuri, Founder</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="section-label" style="margin-bottom:1.25rem;">Core Taglines</p>
+      <div class="grid-2">
+        <div class="card card--cream">
+          <div class="card__label">Primary Tagline</div>
+          <div class="card__title" style="font-size:1.5rem;">"Built to stand out. Designed to perform."</div>
+          <div class="card__body">Used across website footer, signatures, capability statements. Leads with differentiation, closes with commercial intent.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Hero Headline</div>
+          <div class="card__title" style="font-size:1.5rem;">"Your brand shouldn't blend in. Let's make it impossible to ignore."</div>
+          <div class="card__body">Primary hero statement. Splits across two beats — problem / solution. The italic emphasis carries the brand's energy.</div>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <div class="card card--cream">
+          <div class="card__label">Alternative Tagline</div>
+          <div class="card__title" style="font-size:1.5rem;">"Defined differently. Built properly."</div>
+          <div class="card__body">Use in secondary placements, social captions, presentations. Reinforces the anti-backwards-branding philosophy.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         02 POSITIONING & AUDIENCE
+         ======================== -->
+    <div class="section-block" id="s02">
+      <p class="section-label">02 — Positioning & Audience</p>
+      <h2 class="section-title">Who we're for (and who we're not)</h2>
+      <p class="section-intro">KCA Brand Studio serves a specific type of client. Understanding the ideal audience — and who to gracefully decline — is part of protecting the brand's premium positioning.</p>
+
+      <div class="grid-2" style="margin-bottom:3rem;">
+        <div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:1.25rem;">Ideal Client</p>
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div style="padding:1.25rem 1.5rem; background:var(--cream); border-left:3px solid var(--green);">
+              <div style="font-family:var(--serif); font-size:1rem; font-weight:400; color:var(--green); margin-bottom:0.25rem;">Founders & Entrepreneurs</div>
+              <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.6;">Pre-launch or early-stage. Have a business but need a brand to match their ambition. Serious about growth, not just aesthetics.</div>
+            </div>
+            <div style="padding:1.25rem 1.5rem; background:var(--cream); border-left:3px solid var(--green);">
+              <div style="font-family:var(--serif); font-size:1rem; font-weight:400; color:var(--green); margin-bottom:0.25rem;">Emerging Businesses</div>
+              <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.6;">Launched but blending in. Need clarity, a differentiated position, and a brand that actually converts.</div>
+            </div>
+            <div style="padding:1.25rem 1.5rem; background:var(--cream); border-left:3px solid var(--green);">
+              <div style="font-family:var(--serif); font-size:1rem; font-weight:400; color:var(--green); margin-bottom:0.25rem;">Repositioning Brands</div>
+              <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.6;">Been around but need a reset. Growing pains, category changes, or a brand that no longer reflects the business.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--terracotta); margin-bottom:1.25rem;">Not a Fit</p>
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div style="padding:1.25rem 1.5rem; background:var(--cream); border-left:3px solid var(--light-grey);">
+              <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.6; text-decoration:line-through;">Clients who want logo-first, strategy-last</div>
+            </div>
+            <div style="padding:1.25rem 1.5rem; background:var(--cream); border-left:3px solid var(--light-grey);">
+              <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.6; text-decoration:line-through;">Businesses with no commercial intent or revenue goals</div>
+            </div>
+            <div style="padding:1.25rem 1.5rem; background:var(--cream); border-left:3px solid var(--light-grey);">
+              <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.6; text-decoration:line-through;">Projects where the brief is "make it pretty"</div>
+            </div>
+            <div style="padding:1.25rem 1.5rem; background:var(--cream); border-left:3px solid var(--light-grey);">
+              <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.6; text-decoration:line-through;">Large enterprises with internal brand teams</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Categories of specialisation:</strong> Lead generation, ecommerce, DTC, and retail. 14+ years experience in these verticals means positioning advice is grounded in real conversion data — not just brand theory.
+      </div>
+
+      <div class="grid-3">
+        <div class="card card--cream">
+          <div class="card__label">Geography</div>
+          <div class="card__title">AU & Global</div>
+          <div class="card__body">Based in Sydney, Australia. Works with AU-based clients and globally where time zones allow. GST applicable for Australian clients.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Experience Depth</div>
+          <div class="card__title">14+ Years</div>
+          <div class="card__body">Across performance marketing, lead gen, ecommerce, and retail. Brands include Swarovski, Levi's, Logitech, and Bellamy's Organic.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Scale</div>
+          <div class="card__title">100+ Brands</div>
+          <div class="card__body">Built and positioned across categories. Each engagement draws on hard-won commercial experience from working across budget levels and market sizes.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         03 VOICE & TONE
+         ======================== -->
+    <div class="section-block" id="s03">
+      <p class="section-label">03 — Voice & Tone</p>
+      <h2 class="section-title">How we speak</h2>
+      <p class="section-intro">KCA Brand Studio's voice is the same whether writing a proposal, a social caption, or a website headline. It's direct, commercially grounded, and carries the confidence of someone who's been in the room.</p>
+
+      <div class="grid-4" style="margin-bottom:3rem;">
+        <div class="card card--dark">
+          <div class="card__label">Attribute</div>
+          <div class="card__title">Direct</div>
+          <div class="card__body">Lead with the point. No softening. No throat-clearing. Say the thing, then move on.</div>
+        </div>
+        <div class="card card--dark">
+          <div class="card__label">Attribute</div>
+          <div class="card__title">Confident</div>
+          <div class="card__body">No hedging. No "I think" or "perhaps". Positions are stated as positions.</div>
+        </div>
+        <div class="card card--dark">
+          <div class="card__label">Attribute</div>
+          <div class="card__title">Commercial</div>
+          <div class="card__body">Every message ties back to outcomes: resonate, stand out, convert. Business-first thinking.</div>
+        </div>
+        <div class="card card--dark">
+          <div class="card__label">Attribute</div>
+          <div class="card__title">Human</div>
+          <div class="card__body">Founder voice — personal, warm, no jargon. Sounds like Kath, not a corporate handbook.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid-2" style="margin-bottom:3rem;">
+        <div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:1.25rem;">Language We Use</p>
+          <div style="display:flex; flex-wrap:wrap;">
+            <span class="tone-pill tone-pill--yes">Cut through</span>
+            <span class="tone-pill tone-pill--yes">Defined</span>
+            <span class="tone-pill tone-pill--yes">Positioned</span>
+            <span class="tone-pill tone-pill--yes">Built properly</span>
+            <span class="tone-pill tone-pill--yes">Strategy-led</span>
+            <span class="tone-pill tone-pill--yes">Conversion-aware</span>
+            <span class="tone-pill tone-pill--yes">Commercial intent</span>
+            <span class="tone-pill tone-pill--yes">Stand apart</span>
+            <span class="tone-pill tone-pill--yes">Clarity</span>
+            <span class="tone-pill tone-pill--yes">Uncover</span>
+            <span class="tone-pill tone-pill--yes">Immersion</span>
+            <span class="tone-pill tone-pill--yes">Foundation</span>
+            <span class="tone-pill tone-pill--yes">No fluff</span>
+            <span class="tone-pill tone-pill--yes">High-touch</span>
+          </div>
+        </div>
+        <div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--terracotta); margin-bottom:1.25rem;">Language We Avoid</p>
+          <div style="display:flex; flex-wrap:wrap;">
+            <span class="tone-pill tone-pill--no">Creative solutions</span>
+            <span class="tone-pill tone-pill--no">Passionate about</span>
+            <span class="tone-pill tone-pill--no">Unique</span>
+            <span class="tone-pill tone-pill--no">Bespoke</span>
+            <span class="tone-pill tone-pill--no">Synergy</span>
+            <span class="tone-pill tone-pill--no">Holistic</span>
+            <span class="tone-pill tone-pill--no">Leverage</span>
+            <span class="tone-pill tone-pill--no">World-class</span>
+            <span class="tone-pill tone-pill--no">Seamless</span>
+            <span class="tone-pill tone-pill--no">Full-service</span>
+            <span class="tone-pill tone-pill--no">End-to-end solutions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="section-label" style="margin-bottom:2rem;">Copy Examples — Good vs. Avoid</p>
+
+      <div class="grid-2">
+        <div>
+          <div class="copy-tag copy-tag--good">Write like this</div>
+          <div class="copy-example">"No drawn-out timelines. No endless revisions. A concentrated process designed to get you to market with clarity and confidence."</div>
+          <div class="copy-example">"Positioning first. Aesthetics second. We figure out where you sit in the market before we talk colours and fonts."</div>
+          <div class="copy-example">"A process that uncovers — not assumes."</div>
+          <div class="copy-example">"Ready to get clear on positioning and stand out in market? No fluff. No sales pitch. Just a straight conversation about your brand."</div>
+        </div>
+        <div>
+          <div class="copy-tag copy-tag--bad">Avoid this</div>
+          <div class="copy-example copy-example--bad">"We offer bespoke, holistic creative solutions tailored to your unique needs."</div>
+          <div class="copy-example copy-example--bad">"Our passionate team of world-class designers will leverage your brand to deliver seamless synergies."</div>
+          <div class="copy-example copy-example--bad">"We'd love to explore working with you on your exciting project!"</div>
+          <div class="copy-example copy-example--bad">"We believe in the power of storytelling to connect with audiences in a meaningful way."</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="section-label" style="margin-bottom:1.25rem;">Writing Principles</p>
+      <div class="grid-3">
+        <div class="card card--cream">
+          <div class="card__label">Principle 01</div>
+          <div class="card__title">Lead with the problem</div>
+          <div class="card__body">Start with what the reader is experiencing. "Most brands are built backwards." earns attention before the solution is offered.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Principle 02</div>
+          <div class="card__title">Short sentences win</div>
+          <div class="card__body">One idea per sentence. Paragraphs rarely exceed three sentences. White space is generous. Rhythm matters.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Principle 03</div>
+          <div class="card__title">Name the outcome</div>
+          <div class="card__body">Every service, every section, every CTA ends with a commercial outcome. Resonate. Stand out. Convert. Don't leave it implicit.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         04 COLOUR SYSTEM
+         ======================== -->
+    <div class="section-block" id="s04">
+      <p class="section-label">04 — Colour System</p>
+      <h2 class="section-title">The palette</h2>
+      <p class="section-intro">The KCA colour system is built around three distinct zones: a deep forest green that anchors the brand with credibility and authority; a warm cream that gives the brand space to breathe; and a terracotta orange that drives action and energy.</p>
+
+      <!-- Primary -->
+      <div class="swatch-group">
+        <div class="swatch-group__label">Primary Palette</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#1E3D28;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Forest Green</div>
+              <div class="swatch__hex">#1E3D28</div>
+              <div class="swatch__var">--green / --black / --olive / --navy</div>
+              <div class="swatch__role">Brand anchor. Nav, footer, all dark sections, buttons, headings, primary text. In the live CSS this colour is shared across --black, --navy, --olive, and --crimson variables.</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#FAF5EC;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Warm Cream</div>
+              <div class="swatch__hex">#FAF5EC</div>
+              <div class="swatch__var">--cream / --off-white / --blush</div>
+              <div class="swatch__role">Primary page background. Pricing cards, process section, all soft-background sections.</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#64A08C;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Sage Teal</div>
+              <div class="swatch__hex">#64A08C</div>
+              <div class="swatch__var">--sage / --periwinkle</div>
+              <div class="swatch__role">Featured card accent. Used as the background of the "Most Popular" pricing card. Mid-tone green that bridges Forest Green and Cream.</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#C85C30;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Terracotta</div>
+              <div class="swatch__hex">#C85C30</div>
+              <div class="swatch__var">--terracotta / --lime</div>
+              <div class="swatch__role">Energy accent. Button hover states, checkmark ticks in pricing lists, CTA band. Used sparingly — one accent moment per section. Called "--lime" in the live CSS.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neutrals -->
+      <div class="swatch-group">
+        <div class="swatch-group__label">Neutral Scale — Green-tinted</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch__chip swatch__chip--sm" style="background:#2E5C3C;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Medium Green</div>
+              <div class="swatch__hex">#2E5C3C</div>
+              <div class="swatch__var">--green-mid / --charcoal</div>
+              <div class="swatch__role">Hover states, pricing price numerals, secondary dark elements</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip swatch__chip--sm" style="background:#5A6B5E;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Warm Olive Grey</div>
+              <div class="swatch__hex">#5A6B5E</div>
+              <div class="swatch__var">--warm-grey</div>
+              <div class="swatch__role">Body copy, card text, muted descriptions. Green-tinted rather than warm brown.</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip swatch__chip--sm" style="background:#8A9A8C;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Sage Grey</div>
+              <div class="swatch__hex">#8A9A8C</div>
+              <div class="swatch__var">--mid-grey / --olive-light</div>
+              <div class="swatch__role">Captions, meta text, GST notes, labels on dark backgrounds</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip swatch__chip--sm" style="background:#C8DACC;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Light Sage</div>
+              <div class="swatch__hex">#C8DACC</div>
+              <div class="swatch__var">--light-grey</div>
+              <div class="swatch__role">Borders, dividers, inactive/strikethrough elements</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip swatch__chip--sm" style="background:#EDE6D4;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Champagne</div>
+              <div class="swatch__hex">#EDE6D4</div>
+              <div class="swatch__var">--champagne</div>
+              <div class="swatch__role">Warm neutral for decorative ring elements and subtle backgrounds</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip swatch__chip--sm" style="background:#FFFFFF; border:1px solid #C8DACC;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">White</div>
+              <div class="swatch__hex">#FFFFFF</div>
+              <div class="swatch__var">--white</div>
+              <div class="swatch__role">Pricing card backgrounds, review cards, form inputs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Usage Rules -->
+      <div class="note">
+        <strong>Colour note:</strong> The entire neutral scale is green-tinted — not warm brown as in a typical brand palette. #5A6B5E, #8A9A8C, #C8DACC all carry a slight sage/olive cast that harmonises with the Forest Green primary. Forest Green (#1E3D28) on Cream (#FAF5EC) passes WCAG AA contrast. Never use Sage Teal (#64A08C) for body copy or large text blocks.
+      </div>
+
+      <p class="section-label" style="margin-bottom:1.25rem;">Background Pairings</p>
+      <div class="grid-3">
+        <div style="padding:2rem; background:#1E3D28; border:1px solid transparent;">
+          <p style="font-family:var(--sans); font-size:0.6rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.5rem;">Dark Section</p>
+          <p style="font-family:var(--serif); font-size:1.2rem; color:#FFFFFF;">Forest Green</p>
+          <p style="font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:0.5rem;">White text, Sage Grey labels, Terracotta on hover</p>
+        </div>
+        <div style="padding:2rem; background:#FAF5EC; border:1px solid rgba(0,0,0,0.07);">
+          <p style="font-family:var(--sans); font-size:0.6rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#1E3D28; margin-bottom:0.5rem;">Soft Section</p>
+          <p style="font-family:var(--serif); font-size:1.2rem; color:#1E3D28;">Warm Cream</p>
+          <p style="font-size:0.78rem; color:#5A6B5E; margin-top:0.5rem;">Forest Green headings, Warm Olive Grey body, Forest Green labels</p>
+        </div>
+        <div style="padding:2rem; background:#64A08C; border:1px solid #3d7a6a;">
+          <p style="font-family:var(--sans); font-size:0.6rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:0.5rem;">Featured / Accent Section</p>
+          <p style="font-family:var(--serif); font-size:1.2rem; color:#1E3D28;">Sage Teal</p>
+          <p style="font-size:0.78rem; color:#1E3D28; margin-top:0.5rem; opacity:0.7;">Forest Green text. Used only for the "Most Popular" pricing card.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Colour Tints -->
+      <p class="section-label" style="margin-bottom:1.5rem;">Colour Tints</p>
+      <p style="font-size:0.85rem; color:var(--warm-grey); line-height:1.7; margin-bottom:2rem;">Each colour has a full tint range. Use lighter tints for backgrounds, hover states, and layered surfaces. Never use tints of Terracotta for body text — reserve it for accent moments only.</p>
+
+      <div class="tint-row">
+        <p class="tint-row__label">Forest Green #1E3D28</p>
+        <div class="tint-strip">
+          <div class="tint-strip__cell" style="background:#1E3D28;"><span style="color:rgba(255,255,255,0.65);">100%</span></div>
+          <div class="tint-strip__cell" style="background:#4F6B56;"><span style="color:rgba(255,255,255,0.65);">75%</span></div>
+          <div class="tint-strip__cell" style="background:#8FA894;"><span style="color:rgba(255,255,255,0.7);">50%</span></div>
+          <div class="tint-strip__cell" style="background:#C7D4C9;"><span style="color:#1E3D28;">25%</span></div>
+          <div class="tint-strip__cell" style="background:#EBF0EC;"><span style="color:#1E3D28;">10%</span></div>
+        </div>
+      </div>
+
+      <div class="tint-row">
+        <p class="tint-row__label">Sage Teal #64A08C</p>
+        <div class="tint-strip">
+          <div class="tint-strip__cell" style="background:#64A08C;"><span style="color:rgba(255,255,255,0.7);">100%</span></div>
+          <div class="tint-strip__cell" style="background:#83B3A3;"><span style="color:rgba(255,255,255,0.7);">75%</span></div>
+          <div class="tint-strip__cell" style="background:#B1CFC6;"><span style="color:#1E3D28;">50%</span></div>
+          <div class="tint-strip__cell" style="background:#D8E7E2;"><span style="color:#1E3D28;">25%</span></div>
+          <div class="tint-strip__cell" style="background:#EFF5F3;"><span style="color:#1E3D28;">10%</span></div>
+        </div>
+      </div>
+
+      <div class="tint-row">
+        <p class="tint-row__label">Terracotta #C85C30</p>
+        <div class="tint-strip">
+          <div class="tint-strip__cell" style="background:#C85C30;"><span style="color:rgba(255,255,255,0.7);">100%</span></div>
+          <div class="tint-strip__cell" style="background:#D47D5C;"><span style="color:rgba(255,255,255,0.7);">75%</span></div>
+          <div class="tint-strip__cell" style="background:#E4A98F;"><span style="color:#1E3D28;">50%</span></div>
+          <div class="tint-strip__cell" style="background:#F2D4C7;"><span style="color:#1E3D28;">25%</span></div>
+          <div class="tint-strip__cell" style="background:#FAF0EA;"><span style="color:#1E3D28;">10%</span></div>
+        </div>
+      </div>
+
+      <div class="tint-row" style="margin-bottom:3rem;">
+        <p class="tint-row__label">Warm Cream #FAF5EC</p>
+        <div class="tint-strip" style="border:1px solid rgba(0,0,0,0.06);">
+          <div class="tint-strip__cell" style="background:#FAF5EC;"><span style="color:#8A9A8C;">100%</span></div>
+          <div class="tint-strip__cell" style="background:#F5EDD9;"><span style="color:#8A9A8C;">Warm</span></div>
+          <div class="tint-strip__cell" style="background:#EDE6D4;"><span style="color:#5A6B5E;">Champagne</span></div>
+          <div class="tint-strip__cell" style="background:#E3DAC8;"><span style="color:#5A6B5E;">Deep</span></div>
+          <div class="tint-strip__cell" style="background:#FFFFFF;"><span style="color:#8A9A8C;">White</span></div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Colour Usage Proportions -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Colour Usage Proportions</p>
+      <p style="font-size:0.85rem; color:var(--warm-grey); line-height:1.7; margin-bottom:1.5rem;">The palette is deliberately quiet. Cream and Forest Green carry the weight of every composition. Sage Teal and Terracotta are used sparingly — one accent moment per section, never competing.</p>
+      <div class="proportion-bar">
+        <div class="proportion-bar__seg" style="width:50%; background:#FAF5EC; border:1px solid rgba(0,0,0,0.06); color:#5A6B5E;">50%</div>
+        <div class="proportion-bar__seg" style="width:30%; background:#1E3D28; color:rgba(255,255,255,0.7);">30%</div>
+        <div class="proportion-bar__seg" style="width:12%; background:#64A08C; color:rgba(255,255,255,0.8);">12%</div>
+        <div class="proportion-bar__seg" style="width:8%; background:#C85C30; color:rgba(255,255,255,0.8);">8%</div>
+      </div>
+      <div class="proportion-legend">
+        <div class="proportion-legend__item"><div class="proportion-legend__dot" style="background:#FAF5EC; border:1px solid #C8DACC;"></div>Warm Cream — 50% — Backgrounds, surfaces, breathing room</div>
+        <div class="proportion-legend__item"><div class="proportion-legend__dot" style="background:#1E3D28;"></div>Forest Green — 30% — Nav, footer, sections, text, structure</div>
+        <div class="proportion-legend__item"><div class="proportion-legend__dot" style="background:#64A08C;"></div>Sage Teal — 12% — Featured elements, subtle accents</div>
+        <div class="proportion-legend__item"><div class="proportion-legend__dot" style="background:#C85C30;"></div>Terracotta — 8% — CTAs, checkmarks, highlights, energy moments</div>
+      </div>
+
+    </div>
+
+    <!-- ========================
+         05 TYPOGRAPHY
+         ======================== -->
+    <div class="section-block" id="s05">
+      <p class="section-label">05 — Typography</p>
+      <h2 class="section-title">Type system</h2>
+      <p class="section-intro">KCA Brand Studio uses a two-typeface system: a refined editorial serif for display and headline work, and a clean humanist sans-serif for body and UI text. The pairing creates tension between warmth and precision.</p>
+
+      <div class="grid-2" style="margin-bottom:3rem;">
+        <div class="font-card">
+          <div class="font-card__header">
+            <div class="font-card__display" style="font-family:'Cormorant Garamond', serif; font-weight:400;">Aa</div>
+            <div class="font-card__name">Cormorant Garamond — Display Serif</div>
+          </div>
+          <div class="font-card__body">
+            <div class="font-card__alphabet" style="font-family:'Cormorant Garamond', serif; font-weight:400;">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 &amp; ! ? . , —</div>
+            <div class="font-card__alphabet" style="font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:300; color:var(--olive);">Italic: The italic weight is primary for accents &amp; emphasis.</div>
+            <div class="font-card__specs">
+              <span>Source: Google Fonts</span><br>
+              <span>Weights: 300, 400, 500, 600, 700</span><br>
+              <span>Variants: Normal + Italic</span><br>
+              <span>Uses: All headlines, display type, pricing, pull quotes, taglines, logo</span>
+            </div>
+          </div>
+        </div>
+        <div class="font-card">
+          <div class="font-card__header" style="background:var(--charcoal);">
+            <div class="font-card__display" style="font-family:'DM Sans', sans-serif; font-weight:300; letter-spacing:0.02em;">Aa</div>
+            <div class="font-card__name">DM Sans — Body Sans-Serif</div>
+          </div>
+          <div class="font-card__body">
+            <div class="font-card__alphabet" style="font-family:'DM Sans', sans-serif; font-weight:400;">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 &amp; ! ? . , —</div>
+            <div class="font-card__alphabet" style="font-family:'DM Sans', sans-serif; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; font-size:0.8rem; color:var(--olive);">UPPERCASE FOR LABELS &amp; EYEBROWS</div>
+            <div class="font-card__specs">
+              <span>Source: Google Fonts</span><br>
+              <span>Weights: 300, 400, 500, 600</span><br>
+              <span>Variants: Normal + Italic</span><br>
+              <span>Uses: Body copy, nav, labels, UI text, form inputs, badges, buttons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label" style="margin-bottom:1.25rem;">Type Scale</p>
+      <table class="type-scale">
+        <thead>
+          <tr><th>Style</th><th>Specimen</th><th>Specification</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Heading XL</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Page titles, hero headlines</span></td>
+            <td><span style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.8rem,6vw,4.5rem); font-weight:400; line-height:1.05; letter-spacing:-0.02em; color:var(--green);">Your brand.</span></td>
+            <td>Cormorant Garamond 400<br>clamp(2.8rem, 6vw, 5.5rem)<br>line-height: 1.05<br>tracking: -0.02em</td>
+          </tr>
+          <tr>
+            <td><strong>Heading LG</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Section headings</span></td>
+            <td><span style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.1; color:var(--green);">Three ways to work together.</span></td>
+            <td>Cormorant Garamond 400<br>clamp(2rem, 4vw, 3.5rem)<br>line-height: 1.1<br>tracking: -0.01em</td>
+          </tr>
+          <tr>
+            <td><strong>Heading MD</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Sub-section titles</span></td>
+            <td><span style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,2.5vw,2rem); font-weight:400; line-height:1.2; color:var(--green);">1–4 weeks. High-touch. Focused.</span></td>
+            <td>Cormorant Garamond 400<br>clamp(1.5rem, 2.5vw, 2.2rem)<br>line-height: 1.2</td>
+          </tr>
+          <tr>
+            <td><strong>Heading SM (Label)</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Eyebrows, section labels</span></td>
+            <td><span style="font-family:'DM Sans',sans-serif; font-size:0.75rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--olive);">PACKAGES &amp; PRICING</span></td>
+            <td>DM Sans 500<br>0.75rem<br>letter-spacing: 0.15em<br>text-transform: uppercase</td>
+          </tr>
+          <tr>
+            <td><strong>Body LG</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Lead paragraphs, hero sub-copy</span></td>
+            <td><span style="font-size:clamp(1.05rem,1.5vw,1.15rem); color:var(--warm-grey); line-height:1.7;">Strategy-led brand positioning for founders and emerging businesses.</span></td>
+            <td>DM Sans 400<br>clamp(1.05rem, 1.5vw, 1.2rem)<br>line-height: 1.7<br>color: --warm-grey</td>
+          </tr>
+          <tr>
+            <td><strong>Body MD</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Standard body copy</span></td>
+            <td><span style="font-size:1rem; color:var(--warm-grey); line-height:1.7;">No drawn-out timelines. No endless revisions. A concentrated process designed to get you to market.</span></td>
+            <td>DM Sans 400<br>1rem<br>line-height: 1.7<br>color: --warm-grey</td>
+          </tr>
+          <tr>
+            <td><strong>Italic Accent</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Emphasis within headlines</span></td>
+            <td><span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:2.5rem; font-weight:400; color:var(--terracotta);">Let's make it impossible to ignore.</span></td>
+            <td>Cormorant Garamond Italic 400<br>Inherits parent size<br>color: --terracotta (on light bg) or rgba(255,255,255,0.6) (on dark)</td>
+          </tr>
+          <tr>
+            <td><strong>Pricing / Display Numeral</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Price points, statistics</span></td>
+            <td><span style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:400; color:var(--charcoal);">$4,500</span></td>
+            <td>Cormorant Garamond 400<br>clamp(1.8rem, 3vw, 2.2rem)<br>color: --charcoal (light) / --white (dark)</td>
+          </tr>
+          <tr>
+            <td><strong>Button / CTA Text</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">All interactive buttons</span></td>
+            <td><span style="font-family:'DM Sans',sans-serif; font-size:0.8rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;">START YOUR BRAND</span></td>
+            <td>DM Sans 500<br>0.8rem<br>letter-spacing: 0.12em<br>text-transform: uppercase</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note" style="margin-top:2rem;">
+        <strong>Italic rule:</strong> Italics in headlines are always Cormorant Garamond, never DM Sans italic. The Cormorant italic carries warmth and editorial character that the brand relies on for emotional resonance.
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Visual type scale -->
+      <p class="section-label" style="margin-bottom:1.5rem;">Headline Styles</p>
+      <p style="font-size:0.85rem; color:var(--warm-grey); line-height:1.7; margin-bottom:2rem;">Display and headline styles use Cormorant Garamond at precise sizes. Each level has a distinct role — never substitute a smaller heading where a larger one is called for.</p>
+
+      <div class="type-scale-visual">
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Display</div>
+            <span class="type-size-px">80px · 5rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5rem); font-weight:400; color:var(--green); letter-spacing:-0.02em;">Your brand.</div>
+        </div>
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Heading XL</div>
+            <span class="type-size-px">56px · 3.5rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,5vw,3.5rem); font-weight:400; color:var(--green); letter-spacing:-0.01em;">Built differently.</div>
+        </div>
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Heading LG</div>
+            <span class="type-size-px">40px · 2.5rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,2.5rem); font-weight:400; color:var(--green);">Three ways to work together.</div>
+        </div>
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Heading MD</div>
+            <span class="type-size-px">28px · 1.75rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-family:'Cormorant Garamond',serif; font-size:1.75rem; font-weight:400; color:var(--green);">Strategy before aesthetics.</div>
+        </div>
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Italic Accent</div>
+            <span class="type-size-px">Inherits parent · italic</span>
+          </div>
+          <div class="type-size-specimen" style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-style:italic; font-weight:400; color:var(--terracotta);">Let's make it impossible to ignore.</div>
+        </div>
+      </div>
+
+      <p class="section-label" style="margin-bottom:1.5rem;">Paragraph Styles</p>
+      <div class="type-scale-visual">
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Body Large</div>
+            <span class="type-size-px">18px · 1.15rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-size:1.15rem; font-weight:400; color:var(--warm-grey); line-height:1.7;">Strategy-led brand positioning for founders and emerging businesses who want to stand out.</div>
+        </div>
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Body</div>
+            <span class="type-size-px">16px · 1rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-size:1rem; font-weight:400; color:var(--warm-grey); line-height:1.7;">No drawn-out timelines. No endless revisions. A concentrated process designed to get you to market with a brand that converts.</div>
+        </div>
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Body Small</div>
+            <span class="type-size-px">14px · 0.875rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-size:0.875rem; font-weight:400; color:var(--warm-grey); line-height:1.7;">Prices exclude GST. All packages include a 14-day revision window after final delivery.</div>
+        </div>
+        <div class="type-size-row">
+          <div class="type-size-meta">
+            <div class="type-size-name">Label / Eyebrow</div>
+            <span class="type-size-px">11–12px · 0.7rem</span>
+          </div>
+          <div class="type-size-specimen" style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--olive);">PACKAGES &amp; PRICING</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================
+         06 LOGO & WORDMARK
+         ======================== -->
+    <div class="section-block" id="s06">
+      <p class="section-label">06 — Logo & Wordmark</p>
+      <h2 class="section-title">The official wordmark</h2>
+      <p class="section-intro">KCA Brand Studio uses a single, defined wordmark. This is the only logo to be used across all touchpoints — website, collateral, social, documents, and communications. No alternative logo directions should be substituted.</p>
+
+      <div class="note">
+        <strong>One logo only.</strong> The wordmark shown below is the official and sole logo for KCA Brand Studio. It appears in the navigation and footer of the live site at webprofits.ai/kath-c/kca-studio/ and must be reproduced exactly as specified.
+      </div>
+
+      <!-- Logo anatomy -->
+      <p class="section-label" style="margin-bottom:1.5rem;">Logo Anatomy</p>
+      <div class="grid-2" style="margin-bottom:3rem; align-items:start;">
+        <div>
+          <!-- Light colourway -->
+          <div style="background:#FAF5EC; border:1px solid rgba(0,0,0,0.07); padding:3rem 2.5rem; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">
+            <div style="text-align:left;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.3rem; display:block;">Brand Studio</div>
+            </div>
+          </div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--mid-grey); text-align:center;">Light — on Cream / White</p>
+        </div>
+        <div>
+          <!-- Dark colourway -->
+          <div style="background:#1E3D28; padding:3rem 2.5rem; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">
+            <div style="text-align:left;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:400; letter-spacing:0.28em; color:#FFFFFF; text-transform:uppercase; line-height:1;">KCA</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#8A9A8C; margin-top:0.3rem; display:block;">Brand Studio</div>
+            </div>
+          </div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--mid-grey); text-align:center;">Dark — on Forest Green</p>
+        </div>
+      </div>
+
+      <!-- Specification table -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Logo Specification</p>
+      <table class="type-scale" style="margin-bottom:3rem;">
+        <thead>
+          <tr><th>Element</th><th>Specimen</th><th>Specification</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Primary Mark — KCA</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">The wordmark</span></td>
+            <td><span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase;">KCA</span></td>
+            <td>Cormorant Garamond 400<br>letter-spacing: 0.28em<br>text-transform: uppercase<br>color: #1E3D28 (light bg) / #FFFFFF (dark bg)</td>
+          </tr>
+          <tr>
+            <td><strong>Sub-mark — Brand Studio</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Below the primary mark</span></td>
+            <td><span style="font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28;">Brand Studio</span></td>
+            <td>DM Sans 400<br>font-size: 0.55rem (~8.8px)<br>letter-spacing: 0.22em<br>display: block<br>margin-top: 0.15rem<br>color: #1E3D28 (light bg) / #8A9A8C (dark bg)</td>
+          </tr>
+          <tr>
+            <td><strong>Nav Size (reference)</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Navigation bar usage</span></td>
+            <td><span style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1; display:block;">KCA<span style="font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:400; letter-spacing:0.22em; color:#1E3D28; display:block; margin-top:0.15rem;">Brand Studio</span></span></td>
+            <td>KCA: 1.4rem<br>Sub: 0.55rem<br>Used in &lt;nav&gt; and &lt;footer&gt;</td>
+          </tr>
+          <tr>
+            <td><strong>Clear Space</strong><br><span style="font-size:0.72rem; color:var(--mid-grey)">Minimum breathing room</span></td>
+            <td><div style="display:inline-block; outline:1.5px dashed #C8DACC; padding:0.75rem 1rem;"><span style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase;">KCA</span></div></td>
+            <td>Minimum clear space = cap-height of "K" on all four sides. Do not crowd with other elements.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Colourway variants -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Approved Colourways</p>
+      <div class="grid-3" style="margin-bottom:3rem;">
+        <div>
+          <div style="background:#FAF5EC; border:1px solid rgba(0,0,0,0.07); height:110px; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem;">
+            <div><div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div><div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.25rem;">Brand Studio</div></div>
+          </div>
+          <p style="font-size:0.75rem; color:var(--warm-grey); line-height:1.6;"><strong style="color:var(--green);">Primary.</strong> Forest Green on Cream. Default use on all light backgrounds.</p>
+        </div>
+        <div>
+          <div style="background:#1E3D28; height:110px; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem;">
+            <div><div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; letter-spacing:0.28em; color:#FFFFFF; text-transform:uppercase; line-height:1;">KCA</div><div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; letter-spacing:0.22em; text-transform:uppercase; color:#8A9A8C; margin-top:0.25rem;">Brand Studio</div></div>
+          </div>
+          <p style="font-size:0.75rem; color:var(--warm-grey); line-height:1.6;"><strong style="color:var(--green);">Reversed.</strong> White on Forest Green. Use on dark backgrounds, dark sections, footers.</p>
+        </div>
+        <div>
+          <div style="background:#FFFFFF; border:1px solid rgba(0,0,0,0.07); height:110px; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem;">
+            <div><div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div><div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.25rem;">Brand Studio</div></div>
+          </div>
+          <p style="font-size:0.75rem; color:var(--warm-grey); line-height:1.6;"><strong style="color:var(--green);">White bg.</strong> Forest Green on White. Use on pure white sections, document headers, print.</p>
+        </div>
+      </div>
+
+      <!-- Clear Space Diagram -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Clear Space</p>
+      <p style="font-size:0.85rem; color:var(--warm-grey); line-height:1.7; margin-bottom:1.5rem;">The minimum clear space around the wordmark is equal to the cap-height of the "K". No other elements — text, images, rules, or decorative marks — may intrude on this zone.</p>
+      <div class="clearspace-wrap" style="margin-bottom:3rem;">
+        <div style="position:relative; display:inline-block;">
+          <!-- Top arrow + label -->
+          <div style="position:absolute; top:-2.75rem; left:0; right:0; display:flex; flex-direction:column; align-items:center; gap:0.2rem;">
+            <span style="font-family:monospace; font-size:0.58rem; color:var(--terracotta);">× cap-height</span>
+            <div style="width:1px; height:20px; background:var(--terracotta);"></div>
+          </div>
+          <!-- Bottom arrow + label -->
+          <div style="position:absolute; bottom:-2.75rem; left:0; right:0; display:flex; flex-direction:column; align-items:center; gap:0.2rem;">
+            <div style="width:1px; height:20px; background:var(--terracotta);"></div>
+            <span style="font-family:monospace; font-size:0.58rem; color:var(--terracotta);">× cap-height</span>
+          </div>
+          <!-- Left arrow + label -->
+          <div style="position:absolute; left:-5.5rem; top:0; bottom:0; display:flex; align-items:center; gap:0.25rem;">
+            <span style="font-family:monospace; font-size:0.58rem; color:var(--terracotta); white-space:nowrap;">× cap</span>
+            <div style="height:1px; width:20px; background:var(--terracotta);"></div>
+          </div>
+          <!-- Right arrow + label -->
+          <div style="position:absolute; right:-5.5rem; top:0; bottom:0; display:flex; align-items:center; gap:0.25rem;">
+            <div style="height:1px; width:20px; background:var(--terracotta);"></div>
+            <span style="font-family:monospace; font-size:0.58rem; color:var(--terracotta); white-space:nowrap;">× cap</span>
+          </div>
+          <!-- Logo with dashed clear-space border -->
+          <div class="clearspace-logo-box">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+            <div style="font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.3rem;">Brand Studio</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimum sizes -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Minimum Size & Scale</p>
+      <div style="padding:2rem; background:var(--cream); margin-bottom:2rem; display:flex; align-items:flex-end; gap:3rem; flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:0.8rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.3rem; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.15rem;">Brand Studio</div>
+          <p style="font-family:monospace; font-size:0.62rem; color:var(--mid-grey); margin-top:0.5rem;">Minimum<br>digital</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.2rem;">Brand Studio</div>
+          <p style="font-family:monospace; font-size:0.62rem; color:var(--mid-grey); margin-top:0.5rem;">Nav size<br>1.4rem</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.25rem;">Brand Studio</div>
+          <p style="font-family:monospace; font-size:0.62rem; color:var(--mid-grey); margin-top:0.5rem;">Large format<br>print / cover</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="section-label" style="margin-bottom:1.25rem;">Logo Usage Rules</p>
+      <div class="do-dont-grid">
+        <div class="do-list">
+          <div class="do-list__header">Logo Do's</div>
+          <ul class="do-list__items">
+            <li>Use only this wordmark — no other logo concepts or variations</li>
+            <li>Maintain clear space equal to the cap-height of "K" on all sides</li>
+            <li>Use Forest Green (#1E3D28) on cream and white backgrounds</li>
+            <li>Use White (#FFFFFF) on Forest Green backgrounds</li>
+            <li>Always include "Brand Studio" sub-mark below "KCA" — they are one unit</li>
+            <li>Scale proportionally only — never stretch or compress</li>
+            <li>Use the exact Cormorant Garamond 400 weight — do not substitute with 600 or italic</li>
+            <li>Use on solid background colours from the approved palette only</li>
+          </ul>
+        </div>
+        <div class="dont-list">
+          <div class="dont-list__header">Logo Don'ts</div>
+          <ul class="dont-list__items">
+            <li>Don't use any of the other 6 concept directions — the wordmark above is the only approved logo</li>
+            <li>Don't place the logo on busy photography without a solid colour underlay</li>
+            <li>Don't use in Terracotta or Sage Teal — Forest Green and White only</li>
+            <li>Don't add drop shadows, gradients, outlines, or decorative effects</li>
+            <li>Don't separate "Brand Studio" from "KCA" — they must appear together</li>
+            <li>Don't rotate, skew, or apply any transformation</li>
+            <li>Don't use a heavier or lighter font weight than 400</li>
+            <li>Don't reduce below the minimum digital size — legibility must be maintained</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Visual Logo Don'ts -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Logo Don'ts — Visual Examples</p>
+      <div class="logo-donts">
+
+        <!-- 1: Wrong colour -->
+        <div class="logo-dont">
+          <div class="logo-dont__box" style="background:#FAF5EC; border:1px solid rgba(0,0,0,0.07);">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; letter-spacing:0.28em; color:#C85C30; text-transform:uppercase; line-height:1;">KCA</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; letter-spacing:0.22em; text-transform:uppercase; color:#C85C30; margin-top:0.25rem;">Brand Studio</div>
+            </div>
+            <div class="logo-dont__x"></div>
+          </div>
+          <p class="logo-dont__label">Don't use Terracotta or Sage Teal for the wordmark.<span class="logo-dont__rule">Forest Green or White only.</span></p>
+        </div>
+
+        <!-- 2: Drop shadow / effect -->
+        <div class="logo-dont">
+          <div class="logo-dont__box" style="background:#FAF5EC; border:1px solid rgba(0,0,0,0.07);">
+            <div style="filter:drop-shadow(3px 4px 6px rgba(0,0,0,0.4));">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.25rem;">Brand Studio</div>
+            </div>
+            <div class="logo-dont__x"></div>
+          </div>
+          <p class="logo-dont__label">Don't add drop shadows, glows, outlines, or any visual effects.<span class="logo-dont__rule">Clean, unadorned letterforms only.</span></p>
+        </div>
+
+        <!-- 3: KCA only — missing sub-mark -->
+        <div class="logo-dont">
+          <div class="logo-dont__box" style="background:#FAF5EC; border:1px solid rgba(0,0,0,0.07);">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+            <div class="logo-dont__x"></div>
+          </div>
+          <p class="logo-dont__label">Don't use "KCA" without "Brand Studio" beneath it.<span class="logo-dont__rule">They are one unit — never separated.</span></p>
+        </div>
+
+        <!-- 4: Heavy weight / wrong font weight -->
+        <div class="logo-dont">
+          <div class="logo-dont__box" style="background:#FAF5EC; border:1px solid rgba(0,0,0,0.07);">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:700; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.25rem;">Brand Studio</div>
+            </div>
+            <div class="logo-dont__x"></div>
+          </div>
+          <p class="logo-dont__label">Don't use bold or heavy font weights for the wordmark.<span class="logo-dont__rule">Cormorant Garamond 400 (regular) only.</span></p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================
+         07 IMAGERY & PHOTOGRAPHY
+         ======================== -->
+    <div class="section-block" id="s07">
+      <p class="section-label">07 — Imagery & Photography</p>
+      <h2 class="section-title">Visual direction</h2>
+      <p class="section-intro">Photography and imagery reinforce the brand's premium, personal, and strategy-grounded identity. The visual language should feel like a premium consultancy — not a generic marketing agency. Every image selected should feel intentional, editorial, and human.</p>
+
+      <!-- Photography pillars -->
+      <div class="grid-3" style="margin-bottom:3rem;">
+        <div class="photo-rule">
+          <div class="photo-rule__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M20 12c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8 8-3.6 8-8z"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+          </div>
+          <div class="photo-rule__title">Hero Imagery</div>
+          <div class="photo-rule__body">Analog objects — typewriters, notebooks, craft tools. Shot in warm, natural light with shallow depth of field. Muted, editorial tone. Suggests craft, process, and intentionality rather than digital polish.</div>
+        </div>
+        <div class="photo-rule">
+          <div class="photo-rule__icon" style="background:var(--green-mid);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          </div>
+          <div class="photo-rule__title">Founder Portrait</div>
+          <div class="photo-rule__body">Circular crop with decorative ring overlays. Warm, natural light — window-lit or soft outdoor. No studio flash. The ring treatment adds editorial separation and signals premium personal branding.</div>
+        </div>
+        <div class="photo-rule">
+          <div class="photo-rule__icon" style="background:var(--terracotta);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="photo-rule__title">Brand Context</div>
+          <div class="photo-rule__body">Strategy sessions, brand materials in context, founder at work. Must feel real and candid — not staged. Props that signal serious work: mood boards, print-outs, coffee, notebooks. Never a suits-and-handshake aesthetic.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Hero photography direction -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Hero Photography Direction</p>
+      <div class="grid-2" style="margin-bottom:2.5rem;">
+        <div style="background:var(--green); padding:2.5rem; display:flex; align-items:center; justify-content:center; min-height:200px; position:relative; overflow:hidden;">
+          <div style="position:absolute; top:-30px; right:-30px; width:140px; height:140px; border-radius:50%; border:1px solid rgba(255,255,255,0.05);"></div>
+          <div style="text-align:center; position:relative; z-index:2;">
+            <div style="font-family:var(--serif); font-style:italic; font-size:1.4rem; color:rgba(255,255,255,0.8); line-height:1.4; margin-bottom:0.75rem;">"Analog objects.<br>Natural light.<br>Warm tone."</div>
+            <div style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--olive-light);">Approved Direction</div>
+          </div>
+        </div>
+        <div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:1rem;">Hero Image Criteria</p>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <div style="padding:1rem 1.25rem; background:var(--cream); border-left:3px solid var(--green);">
+              <div style="font-family:var(--serif); font-size:0.95rem; color:var(--green); margin-bottom:0.2rem;">Analog & Craft</div>
+              <div style="font-size:0.8rem; color:var(--warm-grey);">Typewriters, letterpress, printed type, notebooks, pencils. Signals craft and precision — not digital-first shortcuts.</div>
+            </div>
+            <div style="padding:1rem 1.25rem; background:var(--cream); border-left:3px solid var(--green);">
+              <div style="font-family:var(--serif); font-size:0.95rem; color:var(--green); margin-bottom:0.2rem;">Natural Light</div>
+              <div style="font-size:0.8rem; color:var(--warm-grey);">Window-lit, golden hour, soft overcast. Warm tones that align with the cream and forest palette. No flash, no harsh lighting.</div>
+            </div>
+            <div style="padding:1rem 1.25rem; background:var(--cream); border-left:3px solid var(--sage);">
+              <div style="font-family:var(--serif); font-size:0.95rem; color:var(--green); margin-bottom:0.2rem;">Muted & Editorial</div>
+              <div style="font-size:0.8rem; color:var(--warm-grey);">Slight desaturation, filmic quality. Think magazine-grade editorial, not Instagram-filtered or hyper-processed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Founder portrait treatment -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Founder Portrait Treatment</p>
+      <div class="row" style="margin-bottom:2.5rem; align-items:flex-start;">
+        <div style="position:relative; width:260px; height:260px; flex-shrink:0;">
+          <!-- Rings -->
+          <div style="position:absolute; top:-14px; left:-14px; width:288px; height:288px; border-radius:50%; border:1.5px solid rgba(200,218,204,0.35); pointer-events:none;"></div>
+          <div style="position:absolute; top:-28px; left:-28px; width:316px; height:316px; border-radius:50%; border:1.5px solid rgba(200,92,48,0.1); pointer-events:none;"></div>
+          <!-- Portrait circle -->
+          <div style="width:260px; height:260px; border-radius:50%; background:var(--cream); border:1.5px solid rgba(250,245,236,0.5); box-shadow:0 20px 60px rgba(27,40,56,0.12); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:0.8rem; font-style:italic; color:var(--mid-grey); position:relative; z-index:2;">Portrait Photo</div>
+          <!-- Accent dots -->
+          <div style="position:absolute; width:12px; height:12px; border-radius:50%; background:var(--terracotta); bottom:20px; right:0; z-index:3;"></div>
+          <div style="position:absolute; width:8px; height:8px; border-radius:50%; background:var(--champagne); top:16px; left:4px; z-index:3;"></div>
+        </div>
+        <div style="flex:1;">
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:1.25rem;">Portrait CSS Specification</p>
+          <div style="background:var(--cream); border:1px solid rgba(0,0,0,0.06); padding:1.5rem 2rem; font-family:'Courier New',monospace; font-size:0.72rem; color:var(--charcoal); line-height:2.2; margin-bottom:1rem;">
+            <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Portrait Circle</strong><br>
+            border-radius: 50%<br>
+            box-shadow: 0 20px 60px rgba(27,40,56,0.12)<br>
+            border: 1.5px solid rgba(250,245,236,0.5)<br>
+            <br>
+            <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Ring 1 (inner)</strong><br>
+            border: 1.5px solid rgba(200,218,204,0.35)<br>
+            offset: +14px all sides<br>
+            <br>
+            <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Ring 2 (outer)</strong><br>
+            border: 1.5px solid rgba(200,92,48,0.10)<br>
+            offset: +28px all sides<br>
+            <br>
+            <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Accent Dots</strong><br>
+            Terracotta 12px — bottom-right<br>
+            Champagne 8px — top-left
+          </div>
+          <div class="note" style="margin-bottom:0;">
+            The ring treatment is exclusive to the founder portrait. Do not apply to case study or client imagery. The terracotta and champagne accent dots echo the brand's energy accent without overuse.
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Photography selection guide -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Photography Selection — Approved vs. Avoid</p>
+      <div class="do-dont-grid" style="margin-bottom:2rem;">
+        <div class="do-list">
+          <div class="do-list__header">Approved Photography</div>
+          <ul class="do-list__items">
+            <li>Warm, natural light — window-lit or soft outdoor settings</li>
+            <li>Analog props: typewriters, printed type specimens, notebooks, letterpress</li>
+            <li>Founder in candid working contexts — not staged or posed corporate</li>
+            <li>Shallow depth of field — subject sharp, background soft</li>
+            <li>Slightly muted, filmic tone — editorial, not Instagram-filtered</li>
+            <li>Close-up details of craft: hands on keyboard, pen on paper, type specimen</li>
+            <li>Warm-toned interiors that complement the cream/forest palette</li>
+          </ul>
+        </div>
+        <div class="dont-list">
+          <div class="dont-list__header">Photography to Avoid</div>
+          <ul class="dont-list__items">
+            <li>Generic stock photography — suits, handshakes, fake boardroom smiles</li>
+            <li>Highly saturated or heavy Instagram-style filters</li>
+            <li>White studio shots with grey gradient backgrounds</li>
+            <li>Abstract digital or tech-themed imagery (code, data, circuits)</li>
+            <li>Flat lay product shots that feel commercial rather than editorial</li>
+            <li>Any image that places focus on tools over thinking and strategy</li>
+            <li>Low-resolution, over-compressed, or watermarked files</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         08 ICONOGRAPHY
+         ======================== -->
+    <div class="section-block" id="s08">
+      <p class="section-label">08 — Iconography</p>
+      <h2 class="section-title">Icon system</h2>
+      <p class="section-intro">KCA Brand Studio uses a consistent SVG line icon system across the site — process steps, differentiator cards, and feature highlights. All icons follow a single, precise style rule: 1.5px stroke weight with rounded terminals. Never filled, never heavy.</p>
+
+      <div class="note">
+        <strong>Icon rule:</strong> All icons are SVG line icons. No filled/solid icons. No outline-with-fill combinations. stroke-width: 1.5, stroke-linecap: round, stroke-linejoin: round. Icons are always Forest Green (#1E3D28) on a Light Sage container, reversing to White on Forest Green on hover.
+      </div>
+
+      <!-- Icon style spec -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Icon Style Specification</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2.5rem; align-items:start;">
+        <div>
+          <div class="icon-size-row">
+            <div class="icon-size-item">
+              <div class="icon-container" style="width:40px; height:40px;">
+                <svg viewBox="0 0 24 24" style="width:18px; height:18px;"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 3.5 3.5"/></svg>
+              </div>
+              <div class="icon-label">40px<br>Compact</div>
+            </div>
+            <div class="icon-size-item">
+              <div class="icon-container">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 3.5 3.5"/></svg>
+              </div>
+              <div class="icon-label">64px<br>Standard</div>
+            </div>
+            <div class="icon-size-item">
+              <div class="icon-container" style="width:80px; height:80px;">
+                <svg viewBox="0 0 24 24" style="width:32px; height:32px;"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 3.5 3.5"/></svg>
+              </div>
+              <div class="icon-label">80px<br>Feature</div>
+            </div>
+          </div>
+          <p style="font-size:0.78rem; color:var(--warm-grey); line-height:1.7;">Container sizes: 40px compact (nav/inline), 64px standard (process steps, feature cards), 80px feature (hero moments). Always circular container. Default state: Light Sage bg. Hover state: Forest Green bg, icon turns White.</p>
+        </div>
+        <div class="icon-spec-box">
+          <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">SVG Attributes</strong><br>
+          stroke-width: 1.5<br>
+          stroke-linecap: round<br>
+          stroke-linejoin: round<br>
+          fill: none<br>
+          viewBox: 0 0 24 24<br>
+          <br>
+          <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Container (Default)</strong><br>
+          width/height: 64px<br>
+          border-radius: 50%<br>
+          background: rgba(200,218,204,0.25)<br>
+          border: 1px solid rgba(200,218,204,0.6)<br>
+          icon stroke: #1E3D28<br>
+          <br>
+          <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Container (Hover)</strong><br>
+          background: #1E3D28<br>
+          border-color: #1E3D28<br>
+          icon stroke: #FFFFFF<br>
+          transition: 0.25s ease
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Process step icons -->
+      <p class="section-label" style="margin-bottom:1.5rem;">Process Icons — The 5-Step Process</p>
+      <div class="icon-showcase" style="margin-bottom:2.5rem;">
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+            </svg>
+          </div>
+          <div class="icon-label">Deep<br>Immersion</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <div class="icon-label">Market<br>Analysis</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <div class="icon-label">Strategic<br>Positioning</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="7" height="7"/>
+              <rect x="15" y="3" width="7" height="7"/>
+              <rect x="2" y="14" width="7" height="7"/>
+              <rect x="15" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <div class="icon-label">Brand<br>System</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </div>
+          <div class="icon-label">Activation</div>
+        </div>
+      </div>
+
+      <!-- Differentiator icons -->
+      <p class="section-label" style="margin-bottom:1.5rem;">Differentiator Icons — Why KCA?</p>
+      <div class="icon-showcase" style="margin-bottom:2.5rem;">
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <div class="icon-label">Strategy-Led</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </div>
+          <div class="icon-label">Conversion-<br>Aware</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="m16.5 16.5 3.5 3.5"/>
+            </svg>
+          </div>
+          <div class="icon-label">Deep<br>Immersion</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <polyline points="23 4 23 10 17 10"/>
+              <polyline points="1 20 1 14 7 14"/>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+            </svg>
+          </div>
+          <div class="icon-label">End-to-End</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="icon-label">Founder-to-<br>Founder</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <div class="icon-label">Brand<br>Guidelines</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Terracotta variant -->
+      <p class="section-label" style="margin-bottom:0.5rem;">Terracotta Variant</p>
+      <p style="font-size:0.85rem; color:var(--warm-grey); line-height:1.7; margin-bottom:1.5rem;">Used for accent moments, CTA sections, and energy-forward contexts. Container background uses a warm terracotta wash; hover inverts to full Terracotta fill with white icon.</p>
+      <div class="icon-showcase" style="margin-bottom:0.75rem;">
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          </div>
+          <div class="icon-label">Deep<br>Immersion</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div class="icon-label">Market<br>Analysis</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <div class="icon-label">Strategic<br>Positioning</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><rect x="2" y="3" width="7" height="7"/><rect x="15" y="3" width="7" height="7"/><rect x="2" y="14" width="7" height="7"/><rect x="15" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="icon-label">Brand<br>System</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          </div>
+          <div class="icon-label">Activation</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="icon-label">Conversion-<br>Aware</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 3.5 3.5"/></svg>
+          </div>
+          <div class="icon-label">Deep<br>Immersion</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <div class="icon-label">End-to-End</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="icon-label">Founder-to-<br>Founder</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="icon-label">Strategy-Led</div>
+        </div>
+        <div class="icon-tile">
+          <div class="icon-container" style="background:rgba(200,92,48,0.1); border-color:rgba(200,92,48,0.25);">
+            <svg viewBox="0 0 24 24" style="stroke:#C85C30;"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div class="icon-label">Brand<br>Guidelines</div>
+        </div>
+      </div>
+      <div style="font-size:0.78rem; color:var(--warm-grey); line-height:1.7; margin-bottom:0.5rem;">
+        <strong>Terracotta spec:</strong> Container bg <code style="font-family:monospace; background:var(--cream); padding:0.1rem 0.3rem;">rgba(200,92,48,0.10)</code>, border <code style="font-family:monospace; background:var(--cream); padding:0.1rem 0.3rem;">rgba(200,92,48,0.25)</code>. Icon stroke <code style="font-family:monospace; background:var(--cream); padding:0.1rem 0.3rem;">#C85C30</code>. Use for CTA-adjacent contexts and accent feature cards only — not as the default icon treatment.
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Icon usage rules -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Icon Usage Rules</p>
+      <div class="do-dont-grid">
+        <div class="do-list">
+          <div class="do-list__header">Icon Do's</div>
+          <ul class="do-list__items">
+            <li>Always use stroke-width: 1.5 — never thicker or thinner</li>
+            <li>Always use rounded line caps and joins (round/round)</li>
+            <li>Place icons in the 64px circular container for process and feature card use</li>
+            <li>Default container: Light Sage bg rgba(200,218,204,0.25)</li>
+            <li>Hover state: Forest Green bg, icon stroke turns white</li>
+            <li>Scale the icon proportionally within its container — icon should fill ~40% of container width</li>
+            <li>Use only Forest Green stroke on light backgrounds, White on dark</li>
+          </ul>
+        </div>
+        <div class="dont-list">
+          <div class="dont-list__header">Icon Don'ts</div>
+          <ul class="dont-list__items">
+            <li>Don't use filled/solid icon variants — this brand uses line icons exclusively</li>
+            <li>Don't mix icon libraries — icons should come from the same family (Lucide/Feather-style)</li>
+            <li>Don't use icons without a container in feature card contexts</li>
+            <li>Don't use Terracotta as the default icon stroke — only Forest Green or White</li>
+            <li>Don't use decorative/illustrative icons — keep them functional and geometric</li>
+            <li>Don't add drop shadows or glows to icons</li>
+            <li>Don't rotate icons at non-standard angles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         09 PARTNER LOGO TREATMENT
+         ======================== -->
+    <div class="section-block" id="s09">
+      <p class="section-label">09 — Partner Logo Treatment</p>
+      <h2 class="section-title">Client & partner logos</h2>
+      <p class="section-intro">Partner and client brand logos appear across the KCA website in a consistent, restrained treatment. All logos are rendered in grayscale on a warm cream tile — colour restores on hover. This approach maintains KCA's visual authority while crediting the brands worked with.</p>
+
+      <div class="note">
+        <strong>Grayscale rule:</strong> All partner logos are displayed as <code style="font-family:monospace; background:rgba(0,0,0,0.05); padding:0.1rem 0.4rem;">filter: grayscale(100%); opacity: 0.8; mix-blend-mode: multiply</code> at rest. On hover, filter is removed and opacity returns to 1. This ensures no competitor or client brand visually competes with KCA's own palette.
+      </div>
+
+      <!-- Demo grid -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Partner Logo Grid — Demo</p>
+      <div style="background:var(--cream); padding:2.5rem; border:1px solid rgba(0,0,0,0.06); margin-bottom:1.5rem;">
+        <div class="partner-grid">
+          <div class="partner-tile">
+            <div class="partner-logo-text">Swarovski</div>
+          </div>
+          <div class="partner-tile">
+            <div class="partner-logo-text">Levi's</div>
+          </div>
+          <div class="partner-tile">
+            <div class="partner-logo-text">Logitech</div>
+          </div>
+          <div class="partner-tile">
+            <div class="partner-logo-text">Bellamy's Organic</div>
+          </div>
+          <div class="partner-tile">
+            <div class="partner-logo-text">Partner Brand</div>
+          </div>
+          <div class="partner-tile">
+            <div class="partner-logo-text">Partner Brand</div>
+          </div>
+        </div>
+        <p style="font-size:0.75rem; color:var(--mid-grey); text-align:center; margin-top:0.75rem; font-style:italic;">Hover each tile to see colour restore</p>
+      </div>
+
+      <!-- Tile specification -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Tile Specification</p>
+      <div class="grid-2" style="margin-bottom:2rem; align-items:start;">
+        <div style="background:var(--cream); border:1px solid rgba(0,0,0,0.06); padding:1.75rem 2rem; font-family:'Courier New',monospace; font-size:0.72rem; color:var(--charcoal); line-height:2.2;">
+          <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Tile Container</strong><br>
+          background: #FAF5EC<br>
+          border-radius: 12px<br>
+          border: 1.5px solid transparent<br>
+          aspect-ratio: 1 / 1<br>
+          padding: 1.25rem<br>
+          <br>
+          <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Logo (Default)</strong><br>
+          filter: grayscale(100%)<br>
+          opacity: 0.8<br>
+          mix-blend-mode: multiply<br>
+          <br>
+          <strong style="font-family:var(--sans); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--olive);">Tile Hover</strong><br>
+          border-color: rgba(0,0,0,0.10)<br>
+          logo filter: none<br>
+          logo opacity: 1<br>
+          transition: 0.2s ease
+        </div>
+        <div>
+          <p style="font-family:var(--sans); font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:1rem;">Grid Layout</p>
+          <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">
+            <div style="padding:1rem 1.25rem; background:var(--cream); border-left:3px solid var(--green);">
+              <div style="font-family:var(--serif); font-size:0.95rem; color:var(--green); margin-bottom:0.2rem;">Auto-fill grid</div>
+              <div style="font-size:0.8rem; color:var(--warm-grey);">display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 1rem. Adapts naturally from 3 to 6+ columns.</div>
+            </div>
+            <div style="padding:1rem 1.25rem; background:var(--cream); border-left:3px solid var(--green);">
+              <div style="font-family:var(--serif); font-size:0.95rem; color:var(--green); margin-bottom:0.2rem;">Cream background always</div>
+              <div style="font-size:0.8rem; color:var(--warm-grey);">Never place logo tiles on Forest Green or Terracotta backgrounds. The mix-blend-mode only works correctly on cream/light backgrounds.</div>
+            </div>
+            <div style="padding:1rem 1.25rem; background:var(--cream); border-left:3px solid var(--sage);">
+              <div style="font-family:var(--serif); font-size:0.95rem; color:var(--green); margin-bottom:0.2rem;">SVG logos preferred</div>
+              <div style="font-size:0.8rem; color:var(--warm-grey);">Logos must be SVG or high-resolution PNG with transparent background for mix-blend-mode: multiply to render correctly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Do / Don't -->
+      <div class="do-dont-grid">
+        <div class="do-list">
+          <div class="do-list__header">Partner Logo Do's</div>
+          <ul class="do-list__items">
+            <li>Display all logos in grayscale (filter: grayscale(100%)) at rest</li>
+            <li>Use cream (#FAF5EC) as the tile background — never pure white or Forest Green</li>
+            <li>Apply border-radius: 12px to all tiles consistently</li>
+            <li>Restore colour on hover to reward engagement</li>
+            <li>Use SVG or transparent PNG logos — raster logos with white backgrounds will block blend mode</li>
+            <li>Maintain equal tile sizing across the grid — use aspect-ratio: 1/1</li>
+          </ul>
+        </div>
+        <div class="dont-list">
+          <div class="dont-list__header">Partner Logo Don'ts</div>
+          <ul class="dont-list__items">
+            <li>Don't display partner logos at full colour at rest — grayscale only</li>
+            <li>Don't place tiles on dark backgrounds — mix-blend-mode: multiply requires light backgrounds</li>
+            <li>Don't add drop shadows or borders at rest — the tile border only appears on hover</li>
+            <li>Don't display more than 8 logos in a single grid row</li>
+            <li>Don't use logos as brand endorsements without written permission</li>
+            <li>Don't resize tiles inconsistently — all tiles in a grid must be the same dimensions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         10 UI COMPONENTS
+         ======================== -->
+    <div class="section-block" id="s10">
+      <p class="section-label">10 — UI Components</p>
+      <h2 class="section-title">Design components</h2>
+      <p class="section-intro">The following components form the core of the KCA Brand Studio design system. All apply the same typographic rules, colour tokens, and spacing principles established in preceding sections.</p>
+
+      <!-- Buttons -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Buttons</p>
+      <div style="padding:2.5rem; background:var(--cream); margin-bottom:1.5rem;">
+        <div class="btn-demo-row">
+          <a class="demo-btn-primary">Start Your Brand</a>
+          <a class="demo-btn-secondary">View Packages</a>
+          <a class="demo-btn-ghost">See how it works</a>
+        </div>
+        <div class="btn-demo-row" style="background:var(--green); padding:1.5rem; border-radius:0; margin:-0 -2.5rem; margin-bottom:0; padding-left:2.5rem;">
+          <a class="demo-btn-primary">Start Your Brand</a>
+          <a class="demo-btn-white">Let's Talk</a>
+        </div>
+      </div>
+      <table class="btn-spec-table">
+        <thead><tr><th>Button</th><th>Use</th><th>Spec</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><a class="demo-btn-primary" style="font-size:0.7rem; padding:0.5rem 1.5rem; display:inline-block;">Primary</a></td>
+            <td>Main CTA — hero, footer, forms, pricing cards. Used once per section. Hover turns Terracotta (#C85C30).</td>
+            <td><code>bg: #1E3D28</code> <code>color: white</code> <code>0.8rem DM Sans 400</code> <code>tracking: 0.15em</code> <code>radius: 100px</code> <code>border: 1px solid #1E3D28</code></td>
+          </tr>
+          <tr>
+            <td><a class="demo-btn-secondary" style="font-size:0.7rem; padding:0.5rem 1.5rem; display:inline-block;">Secondary</a></td>
+            <td>Supporting CTA. Used alongside Primary when two actions are needed.</td>
+            <td><code>border: 1.5px #1E3D28</code> <code>color: #1E3D28</code> <code>bg: transparent</code> <code>radius: 100px</code> <code>hover: bg --green / color white</code></td>
+          </tr>
+          <tr>
+            <td><span class="demo-btn-ghost" style="font-size:0.82rem;">See how it works</span></td>
+            <td>Tertiary text links. "See how it works", view work. No border, arrow suffix, no radius needed.</td>
+            <td><code>color: --warm-grey</code> <code>0.85rem DM Sans 400</code> <code>no border / no bg</code> <code>arrow suffix →</code></td>
+          </tr>
+          <tr>
+            <td><a class="demo-btn-white" style="font-size:0.7rem; padding:0.5rem 1.5rem; display:inline-block; background:#1E3D28; color:white; border-radius:100px; border:1px solid #1E3D28;">On Dark</a></td>
+            <td>CTA on Forest Green backgrounds (CTA band, dark sections). Hover turns Terracotta.</td>
+            <td><code>bg: white</code> <code>color: --green</code> <code>radius: 100px</code> <code>hover: bg --terracotta / color white</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="divider"></div>
+
+      <!-- Badges & Labels -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Badges & Labels</p>
+      <div style="padding:2rem; background:var(--cream); margin-bottom:1.5rem;">
+        <span class="demo-badge demo-badge--green">Most Popular</span>
+        <span class="demo-badge demo-badge--green">Award-Winning Campaign</span>
+        <span class="demo-badge demo-badge--sage">Positioning &amp; Performance</span>
+        <span class="demo-badge demo-badge--cream">How It Works</span>
+        <span class="demo-badge demo-badge--outline">Brand Strategy</span>
+      </div>
+      <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.7;">
+        Badges use DM Sans 600, 0.6rem, letter-spacing 0.12em, uppercase, <strong>border-radius 100px</strong> (pill-shaped). Forest Green badges for featured highlights and awards. Sage Teal badges for secondary categorisation. Outline badges for tags and descriptors.
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Pricing Cards -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Pricing Cards — Matching Live Site</p>
+
+      <!-- Full 3-column grid matching the live homepage exactly -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-bottom:1.5rem; align-items:center;">
+
+        <!-- GOOD -->
+        <div style="background:#FFFFFF; padding:clamp(2rem,3vw,2.5rem); border:1px solid #C8DACC; position:relative;">
+          <div style="font-family:var(--sans); font-size:0.7rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#1E3D28; margin-bottom:0.5rem;">Good</div>
+          <div style="font-family:var(--serif); font-size:clamp(1.3rem,2vw,1.6rem); font-weight:400; color:#1E3D28; margin-bottom:0.5rem;">Brand Foundations</div>
+          <div style="font-size:0.82rem; color:#8A9A8C; margin-bottom:1.5rem; line-height:1.5;">For early-stage brands that need clarity and direction.</div>
+          <div style="font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.2rem); color:#2E5C3C; margin-bottom:0.25rem;">$2,500</div>
+          <div style="font-size:0.7rem; color:#8A9A8C; margin-bottom:1.5rem;">+ GST</div>
+          <div style="height:1px; background:#C8DACC; margin-bottom:1.5rem;"></div>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Strategy</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand purpose &amp; proposition</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Customer value proposition</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Target personas</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand narrative</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Tone of voice</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Messaging infrastructure</li>
+          </ul>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Outputs</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand strategy document</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Messaging playbook</li>
+          </ul>
+          <a style="display:block; text-align:center; padding:0.9rem; font-size:0.75rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; background:#1E3D28; color:white; border:1.5px solid #1E3D28; border-radius:100px; margin-top:1.5rem; transition:all 0.3s ease;">Book a Free Call</a>
+          <p style="font-family:var(--serif); font-style:italic; font-size:0.8rem; color:#8A9A8C; text-align:center; margin-top:0.75rem; line-height:1.5;">Clarity, meaning, and direction — designed to resonate and convert.</p>
+        </div>
+
+        <!-- BETTER — Featured -->
+        <div style="background:#FFFFFF; padding:clamp(2rem,3vw,2.5rem); border:1px solid #C8DACC; position:relative; transform:scaleY(1.02); z-index:2;">
+          <div class="pricing-demo__badge">Most Popular</div>
+          <div style="font-family:var(--sans); font-size:0.7rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#1E3D28; margin-bottom:0.5rem;">Better</div>
+          <div style="font-family:var(--serif); font-size:clamp(1.3rem,2vw,1.6rem); font-weight:400; color:#1E3D28; margin-bottom:0.5rem;">Brand + Identity System</div>
+          <div style="font-size:0.82rem; color:#8A9A8C; margin-bottom:1.5rem; line-height:1.5;">For brands ready to elevate visually and own their market position.</div>
+          <div style="font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.2rem); color:#2E5C3C; margin-bottom:0.25rem;">$4,500</div>
+          <div style="font-size:0.7rem; color:#8A9A8C; margin-bottom:1.5rem;">+ GST</div>
+          <div style="height:1px; background:#C8DACC; margin-bottom:1.5rem;"></div>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Strategy</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand purpose &amp; proposition</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Customer value proposition</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Target personas &amp; brand narrative</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Tone of voice &amp; messaging infrastructure</li>
+          </ul>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Identity</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Logo design</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Colour palette &amp; typography system</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Imagery &amp; illustration direction</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand guidelines document</li>
+          </ul>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Outputs</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand strategy document</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Messaging playbook</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Visual identity suite</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand guidelines document</li>
+          </ul>
+          <a style="display:block; text-align:center; padding:0.9rem; font-size:0.75rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; background:#1E3D28; color:white; border:1.5px solid #1E3D28; border-radius:100px; margin-top:1.5rem; transition:all 0.3s ease;">Book a Free Call</a>
+          <p style="font-family:var(--serif); font-style:italic; font-size:0.8rem; color:#8A9A8C; text-align:center; margin-top:0.75rem; line-height:1.5;">Built to be recognised, remembered, and trusted.</p>
+        </div>
+
+        <!-- BEST -->
+        <div style="background:#FFFFFF; padding:clamp(2rem,3vw,2.5rem); border:1px solid #C8DACC; position:relative;">
+          <div style="font-family:var(--sans); font-size:0.7rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#1E3D28; margin-bottom:0.5rem;">Best</div>
+          <div style="font-family:var(--serif); font-size:clamp(1.3rem,2vw,1.6rem); font-weight:400; color:#1E3D28; margin-bottom:0.5rem;">Brand, Identity + Launch</div>
+          <div style="font-size:0.82rem; color:#8A9A8C; margin-bottom:1.5rem; line-height:1.5;">For brands ready to launch and scale with everything they need.</div>
+          <div style="font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.2rem); color:#2E5C3C; margin-bottom:0.25rem;">$6,500</div>
+          <div style="font-size:0.7rem; color:#8A9A8C; margin-bottom:1.5rem;">+ GST</div>
+          <div style="height:1px; background:#C8DACC; margin-bottom:1.5rem;"></div>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Strategy</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand purpose &amp; proposition</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Customer value proposition</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Target personas &amp; brand narrative</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Tone of voice &amp; messaging infrastructure</li>
+          </ul>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Identity</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Logo design</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Colour palette &amp; typography system</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Imagery &amp; illustration direction</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Brand guidelines document</li>
+          </ul>
+          <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8A9A8C; margin-bottom:0.75rem;">Activation</div>
+          <ul style="list-style:none; margin-bottom:1.25rem;">
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Social templates (3×)</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Business card design</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Marketing collateral (print-ready)</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Go-to-market &amp; conversion messaging</li>
+            <li style="font-size:0.8rem; color:#5A6B5E; padding:0.3rem 0 0.3rem 1.25rem; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#C85C30; font-size:0.75rem; font-weight:700;">✓</span>Launch-ready assets</li>
+          </ul>
+          <a style="display:block; text-align:center; padding:0.9rem; font-size:0.75rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; background:#1E3D28; color:white; border:1.5px solid #1E3D28; border-radius:100px; margin-top:1.5rem; transition:all 0.3s ease;">Book a Free Call</a>
+          <p style="font-family:var(--serif); font-style:italic; font-size:0.8rem; color:#8A9A8C; text-align:center; margin-top:0.75rem; line-height:1.5;">Show up, stand out, and drive results.</p>
+        </div>
+
+      </div>
+      <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.7;">
+        <strong>Card spec:</strong> All cards — bg White (#FFFFFF), border 1px rgba(0,0,0,0.06), no border-radius. Featured (Better) card — same white bg, transform scaleY(1.02), z-index 2. Badge — bg Terracotta (#C85C30), white text, border-radius 100px, positioned absolute top centre. CTA buttons — bg Forest Green (#1E3D28), border-radius 100px. Checkmarks — Terracotta (#C85C30) on all cards.
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Review Cards -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Review / Testimonial Cards</p>
+      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.06); border-radius:10px; padding:2rem; max-width:400px;">
+        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem;">
+          <div style="width:48px; height:48px; border-radius:8px; background:var(--cream); border:1px solid rgba(0,0,0,0.06); display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-size:0.6rem; font-weight:700; color:var(--warm-grey);">CBHS</div>
+          <div>
+            <div style="font-size:0.9rem; font-weight:600; color:var(--black);">Jennifer Xu</div>
+            <div style="font-size:0.72rem; color:var(--mid-grey);">Director, Real Asset Management Group</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:2px; margin-bottom:1rem;">
+          <span style="color:var(--olive); font-size:0.9rem;">★★★★★</span>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--charcoal); background:var(--cream); padding:1rem 1.25rem; border-radius:6px; border-left:3px solid var(--olive); line-height:1.6;">"An insightful, strategic thinker who sees the big picture."</div>
+      </div>
+      <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.7; margin-top:1rem;">
+        Review cards: bg white, border 1px rgba(0,0,0,0.06), border-radius 10px, box-shadow 0 2px 12px rgba(0,0,0,0.04). Callout block: bg --cream, border-left 3px solid --olive, Cormorant Italic. Stars: --olive fill.
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Form Elements -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Form Elements</p>
+      <div style="background:var(--cream); padding:2.5rem; max-width:480px;">
+        <div class="demo-form-group">
+          <label>First Name *</label>
+          <input type="text" placeholder="Your first name">
+        </div>
+        <div class="demo-form-group">
+          <label>Business / Brand Name *</label>
+          <input type="text" placeholder="What's your business called?">
+        </div>
+        <div style="margin-top:0.5rem;">
+          <button style="width:100%; background:var(--green); color:white; padding:1.1rem; font-family:var(--sans); font-size:0.8rem; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; border:none; border-radius:100px; cursor:pointer;">Send Inquiry</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.7; margin-top:1rem;">
+        Form wrapper: bg --cream. Inputs: bg white, border 1px --light-grey, border-radius 0 (square). Focus: border-color --terracotta. Labels: DM Sans 600, 0.75rem, uppercase, letter-spacing 0.1em.
+      </div>
+    </div>
+
+    <!-- ========================
+         11 LAYOUT & SPACING
+         ======================== -->
+    <div class="section-block" id="s11">
+      <p class="section-label">11 — Layout & Spacing</p>
+      <h2 class="section-title">Grid & spacing system</h2>
+      <p class="section-intro">KCA Brand Studio uses a fluid spacing system based on a base 8px grid. All paddings, gaps, and margins resolve to multiples of 8px. Section padding scales fluidly with the viewport using CSS <code style="font-family:monospace; background:var(--cream); padding:0.1rem 0.3rem;">clamp()</code>.</p>
+
+      <div class="spacing-scale" style="margin-bottom:2rem;">
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:4px;"></div>
+          <div class="spacing-label">4px</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:8px;"></div>
+          <div class="spacing-label">8px</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:16px;"></div>
+          <div class="spacing-label">1rem</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:24px;"></div>
+          <div class="spacing-label">1.5rem</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:32px;"></div>
+          <div class="spacing-label">2rem</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:48px;"></div>
+          <div class="spacing-label">3rem</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:64px;"></div>
+          <div class="spacing-label">4rem</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:80px;"></div>
+          <div class="spacing-label">5rem</div>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height:128px;"></div>
+          <div class="spacing-label">clamp(4–8rem)</div>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:2rem;">
+        <div class="card card--cream">
+          <div class="card__label">Max Width</div>
+          <div class="card__title">1200px</div>
+          <div class="card__body">Content container maximum. Horizontal padding scales: clamp(1.5rem, 4vw, 3rem). Never full-bleed body copy.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Narrow Container</div>
+          <div class="card__title">800px</div>
+          <div class="card__body">Used for centred text sections (hero sub-copy, section headers, narrow forms). Prevents over-wide lines on large screens.</div>
+        </div>
+        <div class="card card--cream">
+          <div class="card__label">Section Padding</div>
+          <div class="card__title">clamp(4–8rem)</div>
+          <div class="card__body">Top/bottom padding for all major page sections. Scales fluidly with viewport — tight on mobile, generous on desktop.</div>
+        </div>
+      </div>
+
+      <p class="section-label" style="margin-bottom:1.25rem;">Elevation & Borders</p>
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
+        <div style="width:160px; height:80px; background:white; box-shadow:0 2px 8px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.05); display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:var(--mid-grey); text-align:center;">Level 1<br><code style="font-size:0.62rem;">0 2px 8px rgba(0,0,0,0.06)</code></div>
+        <div style="width:160px; height:80px; background:white; box-shadow:0 4px 20px rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.05); display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:var(--mid-grey); text-align:center;">Level 2<br><code style="font-size:0.62rem;">0 8px 32px rgba(0,0,0,0.08)</code></div>
+        <div style="width:160px; height:80px; background:white; box-shadow:0 20px 60px rgba(27,40,56,0.12); border:1px solid rgba(0,0,0,0.05); display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:var(--mid-grey); text-align:center;">Level 3<br><code style="font-size:0.62rem;">0 20px 60px rgba(27,40,56,0.12)</code></div>
+      </div>
+      <div style="font-size:0.82rem; color:var(--warm-grey); line-height:1.7;">
+        Borders default to <code style="font-family:monospace; background:var(--cream); padding:0.1rem 0.3rem;">1px solid rgba(0,0,0,0.06)</code>. Border-radius is <code>3px</code> for buttons/badges, <code>8–12px</code> for cards, <code>50%</code> for circular elements. The brand generally avoids heavy drop shadows — elevation is subtle.
+      </div>
+    </div>
+
+    <!-- ========================
+         13 DO'S & DON'TS
+         ======================== -->
+    <div class="section-block" id="s12">
+      <p class="section-label">12 — Do's & Don'ts</p>
+      <h2 class="section-title">Brand guardrails</h2>
+      <p class="section-intro">These rules protect the brand's premium positioning and strategic clarity. They apply across all channels, formats, and contexts.</p>
+
+      <div class="do-dont-grid" style="margin-bottom:2rem;">
+        <div class="do-list">
+          <div class="do-list__header">Brand Do's</div>
+          <ul class="do-list__items">
+            <li>Always lead with strategy — positioning before aesthetics in all written and visual communication</li>
+            <li>Use the three-colour primary palette (Green, Cream, Terracotta) as the primary system</li>
+            <li>Reserve italic Cormorant Garamond for emotional accent moments — headlines, quotes, pull statements</li>
+            <li>Keep button copy in UPPERCASE DM Sans — never mixed case or sentence case</li>
+            <li>Use Olive (#8A8C64) for labels, eyebrows, and secondary data — never as a headline colour</li>
+            <li>Use the Terracotta for CTAs and the single accent band — not liberally throughout layouts</li>
+            <li>Maintain generous white space — the brand breathes</li>
+            <li>Use the exact hex values specified — do not eyeball approximations</li>
+            <li>Keep copy short. Headlines under 12 words. Body copy under 3 sentences per paragraph.</li>
+            <li>Attribute all copy with commercial intent — end every message with an outcome</li>
+          </ul>
+        </div>
+        <div class="dont-list">
+          <div class="dont-list__header">Brand Don'ts</div>
+          <ul class="dont-list__items">
+            <li>Don't use Terracotta as a background for long-form content sections</li>
+            <li>Don't mix serif and sans-serif in the same button</li>
+            <li>Don't add drop shadows to logos, type, or UI elements beyond the defined elevation system</li>
+            <li>Don't use any typeface outside Cormorant Garamond and DM Sans (except Jost for Direction 01/Couture logo only)</li>
+            <li>Don't present the brand as a "design studio" — always frame as strategy-led and commercial</li>
+            <li>Don't use the word "passion", "bespoke", "holistic", or "unique" in any copy</li>
+            <li>Don't apply agency-speak — the voice is founder-to-founder, direct and human</li>
+            <li>Don't crowd layouts — each section has a single job. One message. One action.</li>
+            <li>Don't scale the Terracotta accent heavily — one CTA band per page, one badge per card</li>
+            <li>Don't deviate from the defined type scale — custom font sizes break visual rhythm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         14 QUICK REFERENCE
+         ======================== -->
+    <div class="section-block" id="s13">
+      <p class="section-label">13 — Quick Reference</p>
+      <h2 class="section-title">At a glance</h2>
+      <p class="section-intro">Everything you need at a glance. Use this section as a daily reference when producing any KCA Brand Studio material.</p>
+
+      <div class="grid-2" style="margin-bottom:2rem;">
+        <div class="card">
+          <div class="card__label">Brand Identity</div>
+          <div style="font-size:0.85rem; color:var(--charcoal); line-height:2.2;">
+            <strong>Name:</strong> KCA Brand Studio<br>
+            <strong>Founder:</strong> Katherine Chalhoub Arcuri<br>
+            <strong>Location:</strong> Sydney, Australia<br>
+            <strong>Tagline:</strong> Built to stand out. Designed to perform.<br>
+            <strong>Hero line:</strong> Your brand shouldn't blend in.<br>
+            <strong>Mission:</strong> Every brand deserves a strategy as strong as its ambition.<br>
+            <strong>ABN:</strong> To be added
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__label">Colour Tokens</div>
+          <div style="font-size:0.82rem; line-height:2.5; font-family:'Courier New',monospace; color:var(--charcoal);">
+            <span style="display:inline-block; width:14px; height:14px; background:#1E3D28; vertical-align:middle; margin-right:8px;"></span>Forest Green: #1E3D28<br>
+            <span style="display:inline-block; width:14px; height:14px; background:#FAF5EC; border:1px solid #C8DACC; vertical-align:middle; margin-right:8px;"></span>Warm Cream: #FAF5EC<br>
+            <span style="display:inline-block; width:14px; height:14px; background:#64A08C; vertical-align:middle; margin-right:8px;"></span>Sage Teal: #64A08C<br>
+            <span style="display:inline-block; width:14px; height:14px; background:#C85C30; vertical-align:middle; margin-right:8px;"></span>Terracotta: #C85C30<br>
+            <span style="display:inline-block; width:14px; height:14px; background:#2E5C3C; vertical-align:middle; margin-right:8px;"></span>Medium Green: #2E5C3C<br>
+            <span style="display:inline-block; width:14px; height:14px; background:#5A6B5E; vertical-align:middle; margin-right:8px;"></span>Warm Olive Grey: #5A6B5E<br>
+            <span style="display:inline-block; width:14px; height:14px; background:#8A9A8C; vertical-align:middle; margin-right:8px;"></span>Sage Grey: #8A9A8C<br>
+            <span style="display:inline-block; width:14px; height:14px; background:#C8DACC; vertical-align:middle; margin-right:8px;"></span>Light Sage: #C8DACC
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:2rem;">
+        <div class="card">
+          <div class="card__label">Typography</div>
+          <div style="font-size:0.85rem; color:var(--charcoal); line-height:2.2;">
+            <strong>Display:</strong> Cormorant Garamond<br>
+            &nbsp;&nbsp;— Weights 300–700, Italic<br>
+            &nbsp;&nbsp;— Headlines, quotes, pricing, italic accents<br>
+            <strong>Body:</strong> DM Sans<br>
+            &nbsp;&nbsp;— Weights 300–600<br>
+            &nbsp;&nbsp;— Body copy, labels, nav, buttons, UI<br>
+            <strong>Code/Mono:</strong> Courier New (internal docs only)
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__label">Packages</div>
+          <div style="font-size:0.85rem; color:var(--charcoal); line-height:2.2;">
+            <strong>Good — Brand Foundations:</strong> $2,500 + GST<br>
+            &nbsp;&nbsp;— Strategy only<br>
+            <strong>Better — Brand + Identity System:</strong> $4,500 + GST<br>
+            &nbsp;&nbsp;— Strategy + Visual Identity (Most Popular)<br>
+            <strong>Best — Brand, Identity + Launch:</strong> $6,500 + GST<br>
+            &nbsp;&nbsp;— Full execution + launch-ready assets<br>
+            <strong>Timeline:</strong> 1–4 weeks. High-touch. Focused.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:2rem;">
+        <div class="card__label">Contact & Channels</div>
+        <div style="font-size:0.85rem; color:var(--charcoal); line-height:2.2;">
+          <strong>Email:</strong> katherine.chalhoub@gmail.com<br>
+          <strong>LinkedIn:</strong> linkedin.com/in/katherinechalhoubarcuri<br>
+          <strong>Website:</strong> webprofits.ai/kath-c/kca-studio/ (current) — permanent domain TBD<br>
+          <strong>Location:</strong> Sydney, Australia
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================
+         15 BRAND IN USE
+         ======================== -->
+    <div class="section-block" id="s14">
+      <p class="section-label">14 — Brand in Use</p>
+      <h2 class="section-title">The brand applied</h2>
+      <p class="section-intro">How the KCA identity performs across real-world touchpoints. Every application must respect the clear space, approved colourways, and typographic hierarchy defined in this guide.</p>
+
+      <!-- Business Card -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Business Card</p>
+      <div class="brand-in-use-grid" style="margin-bottom:3rem;">
+
+        <!-- Front — Forest Green with centred wordmark -->
+        <div class="mockup-wrap">
+          <p class="mockup-label">Front — Forest Green</p>
+          <div class="biz-card biz-card--dark" style="align-items:center; justify-content:center; gap:0;">
+            <!-- Centred wordmark block -->
+            <div style="text-align:center;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:400; letter-spacing:0.32em; color:#FFFFFF; text-transform:uppercase; line-height:1;">KCA</div>
+              <!-- Terracotta diamond separator -->
+              <div style="width:5px; height:5px; background:var(--terracotta); transform:rotate(45deg); margin:0.75rem auto;"></div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.5rem; font-weight:400; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:0.2rem;">KATHERINE CHALHOUB ARCURI</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.45rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#64A08C;">BRAND STUDIO</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back — Cream with left-aligned details + small badge top-right -->
+        <div class="mockup-wrap">
+          <p class="mockup-label">Back — Warm Cream</p>
+          <div class="biz-card biz-card--light" style="position:relative; justify-content:flex-end; gap:0;">
+            <!-- Small circular wordmark badge — top right -->
+            <div style="position:absolute; top:1rem; right:1rem; width:36px; height:36px; border-radius:50%; border:0.75px solid #1E3D28; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:0.7rem; font-weight:400; letter-spacing:0.15em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+            </div>
+            <!-- Contact block — left aligned, bottom anchored -->
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:0.95rem; font-weight:400; color:#1E3D28; line-height:1.3; margin-bottom:0.1rem;">Katherine Chalhoub Arcuri</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.48rem; font-weight:400; color:var(--warm-grey); margin-bottom:0.85rem;">Brand Strategist &amp; Creative Director</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.42rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#1E3D28; line-height:1; margin-bottom:0.35rem;">KCA Brand Studio</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.42rem; color:var(--warm-grey); line-height:2; letter-spacing:0.05em; text-transform:uppercase;">
+                katherine.chalhoub@gmail.com<br>
+                webprofits.ai/kath-c/kca-studio/<br>
+                <span style="color:var(--terracotta);">Sydney, Australia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Email Signature -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Email Signature</p>
+      <div style="margin-bottom:3rem;">
+        <p class="mockup-label">Standard email signature layout</p>
+        <div class="email-sig">
+          <div style="display:flex; align-items:flex-start; gap:1.5rem; padding-bottom:1rem; margin-bottom:1rem; border-bottom:1px solid var(--light-grey);">
+            <!-- Logo block -->
+            <div style="flex-shrink:0;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; letter-spacing:0.28em; color:#1E3D28; text-transform:uppercase; line-height:1;">KCA</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.42rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#1E3D28; margin-top:0.2rem;">Brand Studio</div>
+            </div>
+            <!-- Divider rule -->
+            <div style="width:1px; background:var(--light-grey); align-self:stretch;"></div>
+            <!-- Details -->
+            <div style="font-family:var(--sans); font-size:0.78rem; color:var(--warm-grey); line-height:1.9;">
+              <strong style="color:var(--green); font-weight:500;">Katherine Chalhoub Arcuri</strong><br>
+              Brand Strategist &amp; Creative Director<br>
+              <span style="color:var(--terracotta);">KCA Brand Studio</span>
+            </div>
+          </div>
+          <div style="font-family:var(--sans); font-size:0.72rem; color:var(--mid-grey); line-height:2;">
+            E: katherine.chalhoub@gmail.com &nbsp;·&nbsp; W: webprofits.ai/kath-c/kca-studio/ &nbsp;·&nbsp; Sydney, Australia
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Profile Banner -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Social Profile Banner</p>
+      <div style="margin-bottom:3rem;">
+        <p class="mockup-label">LinkedIn cover banner — 1584 × 396px</p>
+        <div class="social-banner">
+          <div style="text-align:center; position:relative; z-index:1;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,4vw,2.8rem); font-weight:400; letter-spacing:0.28em; color:#FFFFFF; text-transform:uppercase; line-height:1; margin-bottom:0.4rem;">KCA</div>
+            <div style="font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#8A9A8C;">Brand Studio</div>
+            <div style="width:40px; height:1px; background:var(--terracotta); margin:1rem auto;"></div>
+            <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(0.9rem,2vw,1.2rem); color:rgba(255,255,255,0.65);">Built to stand out. Designed to perform.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Document Header / Letterhead -->
+      <p class="section-label" style="margin-bottom:1.25rem;">Document Header</p>
+      <div style="margin-bottom:1rem;">
+        <p class="mockup-label">Proposal / brief / report header — A4 format</p>
+        <div style="background:#FFFFFF; border:1px solid var(--light-grey);">
+          <!-- Header band -->
+          <div style="background:var(--green); padding:1.25rem 2rem; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; letter-spacing:0.28em; color:#FFFFFF; text-transform:uppercase; line-height:1;">KCA</div>
+              <div style="font-family:'DM Sans',sans-serif; font-size:0.44rem; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:#8A9A8C; margin-top:0.2rem;">Brand Studio</div>
+            </div>
+            <div style="text-align:right; font-family:var(--sans); font-size:0.62rem; color:rgba(255,255,255,0.45); line-height:1.7;">
+              Confidential<br>
+              Brand Proposal 2026
+            </div>
+          </div>
+          <!-- Body sample -->
+          <div style="padding:1.75rem 2rem;">
+            <p style="font-family:var(--sans); font-size:0.62rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--terracotta); margin-bottom:0.5rem;">Brand Strategy</p>
+            <p style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--green); margin-bottom:0.75rem;">Prepared for [Client Name]</p>
+            <p style="font-size:0.8rem; color:var(--warm-grey); line-height:1.7;">This document outlines the brand strategy and positioning framework developed for [Client Name]. All work is confidential and remains the intellectual property of KCA Brand Studio until final payment is received.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CLOSING BAND -->
+  <div class="terra-band">
+    <div style="max-width:1080px; margin:0 auto; padding:0 2.5rem; text-align:center;">
+      <p style="font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:1.5rem;">KCA Brand Studio</p>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:400; color:white; line-height:1.1; margin-bottom:1rem;">Ready to build a brand that<br>actually works?</h2>
+      <p style="font-size:1rem; color:rgba(255,255,255,0.65); margin-bottom:2rem;">This document is confidential and intended for use by KCA Brand Studio and authorised collaborators only.</p>
+      <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4);">© 2026 KCA Brand Studio — Katherine Chalhoub Arcuri — Brand Guide Version 1.0</div>
+    </div>
+  </div>
+
+</body>
+</html>
