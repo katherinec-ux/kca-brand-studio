@@ -439,11 +439,7 @@
         }
 
         @media (max-width: 768px) {
-            .brands__logos {
-                flex-wrap: wrap;
-            }
             .brands__logo {
-                flex: 0 0 auto;
                 width: clamp(110px, 28vw, 140px);
                 padding: 1.25rem;
                 border-radius: 10px;
@@ -944,7 +940,7 @@
 
         .case-studies__grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: clamp(1.5rem, 3vw, 2rem);
         }
 
@@ -1111,6 +1107,9 @@
             transform: scale(1.03);
         }
 
+        @media (max-width: 1024px) {
+            .case-studies__grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
             .case-studies__grid { grid-template-columns: 1fr; }
         }
@@ -2301,7 +2300,7 @@
             <ul class="nav__links" id="navLinks">
                 <li><a href="#services">Packages</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#work">Work</a></li>
+                <li><a href="work/index.html">Work</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="blog/">Journal</a></li>
                 <li><a href="#contact" class="nav__cta">Book a Free Call</a></li>
@@ -2795,77 +2794,6 @@
     </div>
 
     <!-- ============================================
-         CASE STUDIES
-         ============================================ -->
-    <section class="section" id="work">
-        <div class="container">
-            <div class="case-studies__header reveal">
-                <span class="heading-sm">Case Studies</span>
-                <h2 class="heading-lg" style="white-space: nowrap;">Brands we've helped define and position.</h2>
-            </div>
-            <div class="case-studies__grid">
-                <!-- Case Study 1 - Bellamy's Organic -->
-                <div class="case-study reveal">
-                    <div class="case-study__banner" style="background: #64a08c;"></div>
-
-                    <div class="case-study__body">
-                        <div class="case-study__meta">
-                            <div class="case-study__icon">
-                                <img src="images/brands/bellamys-logo.png" alt="Bellamy's Organic">
-                            </div>
-                            <div>
-                                <div class="case-study__client">Bellamy's Organic</div>
-                                <div class="case-study__industry">Organic Baby Food &bull; Content &amp; Brand Strategy</div>
-                            </div>
-                        </div>
-                        <p class="case-study__challenge">Competing against Nestl&eacute;, A2, and supermarket private labels in a heavily regulated category. Needed to cut through on a fraction of the budget by amplifying the brand through its existing customers.</p>
-                        <ul class="case-study__outcomes">
-                            <li>Created "Bellamy's Firsts" - a UGC-led content strategy turning real parents into brand advocates</li>
-                            <li>Drove earned attention through social, email sequences, and community growth</li>
-                            <li>Won 2018 AMI Award for Marketing Excellence &amp; SEMrush Best Content Marketing Campaign</li>
-                        </ul>
-                        <span class="case-study__tag">Award-Winning Campaign</span>
-                    </div>
-                </div>
-
-                <!-- Case Study 2 - Brighten Home Loans -->
-                <div class="case-study reveal reveal-delay-1">
-                    <div class="case-study__banner" style="background: #64a08c;"></div>
-                    <div class="case-study__body">
-                        <div class="case-study__meta">
-                            <div class="case-study__icon">
-                                <img src="images/brands/brighten-logo.jpg" alt="Brighten Home Loans">
-                            </div>
-                            <div>
-                                <div class="case-study__client">Brighten Home Loans</div>
-                                <div class="case-study__industry">Financial Services &bull; Brand &amp; Lead Gen</div>
-                            </div>
-                        </div>
-                        <p class="case-study__challenge">A non-bank lender needing to build trust and brand recognition in a market dominated by the big four, while driving qualified lead volume in a highly regulated category.</p>
-                        <ul class="case-study__outcomes">
-                            <li>Developed brand positioning as a credible, transparent alternative to major banks</li>
-                            <li>Built conversion-led messaging framework across paid social, search, and landing pages</li>
-                            <li>Performance creative strategy that lifted lead quality and reduced cost per acquisition</li>
-                        </ul>
-                        <span class="case-study__tag">Positioning &amp; Performance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         POST CASE STUDY CTA
-         ============================================ -->
-    <div style="background: var(--black); padding: clamp(3rem, 5vw, 4.5rem) 0; text-align: center;">
-        <div class="container">
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; margin-bottom: 0.5rem; color: var(--cream); font-style: italic; line-height: 1.2;">Want results like these for your brand?</p>
-            <p style="font-size: 0.9rem; color: rgba(250,245,236,0.6); margin-bottom: 2rem; letter-spacing: 0.03em;">Let&rsquo;s talk about where you&rsquo;re at and what it would take.</p>
-            <a href="#contact" style="display: inline-block; background: var(--cream); color: var(--black); padding: 0.9rem 2.5rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 100px; font-family: var(--font-sans);">Book a Free Strategy Call</a>
-        </div>
-    </div>
-
-    <!-- ============================================
          ABOUT / FOUNDER
          ============================================ -->
     <section class="section" id="about">
@@ -2884,7 +2812,7 @@
                     <span class="heading-sm">Meet the Founder</span>
                     <h2 class="heading-lg">I believe every brand deserves a strategy as strong as its ambition.</h2>
                     <p class="body-lg">
-                        I'm Kath - a brand strategist and creative director with 14+ years across performance marketing, lead gen, ecommerce, and retail. I've had the privilege of shaping brands like Bellamy's Organic, Roomia and Brighten Home Loans, and those experiences taught me what separates brands that look good from brands that actually work.
+                        I'm Kath - a brand strategist and creative director with 14+ years across performance marketing, lead gen, ecommerce, and retail. I've had the privilege of shaping brands like Bellamy's Organic, Warami Services and Brighten Home Loans, and those experiences taught me what separates brands that look good from brands that actually work.
                     </p>
                     <p class="body-lg">
                         I started KCA Brand Studio because I kept seeing the same gap: beautifully designed brands without the strategic backbone to cut through. I work directly with founders to define what makes them different, build that into every touchpoint, and give them the clarity and confidence to launch with real commercial intent.
